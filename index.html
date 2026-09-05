@@ -5,7 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bipin Kumar Maurya | Advocate & Legal Consultant</title>
+<meta name="description"
+      content="Bipin Kumar Maurya, Advocate & Legal Consultant in District Gorakhpur, Uttar Pradesh. Legal assistance in Criminal, Civil, Family, Property, Consumer and Labour matters.">
 
+<meta name="keywords"
+      content="Bipin Kumar Maurya, Advocate Gorakhpur, Lawyer Gorakhpur, Legal Consultant Gorakhpur, Criminal Lawyer, Civil Lawyer, Family Lawyer, Property Lawyer, Consumer Lawyer, Labour Lawyer">
+
+<meta name="author"
+      content="Bipin Kumar Maurya">
+<meta property="og:title"
+      content="Bipin Kumar Maurya | Advocate & Legal Consultant">
+
+<meta property="og:description"
+      content="Legal assistance and consultation in Criminal, Civil, Family, Property, Consumer and Labour matters in District Gorakhpur, Uttar Pradesh.">
+
+<meta property="og:type"
+      content="website">
     <style>
 
         * {
@@ -305,7 +320,158 @@
             color: #d4af37;
         }
 
+/* LEGAL DISCLAIMER */
 
+        .disclaimer {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 25px;
+            text-align: center;
+            background: #111111;
+        }
+
+        .disclaimer h2 {
+            font-size: 28px;
+            color: #d4af37;
+            margin-bottom: 25px;
+        }
+
+        .disclaimer p {
+            color: #aaaaaa;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+/* ENQUIRY FORM */
+
+        .enquiry-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 25px;
+            background: #111111;
+        }
+
+        .enquiry-form {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .enquiry-form input,
+        .enquiry-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            background: #171717;
+            color: #ffffff;
+            border: 1px solid #555555;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+        .enquiry-form input:focus,
+        .enquiry-form textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .enquiry-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .enquiry-submit {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #d4af37;
+            color: #111111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .enquiry-submit:hover {
+            background: #f0cf55;
+        }
+/* FLOATING CONTACT BUTTONS */
+
+        .floating-contact {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .floating-contact a {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 23px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+
+        .floating-call {
+            background: #d4af37;
+            color: #111111;
+        }
+
+        .floating-whatsapp {
+            background: #25D366;
+            color: #ffffff;
+        }
+
+        .floating-contact a:hover {
+            transform: scale(1.08);
+        }
+/* FAQ SECTION */
+
+        .faq-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 25px;
+            background: #111111;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #171717;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            background: #171717;
+            color: #d4af37;
+            border: none;
+            text-align: left;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 18px;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
         /* MOBILE RESPONSIVE */
 
         @media (max-width: 600px) {
@@ -562,7 +728,127 @@
 
     </section>
 
+<!-- CLIENT ENQUIRY FORM -->
 
+    <section id="enquiry" class="enquiry-section">
+
+        <h2>Client Enquiry</h2>
+
+        <form class="enquiry-form"
+              onsubmit="sendEnquiryToWhatsApp(); return false;">
+
+            <input
+                type="text"
+                id="clientName"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="tel"
+                id="clientPhone"
+                placeholder="Mobile Number"
+                required
+            >
+
+            <input
+                type="email"
+                id="clientEmail"
+                placeholder="Email Address"
+            >
+
+            <textarea
+                id="clientMessage"
+                placeholder="Briefly describe your legal enquiry..."
+                required
+            ></textarea>
+
+            <button type="submit" class="enquiry-submit">
+                💬 Send Enquiry on WhatsApp
+            </button>
+
+        </form>
+
+    </section>
+<!-- FAQ SECTION -->
+
+    <section id="faq" class="faq-section">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                What legal matters can I get assistance with?
+            </button>
+
+            <div class="faq-answer">
+                Legal assistance may be provided in matters relating to
+                Criminal, Civil, Family, Property, Consumer and Labour Law,
+                subject to the facts and circumstances of each case.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                How can I contact the Advocate?
+            </button>
+
+            <div class="faq-answer">
+                You can contact through the phone number or WhatsApp
+                option available on this website.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                Can I send my legal enquiry online?
+            </button>
+
+            <div class="faq-answer">
+                Yes. You can use the Client Enquiry form available on
+                this website to send your basic enquiry through WhatsApp.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                Is the information on this website legal advice?
+            </button>
+
+            <div class="faq-answer">
+                No. The information provided on this website is for
+                general legal information and awareness purposes only.
+                Please refer to the Legal Disclaimer.
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question" onclick="toggleFAQ(this)">
+                Does every legal matter have the same solution?
+            </button>
+
+            <div class="faq-answer">
+                No. Every legal matter depends on its specific facts,
+                circumstances and applicable law. Proper legal consultation
+                may be required before taking any legal action.
+            </div>
+
+        </div>
+
+    </section>
     <!-- CONTACT -->
 
     <section id="contact" class="contact">
@@ -600,7 +886,26 @@
 
     </section>
 
+<!-- LEGAL DISCLAIMER -->
 
+    <section class="disclaimer">
+
+        <h2>Legal Disclaimer</h2>
+
+        <p>
+            इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य विधिक जानकारी
+            एवं जागरूकता के उद्देश्य से प्रदान की गई है। यह किसी विशेष
+            मामले के संबंध में विधिक राय, सलाह अथवा पेशेवर परामर्श का
+            विकल्प नहीं है।
+        </p>
+
+        <p>
+            प्रत्येक कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार
+            पर अलग होता है। किसी भी कानूनी कार्रवाई से पहले उचित
+            विधिक परामर्श प्राप्त करना आवश्यक है।
+        </p>
+
+    </section>
     <!-- FOOTER -->
 
     <footer>
@@ -610,7 +915,56 @@
         </p>
 
     </footer>
+<script>
 
+function sendEnquiryToWhatsApp() {
 
+    var name = document.getElementById("clientName").value;
+    var phone = document.getElementById("clientPhone").value;
+    var email = document.getElementById("clientEmail").value;
+    var message = document.getElementById("clientMessage").value;
+
+    var whatsappMessage =
+        "New Client Enquiry%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Mobile: " + encodeURIComponent(phone) + "%0A" +
+        "Email: " + encodeURIComponent(email) + "%0A" +
+        "Legal Enquiry: " + encodeURIComponent(message);
+
+    var whatsappURL =
+        "https://wa.me/917080884964?text=" + whatsappMessage;
+
+    window.open(whatsappURL, "_blank");
+}
+
+</script>
+<!-- FLOATING CONTACT BUTTONS -->
+
+    <div class="floating-contact">
+
+        <a href="tel:7080884964"
+           class="floating-call"
+           title="Call Now">
+            📞
+        </a>
+
+        <a href="https://wa.me/917080884964"
+           class="floating-whatsapp"
+           title="WhatsApp">
+            💬
+        </a>
+
+    </div>
+<script>
+
+function toggleFAQ(button) {
+
+    var faqItem = button.parentElement;
+
+    faqItem.classList.toggle("active");
+
+}
+
+</script>
 </body>
 </html>
