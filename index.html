@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bipin Kumar Maurya | Advocate & Legal Consultant</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #111111;
+            color: #ffffff;
+        }
+
+        /* HERO SECTION */
+
+        header {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+            border-bottom: 1px solid #d4af37;
+        }
+
+        .hero {
+            max-width: 900px;
+        }
+
+        .symbol {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 52px;
+            margin: 10px 0 15px;
+            color: #d4af37;
+            letter-spacing: 1px;
+        }
+
+        .designation {
+            font-size: 22px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .tagline {
+            color: #aaaaaa;
+            font-size: 17px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            margin: 5px 0 20px;
+        }
+
+        .location {
+            color: #cccccc;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background: #d4af37;
+            color: #111111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #f0cf55;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+
+        /* NAVIGATION */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #0d0d0d;
+            text-align: center;
+            padding: 18px 10px;
+            border-bottom: 1px solid #333333;
+        }
+
+        nav a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+        }
+
+
+        /* GENERAL SECTIONS */
+
+        section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        h2 {
+            color: #d4af37;
+            font-size: 34px;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+
+        /* ABOUT SECTION */
+
+        .about-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 70px 25px;
+            text-align: center;
+            background: #111111;
+        }
+
+        .about-section p {
+            color: #dddddd;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+
+
+        /* PRACTICE AREAS */
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            flex: 1;
+            min-width: 250px;
+            padding: 35px 25px;
+            background: #171717;
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.18);
+        }
+
+        .card h3 {
+            color: #d4af37;
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+
+        /* WHY CHOOSE ME */
+
+        .why-section {
+            max-width: none;
+            padding: 70px 20px;
+            text-align: center;
+            background: #0d0d0d;
+        }
+
+        .why-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .why-box {
+            flex: 1;
+            min-width: 250px;
+            padding: 30px 20px;
+            background: #171717;
+            border: 1px solid #333333;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .why-box:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+        }
+
+        .why-box h3 {
+            color: #d4af37;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .why-box p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+
+        /* CONTACT SECTION */
+
+        .contact {
+            text-align: center;
+            background: #191919;
+            max-width: none;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin: 15px;
+        }
+
+        .contact p a {
+            color: #d4af37;
+            text-decoration: none;
+        }
+
+        .contact-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .contact-buttons a {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .call-btn {
+            background: #d4af37;
+            color: #111111 !important;
+        }
+
+        .call-btn:hover {
+            background: #f0cf55;
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: #ffffff !important;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background: #080808;
+            color: #888888;
+            text-align: center;
+            padding: 25px 15px;
+            border-top: 1px solid #333333;
+            font-size: 14px;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+
+        /* MOBILE RESPONSIVE */
+
+        @media (max-width: 600px) {
+
+            header {
+                min-height: 80vh;
+                padding: 60px 15px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .designation {
+                font-size: 17px;
+            }
+
+            .tagline {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+
+            .location {
+                font-size: 16px;
+            }
+
+            nav {
+                padding: 15px 5px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .about-section {
+                padding: 50px 18px;
+            }
+
+            .about-section h2 {
+                font-size: 28px;
+            }
+
+            .about-section p {
+                font-size: 16px;
+            }
+
+            .card {
+                min-width: 100%;
+            }
+
+            .why-section {
+                padding: 50px 18px;
+            }
+
+            .why-section h2 {
+                font-size: 28px;
+            }
+
+            .why-box {
+                min-width: 100%;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-buttons a {
+                width: 80%;
+                text-align: center;
+            }
+
+            footer {
+                font-size: 13px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- HERO -->
+
+    <header>
+
+        <div class="hero">
+
+            <div class="symbol">⚖️</div>
+
+            <h1>Bipin Kumar Maurya</h1>
+
+            <div class="designation">
+                ADVOCATE | LEGAL CONSULTANT
+            </div>
+
+            <p class="tagline">
+                Committed to providing clear, practical and responsible legal guidance.
+            </p>
+
+            <div class="location">
+                Uttar Pradesh, District Gorakhpur
+            </div>
+
+            <a href="#contact" class="btn">
+                Contact Me
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <a href="#about">About</a>
+        <a href="#practice">Practice Areas</a>
+        <a href="#why">Why Choose Me</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about-section">
+
+        <h2>About Me</h2>
+
+        <p>
+            मैं Bipin Kumar Maurya, District Gorakhpur में Advocate एवं
+            Legal Consultant के रूप में विधिक परामर्श और कानूनी सहायता
+            प्रदान करता हूँ।
+        </p>
+
+        <p>
+            मेरा उद्देश्य प्रत्येक व्यक्ति को उसके कानूनी अधिकारों,
+            दायित्वों एवं उपलब्ध विधिक उपायों के संबंध में उचित मार्गदर्शन
+            प्रदान करना है।
+        </p>
+
+    </section>
+
+
+    <!-- PRACTICE AREAS -->
+
+    <section id="practice">
+
+        <h2>Practice Areas</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <h3>Criminal Law</h3>
+                <p>
+                    Legal assistance and representation
+                    in criminal matters.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Civil Law</h3>
+                <p>
+                    Assistance in civil disputes and
+                    related legal matters.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Family Law</h3>
+                <p>
+                    Legal assistance in family and
+                    matrimonial matters.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Property Law</h3>
+                <p>
+                    Assistance in property and
+                    land-related legal matters.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Consumer Law</h3>
+                <p>
+                    Legal assistance in consumer
+                    disputes and related matters.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Labour Law</h3>
+                <p>
+                    Assistance in employment and
+                    labour-related legal matters.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE ME -->
+
+    <section id="why" class="why-section">
+
+        <h2>Why Choose Me</h2>
+
+        <div class="why-container">
+
+            <div class="why-box">
+
+                <h3>⚖️ Legal Guidance</h3>
+
+                <p>
+                    कानूनी मामलों में उचित एवं व्यावहारिक
+                    विधिक मार्गदर्शन।
+                </p>
+
+            </div>
+
+
+            <div class="why-box">
+
+                <h3>📚 Professional Approach</h3>
+
+                <p>
+                    प्रत्येक मामले को तथ्यों एवं लागू कानून के
+                    आधार पर समझने का प्रयास।
+                </p>
+
+            </div>
+
+
+            <div class="why-box">
+
+                <h3>🤝 Client Focused</h3>
+
+                <p>
+                    क्लाइंट की समस्या को समझकर उपलब्ध कानूनी
+                    विकल्पों की जानकारी।
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+        <h2>Contact</h2>
+
+        <p>
+            📞 Mobile:
+            <a href="tel:7080884964">7080884964</a>
+        </p>
+
+        <p>
+            📧 Email:
+            <a href="mailto:bipinforoffice247@gmail.com">
+                bipinforoffice247@gmail.com
+            </a>
+        </p>
+
+        <p>
+            📍 Uttar Pradesh, District Gorakhpur
+        </p>
+
+
+        <div class="contact-buttons">
+
+            <a href="tel:7080884964" class="call-btn">
+                📞 Call Now
+            </a>
+
+            <a href="https://wa.me/917080884964" class="whatsapp-btn">
+                💬 WhatsApp
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            © 2026 Bipin Kumar Maurya | Advocate & Legal Consultant
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
