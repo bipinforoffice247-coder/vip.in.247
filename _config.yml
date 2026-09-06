@@ -1,0 +1,7 @@
+title: "Bipin Kumar Maurya | Legal Articles"
+description: "Legal awareness articles by Bipin Kumar Maurya, Gorakhpur, Uttar Pradesh."
+url: "https://bipinforoffice247-coder.github.io"
+baseurl: "/vip.in.247"
+permalink: /articles/:title/
+markdown: kramdown
+timezone: Asia/Kolkata
