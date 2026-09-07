@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Legal Article | Bipin Kumar Maurya</title>
 
-  <meta name="description"
-        content="कानूनी जागरूकता एवं भारतीय कानून से संबंधित लेख — Bipin Kumar Maurya, Gorakhpur, Uttar Pradesh.">
+  <meta name="description" content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya.">
 
   <style>
-
     *{
       box-sizing:border-box;
     }
@@ -23,20 +18,25 @@
       font-family:Arial,sans-serif;
       background:#111;
       color:#eee;
-      line-height:1.8;
     }
 
     header{
-      padding:40px 20px;
+      padding:45px 20px;
       text-align:center;
       background:#0b0b0b;
       border-bottom:1px solid #d4af37;
     }
 
     header h1{
-      margin:0;
+      margin:0 0 10px;
       color:#d4af37;
-      font-size:32px;
+      font-size:34px;
+    }
+
+    header p{
+      margin:0;
+      color:#aaa;
+      font-size:16px;
     }
 
     nav{
@@ -60,57 +60,56 @@
     main{
       max-width:900px;
       margin:auto;
-      padding:45px 20px;
+      padding:50px 20px;
     }
 
-    .article{
+    .article-box{
       background:#171717;
       border:1px solid #333;
       border-radius:10px;
       padding:35px;
     }
 
-    .article h1{
+    .article-title{
       color:#d4af37;
-      font-size:32px;
-      line-height:1.4;
-      margin-top:0;
+      font-size:34px;
+      line-height:1.3;
+      margin:0 0 15px;
     }
 
-    .date{
+    .article-date{
       color:#999;
       font-size:14px;
       margin-bottom:30px;
+      padding-bottom:18px;
+      border-bottom:1px solid #333;
     }
 
-    .article h2{
-      color:#d4af37;
-      margin-top:30px;
+    .article-description{
+      color:#ccc;
+      font-size:18px;
+      line-height:1.8;
+      margin-bottom:30px;
+      font-weight:bold;
     }
 
-    .article h3{
-      color:#d4af37;
-      margin-top:25px;
-    }
-
-    .article p{
+    .article-content{
       color:#ddd;
-      margin:15px 0;
+      font-size:17px;
+      line-height:1.9;
     }
 
-    .article ul,
-    .article ol{
-      color:#ddd;
-      padding-left:25px;
+    .article-content p{
+      margin:0 0 22px;
     }
 
     .back-btn{
       display:inline-block;
-      margin-top:30px;
-      background:#d4af37;
+      margin-top:35px;
       color:#111;
+      background:#d4af37;
       text-decoration:none;
-      padding:10px 17px;
+      padding:11px 18px;
       border-radius:6px;
       font-weight:bold;
     }
@@ -120,9 +119,10 @@
     }
 
     .loading,
-    .error{
+    .error,
+    .not-found{
       text-align:center;
-      padding:30px;
+      padding:40px 20px;
       color:#aaa;
     }
 
@@ -130,8 +130,16 @@
       color:#d4af37;
     }
 
-    .disclaimer{
-      margin-top:35px;
+    footer{
+      text-align:center;
+      padding:25px;
+      color:#888;
+      border-top:1px solid #333;
+      margin-top:20px;
+    }
+
+    .notice{
+      margin-top:30px;
       padding:18px;
       border:1px solid #444;
       border-radius:8px;
@@ -140,206 +148,378 @@
       line-height:1.6;
     }
 
-    footer{
-      text-align:center;
-      padding:25px;
-      color:#888;
-      border-top:1px solid #333;
-      margin-top:30px;
-    }
-
     @media(max-width:600px){
 
-      main{
-        padding:25px 15px;
-      }
-
-      .article{
-        padding:22px;
-      }
-
-      .article h1{
-        font-size:27px;
+      header h1{
+        font-size:28px;
       }
 
       nav a{
-        margin:0 6px;
+        margin:0 7px;
         font-size:14px;
       }
 
+      main{
+        padding:30px 15px;
+      }
+
+      .article-box{
+        padding:22px;
+      }
+
+      .article-title{
+        font-size:27px;
+      }
+
+      .article-description{
+        font-size:16px;
+      }
+
+      .article-content{
+        font-size:16px;
+        line-height:1.8;
+      }
     }
-
   </style>
-
 </head>
 
 <body>
 
 <header>
-
-  <h1>Bipin Kumar Maurya</h1>
-
+  <h1>Legal Article</h1>
+  <p>कानूनी जागरूकता एवं विधिक जानकारी</p>
 </header>
 
-
 <nav>
-
   <a href="index.html">Home</a>
-
   <a href="articles.html">Legal Articles</a>
-
   <a href="profile.html">Profile</a>
-
 </nav>
-
 
 <main>
 
-  <article class="article">
+  <article class="article-box" id="article-container">
 
-    <h1 id="article-title">
+    <div class="loading">
       लेख लोड हो रहा है...
-    </h1>
-
-    <div class="date" id="article-date"></div>
-
-    <div id="article-content">
-
-      <div class="loading">
-        लेख लोड हो रहा है...
-      </div>
-
     </div>
-
-    <a class="back-btn" href="articles.html">
-      ← सभी लेख देखें
-    </a>
 
   </article>
 
-
-  <div class="disclaimer">
-
+  <div class="notice">
     <strong>Disclaimer:</strong>
-
     यह लेख केवल सामान्य कानूनी जानकारी एवं विधिक जागरूकता
     के उद्देश्य से है। किसी विशेष मामले में उचित विधिक सलाह
     संबंधित तथ्यों और लागू कानून पर निर्भर करती है।
-
   </div>
 
 </main>
 
-
 <footer>
-
   © Bipin Kumar Maurya | Gorakhpur, Uttar Pradesh
-
 </footer>
 
 
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
-const params = new URLSearchParams(window.location.search);
+  /* =================================
+     SUPABASE CONFIGURATION
+     ================================= */
 
-const id = params.get("id");
+  const SUPABASE_URL =
+    "https://jfstjogeyvkhlhxhiaie.supabase.co";
+
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
 
 
-if (!id) {
+  /* =================================
+     GET ARTICLE ID FROM URL
+     ================================= */
 
-  document.getElementById("article-title").textContent =
-    "लेख उपलब्ध नहीं है";
+  const params =
+    new URLSearchParams(window.location.search);
 
-  document.getElementById("article-content").innerHTML =
-    "<p>कृपया किसी लेख का चयन करें।</p>";
+  const articleId =
+    params.get("id");
 
-} else {
 
-  fetch("articles.json?v=" + Date.now())
+  /* =================================
+     LOAD ARTICLE
+     ================================= */
 
-  .then(response => {
+  async function loadArticle(){
 
-    if (!response.ok) {
+    const container =
+      document.getElementById("article-container");
 
-      throw new Error("Articles JSON could not be loaded.");
+    if(!articleId){
+
+      container.innerHTML = `
+        <div class="not-found">
+          <h2>लेख उपलब्ध नहीं है।</h2>
+          <p>
+            कृपया Legal Articles page से कोई लेख चुनें।
+          </p>
+
+          <a class="back-btn"
+             href="articles.html">
+            ← सभी लेख देखें
+          </a>
+        </div>
+      `;
+
+      return;
+    }
+
+
+    try{
+
+      const { data, error } =
+        await supabaseClient
+          .from("articles")
+          .select(
+            "id,title,description,content,published_at,created_at"
+          )
+          .eq("id", articleId)
+          .eq("status","published")
+          .maybeSingle();
+
+
+      if(error){
+        throw error;
+      }
+
+
+      /* =================================
+         ARTICLE NOT FOUND
+         ================================= */
+
+      if(!data){
+
+        container.innerHTML = `
+          <div class="not-found">
+
+            <h2>
+              लेख नहीं मिला
+            </h2>
+
+            <p>
+              यह लेख उपलब्ध नहीं है या अभी प्रकाशित नहीं हुआ है।
+            </p>
+
+            <a class="back-btn"
+               href="articles.html">
+              ← सभी लेख देखें
+            </a>
+
+          </div>
+        `;
+
+        return;
+      }
+
+
+      /* =================================
+         UPDATE PAGE TITLE
+         ================================= */
+
+      document.title =
+        data.title +
+        " | Bipin Kumar Maurya";
+
+
+      /* =================================
+         CREATE ARTICLE STRUCTURE
+         ================================= */
+
+      container.innerHTML = "";
+
+
+      /* ---------- TITLE ---------- */
+
+      const title =
+        document.createElement("h1");
+
+      title.className =
+        "article-title";
+
+      title.textContent =
+        data.title || "Legal Article";
+
+
+      /* ---------- DATE ---------- */
+
+      const date =
+        document.createElement("div");
+
+      date.className =
+        "article-date";
+
+      date.textContent =
+        formatDate(
+          data.published_at ||
+          data.created_at
+        );
+
+
+      /* ---------- DESCRIPTION ---------- */
+
+      const description =
+        document.createElement("div");
+
+      description.className =
+        "article-description";
+
+      description.textContent =
+        data.description || "";
+
+
+      /* ---------- CONTENT ---------- */
+
+      const content =
+        document.createElement("div");
+
+      content.className =
+        "article-content";
+
+
+      /*
+        Article content को blank line के आधार पर
+        अलग-अलग paragraphs में दिखाया जाएगा।
+      */
+
+      const paragraphs =
+        String(data.content || "")
+          .split(/\n\s*\n/);
+
+
+      paragraphs.forEach(text => {
+
+        const cleanText =
+          text.trim();
+
+        if(!cleanText){
+          return;
+        }
+
+        const paragraph =
+          document.createElement("p");
+
+        paragraph.textContent =
+          cleanText;
+
+        content.appendChild(paragraph);
+
+      });
+
+
+      /* ---------- BACK BUTTON ---------- */
+
+      const backButton =
+        document.createElement("a");
+
+      backButton.className =
+        "back-btn";
+
+      backButton.href =
+        "articles.html";
+
+      backButton.textContent =
+        "← सभी लेख देखें";
+
+
+      /* ---------- APPEND ---------- */
+
+      container.appendChild(title);
+      container.appendChild(date);
+
+      if(data.description){
+        container.appendChild(description);
+      }
+
+      container.appendChild(content);
+      container.appendChild(backButton);
 
     }
 
-    return response.json();
+    catch(error){
 
-  })
+      console.error(
+        "Supabase Article Error:",
+        error
+      );
 
-  .then(articles => {
+      container.innerHTML = `
+        <div class="error">
 
-    const article = articles.find(item => item.id === id);
+          <h2>
+            लेख लोड नहीं हो सका।
+          </h2>
 
-    if (!article) {
+          <p>
+            कृपया थोड़ी देर बाद पुनः प्रयास करें।
+          </p>
 
-      throw new Error("Article not found.");
+          <a class="back-btn"
+             href="articles.html">
+            ← सभी लेख देखें
+          </a>
+
+        </div>
+      `;
 
     }
 
-
-    document.title =
-      article.title + " | Bipin Kumar Maurya";
+  }
 
 
-    document.getElementById("article-title").textContent =
-      article.title;
+  /* =================================
+     DATE FORMAT
+     ================================= */
+
+  function formatDate(dateString){
+
+    if(!dateString){
+      return "";
+    }
+
+    const date =
+      new Date(dateString);
+
+    if(isNaN(date.getTime())){
+      return "";
+    }
+
+    return "प्रकाशित: " +
+      date.toLocaleDateString(
+        "hi-IN",
+        {
+          day:"2-digit",
+          month:"2-digit",
+          year:"numeric"
+        }
+      );
+
+  }
 
 
-    document.getElementById("article-date").textContent =
-      article.date || "";
+  /* =================================
+     START
+     ================================= */
 
-
-    const content = article.content || article.description || "";
-
-
-    document.getElementById("article-content").innerHTML =
-
-      content
-
-        .split(/\n\s*\n/)
-
-        .map(paragraph => {
-
-          return "<p>" +
-            paragraph
-              .replace(/\n/g, "<br>")
-              .replace(/</g, "&lt;")
-              .replace(/>/g, "&gt;")
-            +
-            "</p>";
-
-        })
-
-        .join("");
-
-  })
-
-  .catch(error => {
-
-    document.getElementById("article-title").textContent =
-      "लेख उपलब्ध नहीं है";
-
-
-    document.getElementById("article-date").textContent =
-      "";
-
-
-    document.getElementById("article-content").innerHTML =
-      "<p>माफ कीजिए, यह लेख अभी उपलब्ध नहीं है।</p>";
-
-
-    console.error(error);
-
-  });
-
-}
+  loadArticle();
 
 </script>
 
-
 </body>
-
 </html>
