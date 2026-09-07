@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Bipin Kumar Maurya</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: #f5f5f5;
+        }
+
+        header {
+            background: #111;
+            border-bottom: 1px solid #c9a227;
+            padding: 18px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #d4af37;
+            font-size: 22px;
+        }
+
+        .logout-btn {
+            background: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 9px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .login-box,
+        .dashboard,
+        .article-form {
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
+        }
+
+        .login-box {
+            max-width: 450px;
+            margin: 70px auto;
+        }
+
+        h2 {
+            color: #d4af37;
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 7px;
+            color: #ddd;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            background: #1c1c1c;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 5px;
+            font-size: 15px;
+        }
+
+        textarea {
+            min-height: 300px;
+            resize: vertical;
+            line-height: 1.7;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .gold-btn {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 18px;
+        }
+
+        .gold-btn:hover {
+            background: #f0cf55;
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 11px 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .secondary-btn:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        .danger-btn {
+            background: #8b0000;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .edit-btn {
+            background: #333;
+            color: #d4af37;
+            border: 1px solid #d4af37;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 5px;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .success {
+            display: block;
+            background: #123d1e;
+            border: 1px solid #2e8b57;
+            color: #9cffb0;
+        }
+
+        .error {
+            display: block;
+            background: #3d1212;
+            border: 1px solid #a33;
+            color: #ffaaaa;
+        }
+
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .articles-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .articles-table th,
+        .articles-table td {
+            padding: 12px;
+            border-bottom: 1px solid #333;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .articles-table th {
+            color: #d4af37;
+            background: #181818;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 9px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        .published {
+            background: #123d1e;
+            color: #8cff9d;
+        }
+
+        .draft {
+            background: #403612;
+            color: #ffe78a;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 30px;
+            color: #aaa;
+        }
+
+        .user-info {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .articles-table {
+                display: block;
+                overflow-x: auto;
+            }
+
+            header {
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>⚖️ Admin Dashboard</h1>
+
+    <button id="logoutBtn"
+            class="logout-btn hidden">
+        Logout
+    </button>
+</header>
+
+
+<div class="container">
+
+    <!-- LOGIN -->
+    <section id="loginSection"
+             class="login-box">
+
+        <h2>Admin Login</h2>
+
+        <p style="color:#aaa;">
+            केवल authorized administrator login कर सकता है।
+        </p>
+
+        <label for="loginEmail">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="loginEmail"
+            placeholder="Admin Email"
+            autocomplete="username"
+        >
+
+        <label for="loginPassword">
+            Password
+        </label>
+
+        <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            autocomplete="current-password"
+        >
+
+        <button
+            id="loginBtn"
+            class="gold-btn">
+            Login
+        </button>
+
+        <div id="loginMessage"
+             class="message">
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+    <section id="dashboardSection"
+             class="dashboard hidden">
+
+        <div class="top-bar">
+
+            <div>
+                <h2>Legal Articles Dashboard</h2>
+
+                <div id="userInfo"
+                     class="user-info">
+                </div>
+            </div>
+
+            <button
+                id="newArticleBtn"
+                class="gold-btn">
+                + New Article
+            </button>
+
+        </div>
+
+
+        <!-- ARTICLE FORM -->
+        <div id="articleForm"
+             class="article-form hidden">
+
+            <h2 id="formHeading">
+                New Article
+            </h2>
+
+            <input
+                type="hidden"
+                id="articleId"
+            >
+
+            <label for="articleTitle">
+                Article Title
+            </label>
+
+            <input
+                type="text"
+                id="articleTitle"
+                placeholder="जैसे: भारतीय न्याय संहिता में चोरी का अपराध"
+            >
+
+
+            <label for="articleDescription">
+                Short Description
+            </label>
+
+            <textarea
+                id="articleDescription"
+                style="min-height:120px;"
+                placeholder="Article का छोटा परिचय..."
+            ></textarea>
+
+
+            <label for="articleContent">
+                Article Content
+            </label>
+
+            <textarea
+                id="articleContent"
+                placeholder="यहाँ पूरा Legal Article लिखें...
+
+हर नए paragraph के लिए एक खाली line छोड़ सकते हैं।"
+            ></textarea>
+
+
+            <label for="articleStatus">
+                Status
+            </label>
+
+            <select id="articleStatus">
+                <option value="draft">
+                    Draft
+                </option>
+
+                <option value="published">
+                    Published
+                </option>
+            </select>
+
+
+            <div class="form-buttons">
+
+                <button
+                    id="saveArticleBtn"
+                    class="gold-btn">
+                    Save Article
+                </button>
+
+                <button
+                    id="cancelArticleBtn"
+                    class="secondary-btn">
+                    Cancel
+                </button>
+
+            </div>
+
+
+            <div id="articleMessage"
+                 class="message">
+            </div>
+
+        </div>
+
+
+        <!-- ARTICLES LIST -->
+        <div id="articlesListContainer">
+
+            <h2 style="margin-top:30px;">
+                My Articles
+            </h2>
+
+            <div id="articlesLoading"
+                 class="empty">
+                Articles load हो रहे हैं...
+            </div>
+
+            <table
+                id="articlesTable"
+                class="articles-table hidden">
+
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Status</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody id="articlesTableBody">
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+    /* =====================================================
+       SUPABASE CONFIGURATION
+       ===================================================== */
+
+    const SUPABASE_URL =
+        "https://jfstjogeyvkhlhxhiaie.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
+    /* =====================================================
+       ELEMENTS
+       ===================================================== */
+
+    const loginSection =
+        document.getElementById("loginSection");
+
+    const dashboardSection =
+        document.getElementById("dashboardSection");
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+    const loginBtn =
+        document.getElementById("loginBtn");
+
+    const newArticleBtn =
+        document.getElementById("newArticleBtn");
+
+    const articleForm =
+        document.getElementById("articleForm");
+
+    const cancelArticleBtn =
+        document.getElementById("cancelArticleBtn");
+
+    const saveArticleBtn =
+        document.getElementById("saveArticleBtn");
+
+    const articlesTable =
+        document.getElementById("articlesTable");
+
+    const articlesTableBody =
+        document.getElementById("articlesTableBody");
+
+
+    /* =====================================================
+       MESSAGE FUNCTION
+       ===================================================== */
+
+    function showMessage(element, text, type) {
+
+        element.textContent = text;
+
+        element.className =
+            "message " + type;
+
+    }
+
+
+    function clearMessage(element) {
+
+        element.textContent = "";
+
+        element.className =
+            "message";
+
+    }
+
+
+    /* =====================================================
+       LOGIN
+       ===================================================== */
+
+    loginBtn.addEventListener(
+        "click",
+        async function () {
+
+            const email =
+                document.getElementById(
+                    "loginEmail"
+                ).value.trim();
+
+            const password =
+                document.getElementById(
+                    "loginPassword"
+                ).value;
+
+
+            if (!email || !password) {
+
+                showMessage(
+                    document.getElementById("loginMessage"),
+                    "Email और Password दोनों भरें।",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            loginBtn.disabled = true;
+
+            loginBtn.textContent =
+                "Logging in...";
+
+
+            const {
+                data,
+                error
+            } =
+                await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+
+            loginBtn.disabled = false;
+
+            loginBtn.textContent =
+                "Login";
+
+
+            if (error) {
+
+                showMessage(
+                    document.getElementById("loginMessage"),
+                    "Login failed: " + error.message,
+                    "error"
+                );
+
+                return;
+            }
+
+
+            clearMessage(
+                document.getElementById("loginMessage")
+            );
+
+
+            showDashboard(
+                data.user
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       SHOW DASHBOARD
+       ===================================================== */
+
+    function showDashboard(user) {
+
+        loginSection.classList.add("hidden");
+
+        dashboardSection.classList.remove("hidden");
+
+        logoutBtn.classList.remove("hidden");
+
+
+        document.getElementById(
+            "userInfo"
+        ).textContent =
+            "Logged in as: " + user.email;
+
+
+        loadArticles();
+
+    }
+
+
+    /* =====================================================
+       CHECK EXISTING SESSION
+       ===================================================== */
+
+    async function checkSession() {
+
+        const {
+            data
+        } =
+            await supabaseClient.auth.getSession();
+
+
+        if (data.session) {
+
+            showDashboard(
+                data.session.user
+            );
+
+        }
+
+    }
+
+
+    checkSession();
+
+
+    /* =====================================================
+       AUTH STATE CHANGE
+       ===================================================== */
+
+    supabaseClient.auth.onAuthStateChange(
+        function (event, session) {
+
+            if (session) {
+
+                showDashboard(
+                    session.user
+                );
+
+            } else {
+
+                loginSection.classList.remove(
+                    "hidden"
+                );
+
+                dashboardSection.classList.add(
+                    "hidden"
+                );
+
+                logoutBtn.classList.add(
+                    "hidden"
+                );
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       LOGOUT
+       ===================================================== */
+
+    logoutBtn.addEventListener(
+        "click",
+        async function () {
+
+            await supabaseClient.auth.signOut();
+
+            location.reload();
+
+        }
+    );
+
+
+    /* =====================================================
+       NEW ARTICLE
+       ===================================================== */
+
+    newArticleBtn.addEventListener(
+        "click",
+        function () {
+
+            document.getElementById(
+                "formHeading"
+            ).textContent =
+                "New Article";
+
+
+            document.getElementById(
+                "articleId"
+            ).value = "";
+
+
+            document.getElementById(
+                "articleTitle"
+            ).value = "";
+
+
+            document.getElementById(
+                "articleDescription"
+            ).value = "";
+
+
+            document.getElementById(
+                "articleContent"
+            ).value = "";
+
+
+            document.getElementById(
+                "articleStatus"
+            ).value = "draft";
+
+
+            clearMessage(
+                document.getElementById(
+                    "articleMessage"
+                )
+            );
+
+
+            articleForm.classList.remove(
+                "hidden"
+            );
+
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+
+        }
+    );
+
+
+    /* =====================================================
+       CANCEL ARTICLE FORM
+       ===================================================== */
+
+    cancelArticleBtn.addEventListener(
+        "click",
+        function () {
+
+            articleForm.classList.add(
+                "hidden"
+            );
+
+            clearMessage(
+                document.getElementById(
+                    "articleMessage"
+                )
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       CREATE SLUG
+       ===================================================== */
+
+    function createSlug() {
+
+        return "article-" +
+               Date.now();
+
+    }
+
+
+    /* =====================================================
+       SAVE ARTICLE
+       ===================================================== */
+
+    saveArticleBtn.addEventListener(
+        "click",
+        async function () {
+
+            const title =
+                document.getElementById(
+                    "articleTitle"
+                ).value.trim();
+
+            const description =
+                document.getElementById(
+                    "articleDescription"
+                ).value.trim();
+
+            const content =
+                document.getElementById(
+                    "articleContent"
+                ).value.trim();
+
+            const status =
+                document.getElementById(
+                    "articleStatus"
+                ).value;
+
+            const articleId =
+                document.getElementById(
+                    "articleId"
+                ).value;
+
+
+            if (!title) {
+
+                showMessage(
+                    document.getElementById(
+                        "articleMessage"
+                    ),
+                    "Article title भरना जरूरी है।",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            if (!content) {
+
+                showMessage(
+                    document.getElementById(
+                        "articleMessage"
+                    ),
+                    "Article content लिखना जरूरी है।",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            const {
+                data: sessionData
+            } =
+                await supabaseClient.auth.getSession();
+
+
+            const user =
+                sessionData.session?.user;
+
+
+            if (!user) {
+
+                showMessage(
+                    document.getElementById(
+                        "articleMessage"
+                    ),
+                    "Session समाप्त हो गई है। दोबारा login करें।",
+                    "error"
+                );
+
+                return;
+            }
+
+
+            saveArticleBtn.disabled = true;
+
+            saveArticleBtn.textContent =
+                "Saving...";
+
+
+            let result;
+
+
+            /* =================================================
+               UPDATE EXISTING ARTICLE
+               ================================================= */
+
+            if (articleId) {
+
+                result =
+                    await supabaseClient
+                        .from("articles")
+                        .update({
+
+                            title: title,
+
+                            description:
+                                description,
+
+                            content: content,
+
+                            status: status,
+
+                            updated_at:
+                                new Date().toISOString(),
+
+                            published_at:
+                                status === "published"
+                                    ? new Date().toISOString()
+                                    : null
+
+                        })
+                        .eq("id", articleId)
+                        .eq(
+                            "author_id",
+                            user.id
+                        );
+
+
+            }
+
+            /* =================================================
+               CREATE NEW ARTICLE
+               ================================================= */
+
+            else {
+
+                result =
+                    await supabaseClient
+                        .from("articles")
+                        .insert({
+
+                            title: title,
+
+                            slug:
+                                createSlug(),
+
+                            description:
+                                description,
+
+                            content: content,
+
+                            status: status,
+
+                            author_id:
+                                user.id,
+
+                            published_at:
+                                status === "published"
+                                    ? new Date().toISOString()
+                                    : null
+
+                        });
+
+            }
+
+
+            saveArticleBtn.disabled = false;
+
+            saveArticleBtn.textContent =
+                "Save Article";
+
+
+            if (result.error) {
+
+                showMessage(
+                    document.getElementById(
+                        "articleMessage"
+                    ),
+                    "Error: " +
+                    result.error.message,
+                    "error"
+                );
+
+                return;
+            }
+
+
+            showMessage(
+                document.getElementById(
+                    "articleMessage"
+                ),
+                status === "published"
+                    ? "Article successfully published."
+                    : "Article saved as draft.",
+                "success"
+            );
+
+
+            setTimeout(
+                function () {
+
+                    articleForm.classList.add(
+                        "hidden"
+                    );
+
+                    loadArticles();
+
+                },
+                800
+            );
+
+        }
+    );
+
+
+    /* =====================================================
+       LOAD ARTICLES
+       ===================================================== */
+
+    async function loadArticles() {
+
+        const loading =
+            document.getElementById(
+                "articlesLoading"
+            );
+
+
+        loading.classList.remove(
+            "hidden"
+        );
+
+
+        articlesTable.classList.add(
+            "hidden"
+        );
+
+
+        const {
+            data: sessionData
+        } =
+            await supabaseClient.auth.getSession();
+
+
+        const user =
+            sessionData.session?.user;
+
+
+        if (!user) {
+
+            return;
+
+        }
+
+
+        const {
+            data: articles,
+            error
+        } =
+            await supabaseClient
+                .from("articles")
+                .select("*")
+                .eq(
+                    "author_id",
+                    user.id
+                )
+                .order(
+                    "created_at",
+                    {
+                        ascending: false
+                    }
+                );
+
+
+        loading.classList.add(
+            "hidden"
+        );
+
+
+        if (error) {
+
+            loading.textContent =
+                "Articles load नहीं हो पाए: " +
+                error.message;
+
+            loading.classList.remove(
+                "hidden"
+            );
+
+            return;
+        }
+
+
+        articlesTableBody.innerHTML = "";
+
+
+        if (!articles ||
+            articles.length === 0) {
+
+            loading.textContent =
+                "अभी कोई Article नहीं है।";
+
+            loading.classList.remove(
+                "hidden"
+            );
+
+            return;
+
+        }
+
+
+        articles.forEach(
+            function (article) {
+
+                const row =
+                    document.createElement("tr");
+
+
+                /* TITLE */
+
+                const titleCell =
+                    document.createElement("td");
+
+                titleCell.textContent =
+                    article.title || "";
+
+                row.appendChild(
+                    titleCell
+                );
+
+
+                /* STATUS */
+
+                const statusCell =
+                    document.createElement("td");
+
+                const statusSpan =
+                    document.createElement("span");
+
+
+                statusSpan.className =
+                    "status " +
+                    (
+                        article.status === "published"
+                            ? "published"
+                            : "draft"
+                    );
+
+
+                statusSpan.textContent =
+                    article.status === "published"
+                        ? "Published"
+                        : "Draft";
+
+
+                statusCell.appendChild(
+                    statusSpan
+                );
+
+                row.appendChild(
+                    statusCell
+                );
+
+
+                /* DATE */
+
+                const dateCell =
+                    document.createElement("td");
+
+
+                const date =
+                    new Date(
+                        article.created_at
+                    );
+
+
+                dateCell.textContent =
+                    date.toLocaleDateString(
+                        "en-IN"
+                    );
+
+
+                row.appendChild(
+                    dateCell
+                );
+
+
+                /* ACTIONS */
+
+                const actionCell =
+                    document.createElement("td");
+
+
+                const editButton =
+                    document.createElement("button");
+
+
+                editButton.textContent =
+                    "Edit";
+
+
+                editButton.className =
+                    "edit-btn";
+
+
+                editButton.addEventListener(
+                    "click",
+                    function () {
+
+                        editArticle(
+                            article
+                        );
+
+                    }
+                );
+
+
+                const deleteButton =
+                    document.createElement("button");
+
+
+                deleteButton.textContent =
+                    "Delete";
+
+
+                deleteButton.className =
+                    "danger-btn";
+
+
+                deleteButton.addEventListener(
+                    "click",
+                    function () {
+
+                        deleteArticle(
+                            article.id
+                        );
+
+                    }
+                );
+
+
+                actionCell.appendChild(
+                    editButton
+                );
+
+
+                actionCell.appendChild(
+                    deleteButton
+                );
+
+
+                row.appendChild(
+                    actionCell
+                );
+
+
+                articlesTableBody.appendChild(
+                    row
+                );
+
+            }
+        );
+
+
+        articlesTable.classList.remove(
+            "hidden"
+        );
+
+    }
+
+
+    /* =====================================================
+       EDIT ARTICLE
+       ===================================================== */
+
+    function editArticle(article) {
+
+        document.getElementById(
+            "formHeading"
+        ).textContent =
+            "Edit Article";
+
+
+        document.getElementById(
+            "articleId"
+        ).value =
+            article.id;
+
+
+        document.getElementById(
+            "articleTitle"
+        ).value =
+            article.title || "";
+
+
+        document.getElementById(
+            "articleDescription"
+        ).value =
+            article.description || "";
+
+
+        document.getElementById(
+            "articleContent"
+        ).value =
+            article.content || "";
+
+
+        document.getElementById(
+            "articleStatus"
+        ).value =
+            article.status || "draft";
+
+
+        clearMessage(
+            document.getElementById(
+                "articleMessage"
+            )
+        );
+
+
+        articleForm.classList.remove(
+            "hidden"
+        );
+
+
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+
+    }
+
+
+    /* =====================================================
+       DELETE ARTICLE
+       ===================================================== */
+
+    async function deleteArticle(articleId) {
+
+        const confirmDelete =
+            confirm(
+                "क्या आप इस Article को permanently delete करना चाहते हैं?"
+            );
+
+
+        if (!confirmDelete) {
+
+            return;
+
+        }
+
+
+        const {
+            error
+        } =
+            await supabaseClient
+                .from("articles")
+                .delete()
+                .eq(
+                    "id",
+                    articleId
+                );
+
+
+        if (error) {
+
+            alert(
+                "Delete failed: " +
+                error.message
+            );
+
+            return;
+
+        }
+
+
+        alert(
+            "Article successfully deleted."
+        );
+
+
+        loadArticles();
+
+    }
+
+
+</script>
+
+</body>
+</html>
