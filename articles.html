@@ -156,6 +156,7 @@
     }
 
     @media(max-width:600px){
+
       header h1{
         font-size:30px;
       }
@@ -171,6 +172,10 @@
 
       .post{
         padding:20px;
+      }
+
+      .post h2{
+        font-size:21px;
       }
     }
   </style>
@@ -217,93 +222,220 @@
   © Bipin Kumar Maurya | Gorakhpur, Uttar Pradesh
 </footer>
 
+
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 <script>
 
-fetch("https://bipinforoffice247-coder.github.io/vip.in.247/articles.json?v=" + Date.now())
+  /* ================================
+     SUPABASE CONFIGURATION
+     ================================ */
 
-.then(response => {
+  const SUPABASE_URL =
+    "https://jfstjogeyvkhlhxhiaie.supabase.co";
 
-  if(!response.ok){
-    throw new Error("Articles JSON could not be loaded.");
+  const SUPABASE_PUBLISHABLE_KEY =
+    "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+
+  const supabaseClient =
+    window.supabase.createClient(
+      SUPABASE_URL,
+      SUPABASE_PUBLISHABLE_KEY
+    );
+
+
+  /* ================================
+     LOAD PUBLISHED ARTICLES
+     ================================ */
+
+  async function loadArticles(){
+
+    const list =
+      document.getElementById("articles-list");
+
+    try{
+
+      const { data, error } =
+        await supabaseClient
+          .from("articles")
+          .select(
+            "id,title,description,created_at,published_at"
+          )
+          .eq("status","published")
+          .order(
+            "published_at",
+            {
+              ascending:false,
+              nullsLast:true
+            }
+          );
+
+      if(error){
+        throw error;
+      }
+
+
+      /* ================================
+         NO ARTICLES
+         ================================ */
+
+      if(!data || data.length === 0){
+
+        list.innerHTML = `
+          <div class="empty">
+            अभी कोई लेख प्रकाशित नहीं हुआ है।
+          </div>
+        `;
+
+        return;
+      }
+
+
+      /* ================================
+         CLEAR LOADING MESSAGE
+         ================================ */
+
+      list.innerHTML = "";
+
+
+      /* ================================
+         CREATE ARTICLE CARDS
+         ================================ */
+
+      data.forEach(article => {
+
+        const post =
+          document.createElement("article");
+
+        post.className = "post";
+
+
+        /* ---------- TITLE ---------- */
+
+        const title =
+          document.createElement("h2");
+
+        const titleLink =
+          document.createElement("a");
+
+        titleLink.href =
+          "article.html?id=" +
+          encodeURIComponent(article.id);
+
+        titleLink.textContent =
+          article.title || "Untitled Article";
+
+        title.appendChild(titleLink);
+
+
+        /* ---------- DATE ---------- */
+
+        const date =
+          document.createElement("div");
+
+        date.className = "date";
+
+        date.textContent =
+          formatDate(
+            article.published_at ||
+            article.created_at
+          );
+
+
+        /* ---------- DESCRIPTION ---------- */
+
+        const excerpt =
+          document.createElement("p");
+
+        excerpt.className = "excerpt";
+
+        excerpt.textContent =
+          article.description ||
+          "कानूनी जागरूकता से संबंधित लेख।";
+
+
+        /* ---------- READ BUTTON ---------- */
+
+        const readButton =
+          document.createElement("a");
+
+        readButton.className = "read-btn";
+
+        readButton.href =
+          "article.html?id=" +
+          encodeURIComponent(article.id);
+
+        readButton.textContent =
+          "पूरा लेख पढ़ें →";
+
+
+        /* ---------- APPEND ---------- */
+
+        post.appendChild(title);
+        post.appendChild(date);
+        post.appendChild(excerpt);
+        post.appendChild(readButton);
+
+        list.appendChild(post);
+
+      });
+
+    }
+
+    catch(error){
+
+      console.error(
+        "Supabase Articles Error:",
+        error
+      );
+
+      list.innerHTML = `
+        <div class="error">
+          लेख अभी लोड नहीं हो पा रहे हैं।
+          कृपया थोड़ी देर बाद पुनः प्रयास करें।
+        </div>
+      `;
+
+    }
+
   }
 
-  return response.json();
 
-})
+  /* ================================
+     DATE FORMAT
+     ================================ */
 
-.then(articles => {
+  function formatDate(dateString){
 
-  const list = document.getElementById("articles-list");
+    if(!dateString){
+      return "";
+    }
 
-  if(!Array.isArray(articles) || articles.length === 0){
+    const date =
+      new Date(dateString);
 
-    list.innerHTML =
-      '<div class="empty">अभी कोई लेख उपलब्ध नहीं है।</div>';
+    if(isNaN(date.getTime())){
+      return "";
+    }
 
-    return;
+    return date.toLocaleDateString(
+      "hi-IN",
+      {
+        day:"2-digit",
+        month:"2-digit",
+        year:"numeric"
+      }
+    );
+
   }
 
-  list.innerHTML = "";
 
-  articles.forEach(article => {
+  /* ================================
+     START
+     ================================ */
 
-    const post = document.createElement("article");
-
-    post.className = "post";
-
-    post.innerHTML = `
-
-      <h2>
-        <a href="article.html?id=${encodeURIComponent(article.id)}">
-          ${escapeHTML(article.title)}
-        </a>
-      </h2>
-
-      <div class="date">
-        ${escapeHTML(article.date)}
-      </div>
-
-      <p class="excerpt">
-        ${escapeHTML(article.description)}
-      </p>
-
-      <a class="read-btn"
-         href="article.html?id=${encodeURIComponent(article.id)}">
-        पूरा लेख पढ़ें →
-      </a>
-
-    `;
-
-    list.appendChild(post);
-
-  });
-
-})
-
-.catch(error => {
-
-  document.getElementById("articles-list").innerHTML = `
-
-    <div class="error">
-      लेख अभी लोड नहीं हो पा रहे हैं।
-      कृपया थोड़ी देर बाद पुनः प्रयास करें।
-    </div>
-
-  `;
-
-  console.error(error);
-
-});
-
-function escapeHTML(text) {
-
-  const div = document.createElement("div");
-
-  div.textContent = text;
-
-  return div.innerHTML;
-
-}
+  loadArticles();
 
 </script>
 
