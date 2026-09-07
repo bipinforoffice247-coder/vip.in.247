@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Legal Article | Bipin Kumar Maurya</title>
 
-  <meta name="description" content="कानूनी जागरूकता एवं भारतीय कानून से संबंधित लेख — Bipin Kumar Maurya, Gorakhpur, Uttar Pradesh.">
+  <meta name="description"
+        content="कानूनी जागरूकता एवं भारतीय कानून से संबंधित लेख — Bipin Kumar Maurya, Gorakhpur, Uttar Pradesh.">
 
   <style>
+
     *{
       box-sizing:border-box;
     }
@@ -163,33 +168,47 @@
       }
 
     }
+
   </style>
+
 </head>
 
 <body>
 
 <header>
+
   <h1>Bipin Kumar Maurya</h1>
+
 </header>
 
+
 <nav>
+
   <a href="index.html">Home</a>
+
   <a href="articles.html">Legal Articles</a>
+
   <a href="profile.html">Profile</a>
+
 </nav>
+
 
 <main>
 
   <article class="article">
 
-    <h1 id="article-title">लेख लोड हो रहा है...</h1>
+    <h1 id="article-title">
+      लेख लोड हो रहा है...
+    </h1>
 
     <div class="date" id="article-date"></div>
 
     <div id="article-content">
+
       <div class="loading">
         लेख लोड हो रहा है...
       </div>
+
     </div>
 
     <a class="back-btn" href="articles.html">
@@ -198,62 +217,129 @@
 
   </article>
 
+
   <div class="disclaimer">
+
     <strong>Disclaimer:</strong>
+
     यह लेख केवल सामान्य कानूनी जानकारी एवं विधिक जागरूकता
     के उद्देश्य से है। किसी विशेष मामले में उचित विधिक सलाह
     संबंधित तथ्यों और लागू कानून पर निर्भर करती है।
+
   </div>
 
 </main>
 
+
 <footer>
+
   © Bipin Kumar Maurya | Gorakhpur, Uttar Pradesh
+
 </footer>
 
-<script>
 
 <script>
+
 const params = new URLSearchParams(window.location.search);
+
 const id = params.get("id");
 
-fetch("articles.json?v=" + Date.now())
-.then(response => response.json())
-.then(articles => {
+
+if (!id) {
+
+  document.getElementById("article-title").textContent =
+    "लेख उपलब्ध नहीं है";
+
+  document.getElementById("article-content").innerHTML =
+    "<p>कृपया किसी लेख का चयन करें।</p>";
+
+} else {
+
+  fetch("articles.json?v=" + Date.now())
+
+  .then(response => {
+
+    if (!response.ok) {
+
+      throw new Error("Articles JSON could not be loaded.");
+
+    }
+
+    return response.json();
+
+  })
+
+  .then(articles => {
 
     const article = articles.find(item => item.id === id);
 
     if (!article) {
-        throw new Error("Article not found");
+
+      throw new Error("Article not found.");
+
     }
 
-    document.title = article.title + " | Bipin Kumar Maurya";
+
+    document.title =
+      article.title + " | Bipin Kumar Maurya";
+
 
     document.getElementById("article-title").textContent =
-        article.title;
+      article.title;
+
 
     document.getElementById("article-date").textContent =
-        article.date;
+      article.date || "";
+
+
+    const content = article.content || article.description || "";
+
 
     document.getElementById("article-content").innerHTML =
-        article.content
+
+      content
+
         .split(/\n\s*\n/)
-        .map(text => "<p>" + text.replace(/\n/g, "<br>") + "</p>")
+
+        .map(paragraph => {
+
+          return "<p>" +
+            paragraph
+              .replace(/\n/g, "<br>")
+              .replace(/</g, "&lt;")
+              .replace(/>/g, "&gt;")
+            +
+            "</p>";
+
+        })
+
         .join("");
 
-})
-.catch(error => {
+  })
+
+  .catch(error => {
 
     document.getElementById("article-title").textContent =
-        "लेख उपलब्ध नहीं है";
+      "लेख उपलब्ध नहीं है";
+
+
+    document.getElementById("article-date").textContent =
+      "";
+
 
     document.getElementById("article-content").innerHTML =
-        "<p>लेख लोड नहीं हो पाया।</p>";
+      "<p>माफ कीजिए, यह लेख अभी उपलब्ध नहीं है।</p>";
+
 
     console.error(error);
 
-});
+  });
+
+}
+
 </script>
 
+
 </body>
+
 </html>
