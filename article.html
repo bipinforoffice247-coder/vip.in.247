@@ -214,104 +214,45 @@
 <script>
 
 <script>
-
-function escapeHTML(text) {
-
-  const div = document.createElement("div");
-
-  div.textContent = text || "";
-
-  return div.innerHTML;
-
-}
-
-function renderArticleContent(content) {
-
-  if (!content) {
-    return "<p>इस लेख की सामग्री अभी उपलब्ध नहीं है।</p>";
-  }
-
-  return content
-    .split(/\n\s*\n/)
-    .map(paragraph => {
-
-      const safeParagraph = escapeHTML(paragraph)
-        .replace(/\n/g, "<br>");
-
-      return "<p>" + safeParagraph + "</p>";
-
-    })
-    .join("");
-
-}
-
 const params = new URLSearchParams(window.location.search);
-
 const id = params.get("id");
 
-if (!id) {
-
-  document.getElementById("article-title").textContent =
-    "लेख उपलब्ध नहीं है";
-
-  document.getElementById("article-content").innerHTML =
-    "<p>कृपया किसी लेख का चयन करें।</p>";
-
-} else {
-
-  fetch(
-    "https://bipinforoffice247-coder.github.io/vip.in.247/articles.json?v=" +
-    Date.now()
-  )
-
-  .then(response => {
-
-    if (!response.ok) {
-      throw new Error("Articles JSON could not be loaded.");
-    }
-
-    return response.json();
-
-  })
-
-  .then(articles => {
+fetch("articles.json?v=" + Date.now())
+.then(response => response.json())
+.then(articles => {
 
     const article = articles.find(item => item.id === id);
 
     if (!article) {
-      throw new Error("Article not found.");
+        throw new Error("Article not found");
     }
 
-    document.title =
-      article.title + " | Bipin Kumar Maurya";
+    document.title = article.title + " | Bipin Kumar Maurya";
 
     document.getElementById("article-title").textContent =
-      article.title;
+        article.title;
 
     document.getElementById("article-date").textContent =
-      article.date || "";
+        article.date;
 
     document.getElementById("article-content").innerHTML =
-      renderArticleContent(article.content);
+        article.content
+        .split(/\n\s*\n/)
+        .map(text => "<p>" + text.replace(/\n/g, "<br>") + "</p>")
+        .join("");
 
-  })
-
-  .catch(error => {
+})
+.catch(error => {
 
     document.getElementById("article-title").textContent =
-      "लेख उपलब्ध नहीं है";
-
-    document.getElementById("article-date").textContent = "";
+        "लेख उपलब्ध नहीं है";
 
     document.getElementById("article-content").innerHTML =
-      "<p>माफ कीजिए, यह लेख अभी उपलब्ध नहीं है।</p>";
+        "<p>लेख लोड नहीं हो पाया।</p>";
 
     console.error(error);
 
-  });
-
-}
-
+});
 </script>
 
 </body>
