@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Bipin Kumar Maurya | Advocate in Gorakhpur | Legal Consultant</title>
@@ -30,6 +33,7 @@
     <meta property="og:type"
           content="website">
 
+
     <style>
 
         * {
@@ -46,6 +50,7 @@
             background: #111111;
             color: #ffffff;
         }
+
 
         /* HERO SECTION */
 
@@ -115,6 +120,7 @@
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
 
+
         /* NAVIGATION */
 
         nav {
@@ -140,6 +146,7 @@
             color: #ffffff;
         }
 
+
         /* GENERAL SECTIONS */
 
         section {
@@ -154,6 +161,7 @@
             text-align: center;
             margin-bottom: 35px;
         }
+
 
         /* ABOUT SECTION */
 
@@ -185,6 +193,7 @@
         .profile-link a:hover {
             color: #ffffff;
         }
+
 
         /* PRACTICE AREAS */
 
@@ -222,34 +231,105 @@
             line-height: 1.7;
         }
 
-            <!-- LEGAL ARTICLES -->
 
-    <section id="legal-articles" class="legal-articles-section">
+        /* LEGAL ARTICLES SECTION */
 
-        <h2>Legal Articles</h2>
+        .legal-articles-section {
+            padding: 70px 20px;
+            background: #0b0b0b;
+            text-align: center;
+            max-width: none;
+        }
 
-        <p class="articles-intro">
-            कानून, विधिक जागरूकता और भारतीय विधि से संबंधित
-            उपयोगी लेख पढ़ें।
-        </p>
+        .legal-articles-section h2 {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
 
-        <div id="home-articles-list">
+        .articles-intro {
+            color: #cccccc;
+            max-width: 700px;
+            margin: 0 auto 35px;
+            line-height: 1.7;
+        }
 
-            <div class="home-articles-loading">
-                लेख लोड हो रहे हैं...
-            </div>
+        #home-articles-list {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
 
-        </div>
+        .home-article-card {
+            background: #111111;
+            border: 1px solid #333333;
+            border-left: 4px solid #d4af37;
+            padding: 25px;
+            text-align: left;
+            border-radius: 8px;
+            transition: 0.3s ease;
+        }
 
-        <div class="all-articles-link">
+        .home-article-card:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
+        }
 
-            <a href="articles.html">
-                सभी Legal Articles देखें →
-            </a>
+        .home-article-card h3 {
+            color: #d4af37;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
 
-        </div>
+        .home-article-date {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
 
-    </section>
+        .home-article-description {
+            color: #dddddd;
+            line-height: 1.7;
+        }
+
+        .home-article-card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-article-card a:hover {
+            text-decoration: underline;
+        }
+
+        .home-articles-loading {
+            color: #aaaaaa;
+            padding: 20px;
+        }
+
+        .all-articles-link {
+            margin-top: 35px;
+        }
+
+        .all-articles-link a {
+            display: inline-block;
+            padding: 12px 25px;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .all-articles-link a:hover {
+            background: #d4af37;
+            color: #000000;
+        }
+
+
         /* WHY CHOOSE ME */
 
         .why-section {
@@ -293,6 +373,7 @@
             color: #cccccc;
             line-height: 1.7;
         }
+
 
         /* CONTACT SECTION */
 
@@ -359,6 +440,7 @@
             transform: translateY(-2px);
         }
 
+
         /* FOOTER */
 
         footer {
@@ -373,6 +455,7 @@
         footer strong {
             color: #d4af37;
         }
+
 
         /* LEGAL DISCLAIMER */
 
@@ -396,6 +479,7 @@
             line-height: 1.8;
             margin-bottom: 15px;
         }
+
 
         /* ENQUIRY FORM */
 
@@ -451,6 +535,7 @@
             background: #f0cf55;
         }
 
+
         /* FLOATING CONTACT BUTTONS */
 
         .floating-contact {
@@ -489,6 +574,7 @@
         .floating-contact a:hover {
             transform: scale(1.08);
         }
+
 
         /* FAQ SECTION */
 
@@ -529,6 +615,7 @@
         .faq-item.active .faq-answer {
             display: block;
         }
+
 
         /* MOBILE RESPONSIVE */
 
@@ -581,6 +668,18 @@
                 min-width: 100%;
             }
 
+            .legal-articles-section {
+                padding: 50px 15px;
+            }
+
+            .legal-articles-section h2 {
+                font-size: 27px;
+            }
+
+            .home-article-card {
+                padding: 20px;
+            }
+
             .why-section {
                 padding: 50px 18px;
             }
@@ -606,125 +705,16 @@
             footer {
                 font-size: 13px;
             }
+
         }
 
-        /* ================================
-   LEGAL ARTICLES SECTION
-================================ */
-
-.legal-articles-section {
-    padding: 70px 20px;
-    background: #0b0b0b;
-    text-align: center;
-}
-
-.legal-articles-section h2 {
-    color: #d4af37;
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.articles-intro {
-    color: #cccccc;
-    max-width: 700px;
-    margin: 0 auto 35px;
-    line-height: 1.7;
-}
-
-#home-articles-list {
-    max-width: 950px;
-    margin: 0 auto;
-    display: grid;
-    gap: 20px;
-}
-
-.home-article-card {
-    background: #111111;
-    border: 1px solid #333333;
-    border-left: 4px solid #d4af37;
-    padding: 25px;
-    text-align: left;
-    border-radius: 8px;
-    transition: 0.3s ease;
-}
-
-.home-article-card:hover {
-    transform: translateY(-3px);
-    border-color: #d4af37;
-}
-
-.home-article-card h3 {
-    color: #d4af37;
-    margin-bottom: 10px;
-    font-size: 21px;
-}
-
-.home-article-date {
-    color: #999999;
-    font-size: 14px;
-    margin-bottom: 12px;
-}
-
-.home-article-description {
-    color: #dddddd;
-    line-height: 1.7;
-}
-
-.home-article-card a {
-    display: inline-block;
-    margin-top: 15px;
-    color: #d4af37;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.home-article-card a:hover {
-    text-decoration: underline;
-}
-
-.home-articles-loading {
-    color: #aaaaaa;
-    padding: 20px;
-}
-
-.all-articles-link {
-    margin-top: 35px;
-}
-
-.all-articles-link a {
-    display: inline-block;
-    padding: 12px 25px;
-    border: 1px solid #d4af37;
-    color: #d4af37;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: 0.3s ease;
-}
-
-.all-articles-link a:hover {
-    background: #d4af37;
-    color: #000000;
-}
-
-@media (max-width: 600px) {
-
-    .legal-articles-section {
-        padding: 50px 15px;
-    }
-
-    .legal-articles-section h2 {
-        font-size: 27px;
-    }
-
-    .home-article-card {
-        padding: 20px;
-    }
-}
     </style>
+
 
     <!-- STRUCTURED DATA -->
 
     <script type="application/ld+json">
+
     {
       "@context": "https://schema.org",
       "@type": "Person",
@@ -732,7 +722,8 @@
       "jobTitle": "Advocate & Legal Consultant",
       "url": "https://bipinforoffice247-coder.github.io/vip.in.247/",
       "sameAs": [
-        "https://www.instagram.com/vip.in.247/"
+        "https://www.instagram.com/vip.in.247/",
+        "https://www.linkedin.com/in/bipin-kumar-maurya"
       ],
       "address": {
         "@type": "PostalAddress",
@@ -741,11 +732,14 @@
         "addressCountry": "IN"
       }
     }
+
     </script>
 
 </head>
 
+
 <body>
+
 
     <!-- HERO -->
 
@@ -777,16 +771,19 @@
 
     </header>
 
+
     <!-- NAVIGATION -->
 
     <nav>
 
         <a href="#about">About</a>
         <a href="#practice">Practice Areas</a>
+        <a href="#legal-articles">Legal Articles</a>
         <a href="#why">Why Choose Me</a>
         <a href="#contact">Contact</a>
 
     </nav>
+
 
     <!-- ABOUT -->
 
@@ -801,9 +798,11 @@
         </p>
 
         <p class="profile-link">
+
             <a href="profile.html">
                 Bipin Kumar Maurya — Professional Profile →
             </a>
+
         </p>
 
         <p>
@@ -814,6 +813,7 @@
 
     </section>
 
+
     <!-- PRACTICE AREAS -->
 
     <section id="practice">
@@ -823,56 +823,110 @@
         <div class="cards">
 
             <div class="card">
+
                 <h3>Criminal Law</h3>
+
                 <p>
                     Legal assistance and representation
                     in criminal matters.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Civil Law</h3>
+
                 <p>
                     Assistance in civil disputes and
                     related legal matters.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Family Law</h3>
+
                 <p>
                     Legal assistance in family and
                     matrimonial matters.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Property Law</h3>
+
                 <p>
                     Assistance in property and
                     land-related legal matters.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Consumer Law</h3>
+
                 <p>
                     Legal assistance in consumer
                     disputes and related matters.
                 </p>
+
             </div>
 
+
             <div class="card">
+
                 <h3>Labour Law</h3>
+
                 <p>
                     Assistance in employment and
                     labour-related legal matters.
                 </p>
+
             </div>
 
         </div>
 
     </section>
+
+
+    <!-- LEGAL ARTICLES -->
+
+    <section id="legal-articles" class="legal-articles-section">
+
+        <h2>Legal Articles</h2>
+
+        <p class="articles-intro">
+            कानून, विधिक जागरूकता और भारतीय विधि से संबंधित
+            उपयोगी लेख पढ़ें।
+        </p>
+
+        <div id="home-articles-list">
+
+            <div class="home-articles-loading">
+                लेख लोड हो रहे हैं...
+            </div>
+
+        </div>
+
+        <div class="all-articles-link">
+
+            <a href="articles.html">
+                सभी Legal Articles देखें →
+            </a>
+
+        </div>
+
+    </section>
+
 
     <!-- WHY CHOOSE ME -->
 
@@ -893,6 +947,7 @@
 
             </div>
 
+
             <div class="why-box">
 
                 <h3>📚 Professional Approach</h3>
@@ -903,6 +958,7 @@
                 </p>
 
             </div>
+
 
             <div class="why-box">
 
@@ -918,6 +974,7 @@
         </div>
 
     </section>
+
 
     <!-- CLIENT ENQUIRY FORM -->
 
@@ -962,11 +1019,13 @@
 
     </section>
 
+
     <!-- FAQ SECTION -->
 
     <section id="faq" class="faq-section">
 
         <h2>Frequently Asked Questions</h2>
+
 
         <div class="faq-item">
 
@@ -982,6 +1041,7 @@
 
         </div>
 
+
         <div class="faq-item">
 
             <button class="faq-question" onclick="toggleFAQ(this)">
@@ -994,6 +1054,7 @@
             </div>
 
         </div>
+
 
         <div class="faq-item">
 
@@ -1008,6 +1069,7 @@
 
         </div>
 
+
         <div class="faq-item">
 
             <button class="faq-question" onclick="toggleFAQ(this)">
@@ -1021,6 +1083,7 @@
             </div>
 
         </div>
+
 
         <div class="faq-item">
 
@@ -1038,6 +1101,7 @@
 
     </section>
 
+
     <!-- CONTACT -->
 
     <section id="contact" class="contact">
@@ -1046,7 +1110,9 @@
 
         <p>
             📞 Mobile:
-            <a href="tel:7080884964">7080884964</a>
+            <a href="tel:7080884964">
+                7080884964
+            </a>
         </p>
 
         <p>
@@ -1060,6 +1126,7 @@
             📍 Uttar Pradesh, District Gorakhpur
         </p>
 
+
         <div class="contact-buttons">
 
             <a href="tel:7080884964"
@@ -1067,12 +1134,14 @@
                 📞 Call Now
             </a>
 
+
             <a href="https://wa.me/917080884964"
                class="whatsapp-btn"
                target="_blank"
                rel="noopener noreferrer">
                 💬 WhatsApp
             </a>
+
 
             <a href="https://www.instagram.com/vip.in.247/"
                class="instagram-btn"
@@ -1084,6 +1153,7 @@
         </div>
 
     </section>
+
 
     <!-- LEGAL DISCLAIMER -->
 
@@ -1106,6 +1176,7 @@
 
     </section>
 
+
     <!-- FOOTER -->
 
     <footer>
@@ -1116,31 +1187,45 @@
 
     </footer>
 
+
     <!-- WHATSAPP ENQUIRY SCRIPT -->
 
     <script>
 
-    function sendEnquiryToWhatsApp() {
+        function sendEnquiryToWhatsApp() {
 
-        var name = document.getElementById("clientName").value;
-        var phone = document.getElementById("clientPhone").value;
-        var email = document.getElementById("clientEmail").value;
-        var message = document.getElementById("clientMessage").value;
+            var name =
+                document.getElementById("clientName").value;
 
-        var whatsappMessage =
-            "New Client Enquiry%0A%0A" +
-            "Name: " + encodeURIComponent(name) + "%0A" +
-            "Mobile: " + encodeURIComponent(phone) + "%0A" +
-            "Email: " + encodeURIComponent(email) + "%0A" +
-            "Legal Enquiry: " + encodeURIComponent(message);
+            var phone =
+                document.getElementById("clientPhone").value;
 
-        var whatsappURL =
-            "https://wa.me/917080884964?text=" + whatsappMessage;
+            var email =
+                document.getElementById("clientEmail").value;
 
-        window.open(whatsappURL, "_blank");
-    }
+            var message =
+                document.getElementById("clientMessage").value;
+
+
+            var whatsappMessage =
+                "New Client Enquiry%0A%0A" +
+                "Name: " + encodeURIComponent(name) + "%0A" +
+                "Mobile: " + encodeURIComponent(phone) + "%0A" +
+                "Email: " + encodeURIComponent(email) + "%0A" +
+                "Legal Enquiry: " + encodeURIComponent(message);
+
+
+            var whatsappURL =
+                "https://wa.me/917080884964?text=" +
+                whatsappMessage;
+
+
+            window.open(whatsappURL, "_blank");
+
+        }
 
     </script>
+
 
     <!-- FLOATING CONTACT BUTTONS -->
 
@@ -1152,6 +1237,7 @@
             📞
         </a>
 
+
         <a href="https://wa.me/917080884964"
            class="floating-whatsapp"
            title="WhatsApp"
@@ -1162,78 +1248,133 @@
 
     </div>
 
+
     <!-- FAQ SCRIPT -->
 
     <script>
 
-    function toggleFAQ(button) {
+        function toggleFAQ(button) {
 
-        var faqItem = button.parentElement;
+            var faqItem =
+                button.parentElement;
 
-        faqItem.classList.toggle("active");
+            faqItem.classList.toggle("active");
 
-    }
+        }
 
     </script>
 
+
+    <!-- LEGAL ARTICLES SCRIPT -->
+
     <script>
-fetch("articles.json?v=" + Date.now())
-    .then(response => {
-        if (!response.ok) {
-            throw new Error("Articles file not found");
-        }
-        return response.json();
-    })
-    .then(articles => {
 
-        const container = document.getElementById("home-articles-list");
+        fetch("articles.json?v=" + Date.now())
 
-        if (!articles || articles.length === 0) {
-            container.innerHTML =
-                '<div class="home-articles-loading">अभी कोई Legal Article उपलब्ध नहीं है।</div>';
-            return;
-        }
+            .then(response => {
 
-        const latestArticles = articles.slice(0, 3);
+                if (!response.ok) {
 
-        container.innerHTML = latestArticles.map(article => {
+                    throw new Error(
+                        "Articles file not found"
+                    );
 
-            const title = String(article.title || "");
-            const date = String(article.date || "");
-            const description = String(article.description || "");
-            const id = encodeURIComponent(article.id || "");
+                }
 
-            return `
-                <article class="home-article-card">
+                return response.json();
 
-                    <h3>${title}</h3>
+            })
 
-                    <div class="home-article-date">
-                        📅 ${date}
-                    </div>
+            .then(articles => {
 
-                    <div class="home-article-description">
-                        ${description}
-                    </div>
+                const container =
+                    document.getElementById(
+                        "home-articles-list"
+                    );
 
-                    <a href="article.html?id=${id}">
-                        पूरा लेख पढ़ें →
-                    </a>
 
-                </article>
-            `;
+                if (!articles || articles.length === 0) {
 
-        }).join("");
+                    container.innerHTML =
+                        '<div class="home-articles-loading">' +
+                        'अभी कोई Legal Article उपलब्ध नहीं है।' +
+                        '</div>';
 
-    })
-    .catch(error => {
+                    return;
 
-        console.error("Legal Articles Error:", error);
+                }
 
-        document.getElementById("home-articles-list").innerHTML =
-            '<div class="home-articles-loading">लेख अभी लोड नहीं हो पा रहे हैं।</div>';
 
-    });
-</script>
+                const latestArticles =
+                    articles.slice(0, 3);
+
+
+                container.innerHTML =
+                    latestArticles.map(article => {
+
+                        const title =
+                            String(article.title || "");
+
+                        const date =
+                            String(article.date || "");
+
+                        const description =
+                            String(article.description || "");
+
+                        const id =
+                            encodeURIComponent(
+                                article.id || ""
+                            );
+
+
+                        return `
+
+                            <article class="home-article-card">
+
+                                <h3>${title}</h3>
+
+                                <div class="home-article-date">
+                                    📅 ${date}
+                                </div>
+
+                                <div class="home-article-description">
+                                    ${description}
+                                </div>
+
+                                <a href="article.html?id=${id}">
+                                    पूरा लेख पढ़ें →
+                                </a>
+
+                            </article>
+
+                        `;
+
+                    }).join("");
+
+            })
+
+
+            .catch(error => {
+
+                console.error(
+                    "Legal Articles Error:",
+                    error
+                );
+
+
+                document.getElementById(
+                    "home-articles-list"
+                ).innerHTML =
+
+                    '<div class="home-articles-loading">' +
+                    'लेख अभी लोड नहीं हो पा रहे हैं।' +
+                    '</div>';
+
+            });
+
+    </script>
+
+
 </body>
+
 </html>
