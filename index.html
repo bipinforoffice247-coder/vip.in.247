@@ -1265,35 +1265,72 @@
     </script>
 
 
-    <!-- LEGAL ARTICLES SCRIPT -->
+    <!-- SUPABASE -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+    <!-- SUPABASE LEGAL ARTICLES SCRIPT -->
 
     <script>
 
-        fetch("articles.json?v=" + Date.now())
+        const SUPABASE_URL =
+            "https://jfstjogeyvkhlhxhiaie.supabase.co";
 
-            .then(response => {
+        const SUPABASE_PUBLISHABLE_KEY =
+            "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
 
-                if (!response.ok) {
 
-                    throw new Error(
-                        "Articles file not found"
-                    );
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_PUBLISHABLE_KEY
+            );
+
+
+        async function loadHomeArticles() {
+
+            const container =
+                document.getElementById(
+                    "home-articles-list"
+                );
+
+
+            try {
+
+                const { data, error } =
+                    await supabaseClient
+
+                        .from("articles")
+
+                        .select(
+                            "id, title, description, created_at, published_at"
+                        )
+
+                        .eq(
+                            "status",
+                            "published"
+                        )
+
+                        .order(
+                            "published_at",
+                            {
+                                ascending: false,
+                                nullsFirst: false
+                            }
+                        )
+
+                        .limit(3);
+
+
+                if (error) {
+
+                    throw error;
 
                 }
 
-                return response.json();
 
-            })
-
-            .then(articles => {
-
-                const container =
-                    document.getElementById(
-                        "home-articles-list"
-                    );
-
-
-                if (!articles || articles.length === 0) {
+                if (!data || data.length === 0) {
 
                     container.innerHTML =
                         '<div class="home-articles-loading">' +
@@ -1305,56 +1342,81 @@
                 }
 
 
-                const latestArticles =
-                    articles.slice(0, 3);
+                container.innerHTML = "";
 
 
-                container.innerHTML =
-                    latestArticles.map(article => {
+                data.forEach(article => {
 
-                        const title =
-                            String(article.title || "");
+                    const articleCard =
+                        document.createElement("article");
 
-                        const date =
-                            String(article.date || "");
-
-                        const description =
-                            String(article.description || "");
-
-                        const id =
-                            encodeURIComponent(
-                                article.id || ""
-                            );
+                    articleCard.className =
+                        "home-article-card";
 
 
-                        return `
+                    const title =
+                        document.createElement("h3");
 
-                            <article class="home-article-card">
-
-                                <h3>${title}</h3>
-
-                                <div class="home-article-date">
-                                    📅 ${date}
-                                </div>
-
-                                <div class="home-article-description">
-                                    ${description}
-                                </div>
-
-                                <a href="article.html?id=${id}">
-                                    पूरा लेख पढ़ें →
-                                </a>
-
-                            </article>
-
-                        `;
-
-                    }).join("");
-
-            })
+                    title.textContent =
+                        article.title ||
+                        "Untitled Article";
 
 
-            .catch(error => {
+                    const date =
+                        document.createElement("div");
+
+                    date.className =
+                        "home-article-date";
+
+                    date.textContent =
+                        "📅 " +
+                        formatArticleDate(
+                            article.published_at ||
+                            article.created_at
+                        );
+
+
+                    const description =
+                        document.createElement("div");
+
+                    description.className =
+                        "home-article-description";
+
+                    description.textContent =
+                        article.description ||
+                        "कानूनी जानकारी एवं जागरूकता से संबंधित लेख।";
+
+
+                    const link =
+                        document.createElement("a");
+
+                    link.href =
+                        "article.html?id=" +
+                        encodeURIComponent(
+                            article.id
+                        );
+
+                    link.textContent =
+                        "पूरा लेख पढ़ें →";
+
+
+                    articleCard.appendChild(title);
+
+                    articleCard.appendChild(date);
+
+                    articleCard.appendChild(description);
+
+                    articleCard.appendChild(link);
+
+
+                    container.appendChild(
+                        articleCard
+                    );
+
+                });
+
+
+            } catch (error) {
 
                 console.error(
                     "Legal Articles Error:",
@@ -1362,15 +1424,49 @@
                 );
 
 
-                document.getElementById(
-                    "home-articles-list"
-                ).innerHTML =
-
+                container.innerHTML =
                     '<div class="home-articles-loading">' +
                     'लेख अभी लोड नहीं हो पा रहे हैं।' +
                     '</div>';
 
-            });
+            }
+
+        }
+
+
+        function formatArticleDate(dateValue) {
+
+            if (!dateValue) {
+
+                return "";
+
+            }
+
+
+            const date =
+                new Date(dateValue);
+
+
+            if (isNaN(date.getTime())) {
+
+                return "";
+
+            }
+
+
+            return date.toLocaleDateString(
+                "hi-IN",
+                {
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+        loadHomeArticles();
 
     </script>
 
