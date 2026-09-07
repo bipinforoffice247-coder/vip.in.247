@@ -213,13 +213,35 @@
 
 <script>
 
-function escapeHTML(text){
+<script>
+
+function escapeHTML(text) {
 
   const div = document.createElement("div");
 
-  div.textContent = text;
+  div.textContent = text || "";
 
   return div.innerHTML;
+
+}
+
+function renderArticleContent(content) {
+
+  if (!content) {
+    return "<p>इस लेख की सामग्री अभी उपलब्ध नहीं है।</p>";
+  }
+
+  return content
+    .split(/\n\s*\n/)
+    .map(paragraph => {
+
+      const safeParagraph = escapeHTML(paragraph)
+        .replace(/\n/g, "<br>");
+
+      return "<p>" + safeParagraph + "</p>";
+
+    })
+    .join("");
 
 }
 
@@ -227,7 +249,7 @@ const params = new URLSearchParams(window.location.search);
 
 const id = params.get("id");
 
-if(!id){
+if (!id) {
 
   document.getElementById("article-title").textContent =
     "लेख उपलब्ध नहीं है";
@@ -235,16 +257,17 @@ if(!id){
   document.getElementById("article-content").innerHTML =
     "<p>कृपया किसी लेख का चयन करें।</p>";
 
-}else{
+} else {
 
-  fetch("https://bipinforoffice247-coder.github.io/vip.in.247/articles.json?v=" + Date.now())
+  fetch(
+    "https://bipinforoffice247-coder.github.io/vip.in.247/articles.json?v=" +
+    Date.now()
+  )
 
   .then(response => {
 
-    if(!response.ok){
-
+    if (!response.ok) {
       throw new Error("Articles JSON could not be loaded.");
-
     }
 
     return response.json();
@@ -255,10 +278,8 @@ if(!id){
 
     const article = articles.find(item => item.id === id);
 
-    if(!article){
-
+    if (!article) {
       throw new Error("Article not found.");
-
     }
 
     document.title =
@@ -268,13 +289,10 @@ if(!id){
       article.title;
 
     document.getElementById("article-date").textContent =
-      article.date;
+      article.date || "";
 
     document.getElementById("article-content").innerHTML =
-
-      "<p>" +
-      escapeHTML(article.description) +
-      "</p>";
+      renderArticleContent(article.content);
 
   })
 
