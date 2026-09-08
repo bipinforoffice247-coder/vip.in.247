@@ -416,142 +416,97 @@
             text-align: left;
         }
 
-        .bare-act-category {
+        .bare-category-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 245px;
+            padding: 30px;
             background: #171717;
             border: 1px solid #333333;
             border-radius: 12px;
-            padding: 25px;
-            min-height: 220px;
+            text-decoration: none;
+            color: #ffffff;
             transition: 0.3s ease;
             position: relative;
             overflow: hidden;
         }
 
-        .bare-act-category:hover {
-            transform: translateY(-5px);
+        .bare-category-card:hover {
+            transform: translateY(-6px);
             border-color: #d4af37;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.12);
+            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.15);
         }
 
-        .bare-act-category:nth-child(1) {
+        .bare-category-card:nth-child(1) {
             border-top: 4px solid #d4af37;
         }
 
-        .bare-act-category:nth-child(2) {
+        .bare-category-card:nth-child(2) {
             border-top: 4px solid #8fa8c7;
         }
 
-        .bare-act-category:nth-child(3) {
+        .bare-category-card:nth-child(3) {
             border-top: 4px solid #9ab58a;
         }
 
-        .bare-act-category:nth-child(4) {
+        .bare-category-card:nth-child(4) {
             border-top: 4px solid #b9a06a;
         }
 
-        .bare-act-category-title {
+        .bare-category-icon {
+            font-size: 42px;
+            margin-bottom: 18px;
+        }
+
+        .bare-category-name {
+            display: block;
             color: #d4af37;
             font-size: 23px;
-            margin: 0 0 20px;
-            padding-bottom: 14px;
-            border-bottom: 1px solid #333333;
-            line-height: 1.4;
-        }
-
-        .bare-act-category:nth-child(2) .bare-act-category-title {
-            color: #b9cce5;
-        }
-
-        .bare-act-category:nth-child(3) .bare-act-category-title {
-            color: #b3cca5;
-        }
-
-        .bare-act-category:nth-child(4) .bare-act-category-title {
-            color: #d0b879;
-        }
-
-
-        /* INDIVIDUAL ACT CARD INSIDE CATEGORY */
-
-        .bare-act-card {
-            background: #111111;
-            border: 1px solid #333333;
-            border-left: 3px solid #d4af37;
-            border-radius: 8px;
-            padding: 18px;
-            margin-bottom: 14px;
-            transition: 0.3s ease;
-        }
-
-        .bare-act-card:last-child {
-            margin-bottom: 0;
-        }
-
-        .bare-act-card:hover {
-            border-color: #d4af37;
-            background: #141414;
-        }
-
-        .bare-act-title {
-            color: #d4af37;
-            font-size: 19px;
             font-weight: bold;
-            margin: 0 0 9px;
-            line-height: 1.5;
-        }
-
-        .bare-act-description {
-            color: #cccccc;
-            line-height: 1.7;
-            margin: 0 0 10px;
-            font-size: 15px;
-        }
-
-        .bare-act-date {
-            color: #888888;
-            font-size: 13px;
+            line-height: 1.4;
             margin-bottom: 12px;
         }
 
-        .bare-act-pdf-link {
+        .bare-category-card:nth-child(2) .bare-category-name {
+            color: #b9cce5;
+        }
+
+        .bare-category-card:nth-child(3) .bare-category-name {
+            color: #b3cca5;
+        }
+
+        .bare-category-card:nth-child(4) .bare-category-name {
+            color: #d0b879;
+        }
+
+        .bare-category-subtitle {
+            display: block;
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        .bare-category-action {
             display: inline-block;
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
+            align-self: flex-start;
+            padding: 10px 17px;
             border: 1px solid #d4af37;
-            padding: 9px 16px;
             border-radius: 5px;
+            color: #d4af37;
+            font-weight: bold;
             transition: 0.3s ease;
         }
 
-        .bare-act-pdf-link:hover {
+        .bare-category-card:hover .bare-category-action {
             background: #d4af37;
             color: #111111;
-        }
-
-
-        /* EMPTY CATEGORY */
-
-        .bare-category-empty {
-            color: #888888;
-            font-size: 14px;
-            line-height: 1.7;
-            padding: 12px 0 5px;
         }
 
         .bare-acts-loading {
             color: #aaaaaa;
             padding: 20px;
-            grid-column: 1 / -1;
-            text-align: center;
-        }
-
-        .bare-acts-empty {
-            color: #aaaaaa;
-            padding: 25px;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            background: #171717;
             grid-column: 1 / -1;
             text-align: center;
         }
@@ -923,24 +878,20 @@
                 gap: 18px;
             }
 
-            .bare-act-category {
-                padding: 20px;
-                min-height: auto;
+            .bare-category-card {
+                min-height: 220px;
+                padding: 24px;
             }
 
-            .bare-act-category-title {
+            .bare-category-icon {
+                font-size: 36px;
+            }
+
+            .bare-category-name {
                 font-size: 20px;
             }
 
-            .bare-act-card {
-                padding: 17px;
-            }
-
-            .bare-act-title {
-                font-size: 18px;
-            }
-
-            .bare-act-pdf-link {
+            .bare-category-action {
                 width: 100%;
                 text-align: center;
             }
@@ -1233,11 +1184,127 @@
             सामान्य विधिक जानकारी और जागरूकता के उद्देश्य से उपलब्ध है।
         </p>
 
+
+        <!-- ONLY FOUR CATEGORY CARDS -->
+
         <div id="home-bare-acts-list">
 
-            <div class="bare-acts-loading">
-                Bare Acts लोड हो रहे हैं...
-            </div>
+
+            <!-- CRIMINAL LAWS -->
+
+            <a href="criminal-laws.html"
+               class="bare-category-card">
+
+                <div>
+
+                    <div class="bare-category-icon">
+                        ⚖️
+                    </div>
+
+                    <span class="bare-category-name">
+                        Criminal Laws
+                    </span>
+
+                    <span class="bare-category-subtitle">
+                        आपराधिक कानूनों से संबंधित
+                        Published Bare Acts देखें।
+                    </span>
+
+                </div>
+
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
+
+            </a>
+
+
+            <!-- CONSTITUTIONAL LAWS -->
+
+            <a href="constitutional-laws.html"
+               class="bare-category-card">
+
+                <div>
+
+                    <div class="bare-category-icon">
+                        📜
+                    </div>
+
+                    <span class="bare-category-name">
+                        Constitution & Constitutional Laws
+                    </span>
+
+                    <span class="bare-category-subtitle">
+                        संविधान एवं संवैधानिक कानूनों से संबंधित
+                        Published Bare Acts देखें।
+                    </span>
+
+                </div>
+
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
+
+            </a>
+
+
+            <!-- COMMERCE & CORPORATE LAWS -->
+
+            <a href="commerce-corporate-laws.html"
+               class="bare-category-card">
+
+                <div>
+
+                    <div class="bare-category-icon">
+                        🏢
+                    </div>
+
+                    <span class="bare-category-name">
+                        Commerce & Corporate Laws
+                    </span>
+
+                    <span class="bare-category-subtitle">
+                        वाणिज्यिक एवं कॉर्पोरेट कानूनों से संबंधित
+                        Published Bare Acts देखें।
+                    </span>
+
+                </div>
+
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
+
+            </a>
+
+
+            <!-- MISCELLANEOUS LAWS -->
+
+            <a href="miscellaneous-laws.html"
+               class="bare-category-card">
+
+                <div>
+
+                    <div class="bare-category-icon">
+                        📚
+                    </div>
+
+                    <span class="bare-category-name">
+                        Miscellaneous Laws
+                    </span>
+
+                    <span class="bare-category-subtitle">
+                        अन्य महत्वपूर्ण विधियों से संबंधित
+                        Published Bare Acts देखें।
+                    </span>
+
+                </div>
+
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
+
+            </a>
+
 
         </div>
 
@@ -1586,7 +1653,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-    <!-- SUPABASE LEGAL ARTICLES + BARE ACTS -->
+    <!-- SUPABASE LEGAL ARTICLES -->
 
     <script>
 
@@ -1791,265 +1858,10 @@
 
 
         /* =========================================
-           BARE ACTS
-        ========================================= */
-
-        async function loadHomeBareActs() {
-
-            const container =
-                document.getElementById(
-                    "home-bare-acts-list"
-                );
-
-
-            if (!container) {
-
-                return;
-
-            }
-
-
-            try {
-
-                const { data, error } =
-                    await supabaseClient
-
-                        .from("bare_acts")
-
-                        .select(
-                            "id, title, category, description, pdf_path, published_at, created_at"
-                        )
-
-                        .eq(
-                            "status",
-                            "published"
-                        )
-
-                        .order(
-                            "published_at",
-                            {
-                                ascending: false,
-                                nullsFirst: false
-                            }
-                        );
-
-
-                if (error) {
-
-                    throw error;
-
-                }
-
-
-                const acts =
-                    (data || []).filter(
-                        act =>
-                            act.pdf_path &&
-                            act.pdf_path.trim() !== ""
-                    );
-
-
-                /*
-                 * Four fixed categories.
-                 * All four cards will always be displayed.
-                 */
-
-                const categories = [
-
-                    "Criminal Laws",
-
-                    "Constitution & Constitutional Laws",
-
-                    "Commerce & Corporate Laws",
-
-                    "Miscellaneous Laws"
-
-                ];
-
-
-                container.innerHTML = "";
-
-
-                categories.forEach(category => {
-
-                    const categoryWrapper =
-                        document.createElement("div");
-
-                    categoryWrapper.className =
-                        "bare-act-category";
-
-
-                    const categoryTitle =
-                        document.createElement("h3");
-
-                    categoryTitle.className =
-                        "bare-act-category-title";
-
-                    categoryTitle.textContent =
-                        category;
-
-
-                    categoryWrapper.appendChild(
-                        categoryTitle
-                    );
-
-
-                    const categoryActs =
-                        acts.filter(
-                            act =>
-                                act.category === category
-                        );
-
-
-                    /*
-                     * If this category has no published Act,
-                     * the category card still remains visible.
-                     */
-
-                    if (categoryActs.length === 0) {
-
-                        const emptyMessage =
-                            document.createElement("div");
-
-                        emptyMessage.className =
-                            "bare-category-empty";
-
-                        emptyMessage.textContent =
-                            "अभी इस category में कोई Published Bare Act उपलब्ध नहीं है।";
-
-                        categoryWrapper.appendChild(
-                            emptyMessage
-                        );
-
-                    }
-
-
-                    categoryActs.forEach(act => {
-
-                        const card =
-                            document.createElement("div");
-
-                        card.className =
-                            "bare-act-card";
-
-
-                        const title =
-                            document.createElement("h4");
-
-                        title.className =
-                            "bare-act-title";
-
-                        title.textContent =
-                            act.title ||
-                            "Untitled Bare Act";
-
-
-                        const description =
-                            document.createElement("p");
-
-                        description.className =
-                            "bare-act-description";
-
-                        description.textContent =
-                            act.description ||
-                            "इस Bare Act की PDF सामान्य विधिक जानकारी एवं अध्ययन के लिए उपलब्ध है।";
-
-
-                        const date =
-                            document.createElement("div");
-
-                        date.className =
-                            "bare-act-date";
-
-                        date.textContent =
-                            "📅 Published: " +
-                            formatArticleDate(
-                                act.published_at ||
-                                act.created_at
-                            );
-
-
-                        const pdfLink =
-                            document.createElement("a");
-
-
-                        const publicUrlResult =
-                            supabaseClient
-                                .storage
-                                .from("bare-acts")
-                                .getPublicUrl(
-                                    act.pdf_path
-                                );
-
-
-                        pdfLink.href =
-                            publicUrlResult.data.publicUrl;
-
-
-                        pdfLink.target =
-                            "_blank";
-
-
-                        pdfLink.rel =
-                            "noopener noreferrer";
-
-
-                        pdfLink.className =
-                            "bare-act-pdf-link";
-
-
-                        pdfLink.textContent =
-                            "📄 Open PDF →";
-
-
-                        card.appendChild(title);
-
-                        card.appendChild(description);
-
-                        card.appendChild(date);
-
-                        card.appendChild(pdfLink);
-
-
-                        categoryWrapper.appendChild(
-                            card
-                        );
-
-                    });
-
-
-                    container.appendChild(
-                        categoryWrapper
-                    );
-
-                });
-
-
-            } catch (error) {
-
-                console.error(
-                    "Bare Acts Error:",
-                    error
-                );
-
-
-                container.innerHTML =
-                    '<div class="bare-acts-empty">' +
-                    'Bare Acts अभी लोड नहीं हो पा रहे हैं।' +
-                    '</div>';
-
-            }
-
-        }
-
-
-        /* =========================================
-           LOAD DATA
+           LOAD ARTICLES
         ========================================= */
 
         loadHomeArticles();
-
-        loadHomeBareActs();
 
     </script>
 
