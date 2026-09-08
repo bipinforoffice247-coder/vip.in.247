@@ -26,7 +26,7 @@
 
     <!-- SEO KEYWORDS -->
     <meta name="keywords"
-          content="Bipin Kumar Maurya, Bipin Kumar Maurya Advocate, Advocate Gorakhpur, Advocate in Gorakhpur, Lawyer Gorakhpur, Legal Consultant Gorakhpur, Criminal Law Gorakhpur, Civil Law Gorakhpur, Family Law Gorakhpur, Property Law Gorakhpur, Consumer Law Gorakhpur, Labour Law Gorakhpur, Legal Information Gorakhpur, Legal Articles, Indian Law">
+          content="Bipin Kumar Maurya, Bipin Kumar Maurya Advocate, Advocate Gorakhpur, Advocate in Gorakhpur, Lawyer Gorakhpur, Legal Consultant Gorakhpur, Criminal Law Gorakhpur, Civil Law Gorakhpur, Family Law Gorakhpur, Property Law Gorakhpur, Consumer Law Gorakhpur, Labour Law Gorakhpur, Legal Information Gorakhpur, Legal Articles, Bare Acts, Indian Law">
 
     <!-- AUTHOR -->
     <meta name="author"
@@ -385,6 +385,113 @@
         }
 
 
+        /* =========================================
+           BARE ACTS SECTION
+        ========================================= */
+
+        .bare-acts-section {
+            max-width: none;
+            padding: 70px 20px;
+            background: #111111;
+            text-align: center;
+        }
+
+        .bare-acts-section h2 {
+            color: #d4af37;
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .bare-acts-intro {
+            color: #cccccc;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        #home-bare-acts-list {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .bare-act-category {
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .bare-act-category-title {
+            color: #d4af37;
+            font-size: 24px;
+            margin-bottom: 18px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #333333;
+        }
+
+        .bare-act-card {
+            background: #171717;
+            border: 1px solid #333333;
+            border-left: 4px solid #d4af37;
+            border-radius: 8px;
+            padding: 22px 25px;
+            margin-bottom: 15px;
+            transition: 0.3s ease;
+        }
+
+        .bare-act-card:hover {
+            transform: translateY(-3px);
+            border-color: #d4af37;
+            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.10);
+        }
+
+        .bare-act-title {
+            color: #d4af37;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0 0 10px;
+        }
+
+        .bare-act-description {
+            color: #cccccc;
+            line-height: 1.7;
+            margin: 0 0 12px;
+        }
+
+        .bare-act-date {
+            color: #888888;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .bare-act-pdf-link {
+            display: inline-block;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            border: 1px solid #d4af37;
+            padding: 9px 16px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        .bare-act-pdf-link:hover {
+            background: #d4af37;
+            color: #111111;
+        }
+
+        .bare-acts-loading {
+            color: #aaaaaa;
+            padding: 20px;
+        }
+
+        .bare-acts-empty {
+            color: #aaaaaa;
+            padding: 25px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            background: #171717;
+        }
+
+
         /* WHY CHOOSE ME */
 
         .why-section {
@@ -735,6 +842,35 @@
                 padding: 20px;
             }
 
+
+            /* MOBILE BARE ACTS */
+
+            .bare-acts-section {
+                padding: 50px 15px;
+            }
+
+            .bare-acts-section h2 {
+                font-size: 27px;
+            }
+
+            .bare-act-category-title {
+                font-size: 21px;
+            }
+
+            .bare-act-card {
+                padding: 20px;
+            }
+
+            .bare-act-title {
+                font-size: 18px;
+            }
+
+            .bare-act-pdf-link {
+                width: 100%;
+                text-align: center;
+            }
+
+
             .why-section {
                 padding: 50px 18px;
             }
@@ -795,25 +931,25 @@
 
     <!-- WEBSITE STRUCTURED DATA -->
 
-<script type="application/ld+json">
+    <script type="application/ld+json">
 
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "@id": "https://bipinkumarmaurya.github.io/#website",
-  "url": "https://bipinkumarmaurya.github.io/",
-  "name": "Bipin Kumar Maurya | Legal Information & Legal Consultant",
-  "description": "Legal information, legal awareness resources and legal articles relating to Criminal, Civil, Family, Property, Consumer and Labour matters in Gorakhpur, Uttar Pradesh.",
-  "inLanguage": "hi-IN",
-  "publisher": {
-    "@id": "https://bipinkumarmaurya.github.io/#person"
-  },
-  "about": {
-    "@id": "https://bipinkumarmaurya.github.io/#person"
-  }
-}
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "@id": "https://bipinkumarmaurya.github.io/#website",
+      "url": "https://bipinkumarmaurya.github.io/",
+      "name": "Bipin Kumar Maurya | Legal Information & Legal Consultant",
+      "description": "Legal information, legal awareness resources and legal articles relating to Criminal, Civil, Family, Property, Consumer and Labour matters in Gorakhpur, Uttar Pradesh.",
+      "inLanguage": "hi-IN",
+      "publisher": {
+        "@id": "https://bipinkumarmaurya.github.io/#person"
+      },
+      "about": {
+        "@id": "https://bipinkumarmaurya.github.io/#person"
+      }
+    }
 
-</script>
+    </script>
 
 </head>
 
@@ -859,6 +995,7 @@
         <a href="#about">About</a>
         <a href="#practice">Practice Areas</a>
         <a href="#legal-articles">Legal Articles</a>
+        <a href="#bare-acts">Bare Acts</a>
         <a href="#why">Why Choose Me</a>
         <a href="#contact">Contact</a>
 
@@ -1002,6 +1139,30 @@
             <a href="articles.html">
                 सभी Legal Articles देखें →
             </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         BARE ACTS SECTION
+    ========================================= -->
+
+    <section id="bare-acts" class="bare-acts-section">
+
+        <h2>⚖️ Bare Acts</h2>
+
+        <p class="bare-acts-intro">
+            भारतीय कानूनों से संबंधित Bare Acts एवं विधिक सामग्री
+            सामान्य विधिक जानकारी और जागरूकता के उद्देश्य से उपलब्ध है।
+        </p>
+
+        <div id="home-bare-acts-list">
+
+            <div class="bare-acts-loading">
+                Bare Acts लोड हो रहे हैं...
+            </div>
 
         </div>
 
@@ -1350,7 +1511,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
-    <!-- SUPABASE LEGAL ARTICLES SCRIPT -->
+    <!-- SUPABASE LEGAL ARTICLES + BARE ACTS -->
 
     <script>
 
@@ -1367,6 +1528,10 @@
                 SUPABASE_PUBLISHABLE_KEY
             );
 
+
+        /* =========================================
+           LEGAL ARTICLES
+        ========================================= */
 
         async function loadHomeArticles() {
 
@@ -1514,6 +1679,10 @@
         }
 
 
+        /* =========================================
+           DATE FORMAT
+        ========================================= */
+
         function formatArticleDate(dateValue) {
 
             if (!dateValue) {
@@ -1546,7 +1715,404 @@
         }
 
 
+        /* =========================================
+           BARE ACTS
+        ========================================= */
+
+        async function loadHomeBareActs() {
+
+            const container =
+                document.getElementById(
+                    "home-bare-acts-list"
+                );
+
+
+            if (!container) {
+
+                return;
+
+            }
+
+
+            try {
+
+                const { data, error } =
+                    await supabaseClient
+
+                        .from("bare_acts")
+
+                        .select(
+                            "id, title, category, description, pdf_path, published_at, created_at"
+                        )
+
+                        .eq(
+                            "status",
+                            "published"
+                        )
+
+                        .order(
+                            "published_at",
+                            {
+                                ascending: false,
+                                nullsFirst: false
+                            }
+                        );
+
+
+                if (error) {
+
+                    throw error;
+
+                }
+
+
+                /* Only Acts having a PDF path */
+
+                const acts =
+                    (data || []).filter(
+                        act =>
+                            act.pdf_path &&
+                            act.pdf_path.trim() !== ""
+                    );
+
+
+                if (acts.length === 0) {
+
+                    container.innerHTML =
+                        '<div class="bare-acts-empty">' +
+                        'अभी कोई Published Bare Act उपलब्ध नहीं है।' +
+                        '</div>';
+
+                    return;
+
+                }
+
+
+                container.innerHTML = "";
+
+
+                /* Fixed category order */
+
+                const categories = [
+
+                    "Criminal Laws",
+
+                    "Constitution & Constitutional Laws",
+
+                    "Commerce & Corporate Laws",
+
+                    "Miscellaneous Laws"
+
+                ];
+
+
+                categories.forEach(category => {
+
+                    const categoryActs =
+                        acts.filter(
+                            act =>
+                                act.category === category
+                        );
+
+
+                    if (categoryActs.length === 0) {
+
+                        return;
+
+                    }
+
+
+                    const categoryWrapper =
+                        document.createElement("div");
+
+                    categoryWrapper.className =
+                        "bare-act-category";
+
+
+                    const categoryTitle =
+                        document.createElement("h3");
+
+                    categoryTitle.className =
+                        "bare-act-category-title";
+
+                    categoryTitle.textContent =
+                        category;
+
+
+                    categoryWrapper.appendChild(
+                        categoryTitle
+                    );
+
+
+                    categoryActs.forEach(act => {
+
+                        const card =
+                            document.createElement("div");
+
+                        card.className =
+                            "bare-act-card";
+
+
+                        const title =
+                            document.createElement("h4");
+
+                        title.className =
+                            "bare-act-title";
+
+                        title.textContent =
+                            act.title ||
+                            "Untitled Bare Act";
+
+
+                        const description =
+                            document.createElement("p");
+
+                        description.className =
+                            "bare-act-description";
+
+                        description.textContent =
+                            act.description ||
+                            "इस Bare Act की PDF सामान्य विधिक जानकारी एवं अध्ययन के लिए उपलब्ध है।";
+
+
+                        const date =
+                            document.createElement("div");
+
+                        date.className =
+                            "bare-act-date";
+
+                        date.textContent =
+                            "📅 Published: " +
+                            formatArticleDate(
+                                act.published_at ||
+                                act.created_at
+                            );
+
+
+                        const pdfLink =
+                            document.createElement("a");
+
+
+                        const publicUrlResult =
+                            supabaseClient
+                                .storage
+                                .from("bare-acts")
+                                .getPublicUrl(
+                                    act.pdf_path
+                                );
+
+
+                        pdfLink.href =
+                            publicUrlResult.data.publicUrl;
+
+
+                        pdfLink.target =
+                            "_blank";
+
+
+                        pdfLink.rel =
+                            "noopener noreferrer";
+
+
+                        pdfLink.className =
+                            "bare-act-pdf-link";
+
+
+                        pdfLink.textContent =
+                            "📄 Open PDF →";
+
+
+                        card.appendChild(title);
+
+                        card.appendChild(description);
+
+                        card.appendChild(date);
+
+                        card.appendChild(pdfLink);
+
+
+                        categoryWrapper.appendChild(
+                            card
+                        );
+
+                    });
+
+
+                    container.appendChild(
+                        categoryWrapper
+                    );
+
+                });
+
+
+                /*
+                 * If an unexpected category exists,
+                 * show it after the four main categories.
+                 */
+
+                const knownCategories =
+                    new Set(categories);
+
+
+                const otherActs =
+                    acts.filter(
+                        act =>
+                            !knownCategories.has(
+                                act.category
+                            )
+                    );
+
+
+                if (otherActs.length > 0) {
+
+                    const categoryWrapper =
+                        document.createElement("div");
+
+                    categoryWrapper.className =
+                        "bare-act-category";
+
+
+                    const categoryTitle =
+                        document.createElement("h3");
+
+                    categoryTitle.className =
+                        "bare-act-category-title";
+
+                    categoryTitle.textContent =
+                        "Other Laws";
+
+
+                    categoryWrapper.appendChild(
+                        categoryTitle
+                    );
+
+
+                    otherActs.forEach(act => {
+
+                        const card =
+                            document.createElement("div");
+
+                        card.className =
+                            "bare-act-card";
+
+
+                        const title =
+                            document.createElement("h4");
+
+                        title.className =
+                            "bare-act-title";
+
+                        title.textContent =
+                            act.title ||
+                            "Untitled Bare Act";
+
+
+                        const description =
+                            document.createElement("p");
+
+                        description.className =
+                            "bare-act-description";
+
+                        description.textContent =
+                            act.description ||
+                            "इस Bare Act की PDF सामान्य विधिक जानकारी एवं अध्ययन के लिए उपलब्ध है।";
+
+
+                        const date =
+                            document.createElement("div");
+
+                        date.className =
+                            "bare-act-date";
+
+                        date.textContent =
+                            "📅 Published: " +
+                            formatArticleDate(
+                                act.published_at ||
+                                act.created_at
+                            );
+
+
+                        const pdfLink =
+                            document.createElement("a");
+
+
+                        const publicUrlResult =
+                            supabaseClient
+                                .storage
+                                .from("bare-acts")
+                                .getPublicUrl(
+                                    act.pdf_path
+                                );
+
+
+                        pdfLink.href =
+                            publicUrlResult.data.publicUrl;
+
+
+                        pdfLink.target =
+                            "_blank";
+
+
+                        pdfLink.rel =
+                            "noopener noreferrer";
+
+
+                        pdfLink.className =
+                            "bare-act-pdf-link";
+
+
+                        pdfLink.textContent =
+                            "📄 Open PDF →";
+
+
+                        card.appendChild(title);
+
+                        card.appendChild(description);
+
+                        card.appendChild(date);
+
+                        card.appendChild(pdfLink);
+
+
+                        categoryWrapper.appendChild(
+                            card
+                        );
+
+                    });
+
+
+                    container.appendChild(
+                        categoryWrapper
+                    );
+
+                }
+
+
+            } catch (error) {
+
+                console.error(
+                    "Bare Acts Error:",
+                    error
+                );
+
+
+                container.innerHTML =
+                    '<div class="bare-acts-empty">' +
+                    'Bare Acts अभी लोड नहीं हो पा रहे हैं।' +
+                    '</div>';
+
+            }
+
+        }
+
+
+        /* =========================================
+           LOAD DATA
+        ========================================= */
+
         loadHomeArticles();
+
+        loadHomeBareActs();
 
     </script>
 
