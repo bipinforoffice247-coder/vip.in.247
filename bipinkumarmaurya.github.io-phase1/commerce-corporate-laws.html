@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Commerce & Corporate Laws | Bipin Kumar Maurya</title>
+<meta name="description" content="Published Commerce and Corporate Laws - Bipin Kumar Maurya">
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+font-family:Arial,sans-serif;
+background:#0b0f14;
+color:#f5f5f5;
+line-height:1.6;
+}
+
+.container{
+width:92%;
+max-width:1100px;
+margin:auto;
+}
+
+header{
+background:#111820;
+border-bottom:1px solid #c9a227;
+padding:18px 0;
+}
+
+.header-inner{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+}
+
+.logo{
+color:#d4af37;
+font-size:22px;
+font-weight:bold;
+}
+
+.back-btn{
+text-decoration:none;
+color:#111;
+background:#d4af37;
+padding:9px 16px;
+border-radius:6px;
+font-weight:bold;
+}
+
+.hero{
+text-align:center;
+padding:55px 20px 35px;
+}
+
+.hero h1{
+color:#d4af37;
+font-size:34px;
+margin-bottom:10px;
+}
+
+.hero p{
+color:#c7c7c7;
+}
+
+.acts{
+padding:20px 0 60px;
+}
+
+.act-card{
+background:#121922;
+border:1px solid #293541;
+border-left:4px solid #d4af37;
+border-radius:10px;
+padding:22px;
+margin-bottom:18px;
+}
+
+.act-card h2{
+color:#fff;
+font-size:21px;
+margin-bottom:8px;
+}
+
+.description{
+color:#bfc5ca;
+margin-bottom:10px;
+}
+
+.date{
+color:#8f999f;
+font-size:14px;
+margin-bottom:15px;
+}
+
+.pdf-btn{
+display:inline-block;
+text-decoration:none;
+background:#d4af37;
+color:#111;
+padding:9px 15px;
+border-radius:6px;
+font-weight:bold;
+}
+
+.loading,.empty,.error{
+text-align:center;
+padding:35px 15px;
+color:#c7c7c7;
+}
+
+.error{color:#ff9b9b}
+
+footer{
+text-align:center;
+padding:25px;
+border-top:1px solid #293541;
+color:#888;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+<div class="logo">Bipin Kumar Maurya</div>
+<a href="index.html#bare-acts" class="back-btn">← Main Website</a>
+</div>
+</header>
+<nav style="text-align:center;padding:13px;background:#0d1116;border-bottom:1px solid #293541"><a href="search.html" style="color:#d4af37;text-decoration:none;margin:0 8px">🔎 Search</a><a href="sections.html" style="color:#d4af37;text-decoration:none;margin:0 8px">Important Sections</a><a href="dictionary.html" style="color:#d4af37;text-decoration:none;margin:0 8px">Legal Dictionary</a><a href="articles.html" style="color:#d4af37;text-decoration:none;margin:0 8px">Articles</a></nav>
+
+<section class="hero">
+<div class="container">
+<h1>🏢 Commerce & Corporate Laws</h1>
+<p>All Published Commerce and Corporate Law Bare Acts</p>
+</div>
+</section>
+
+<section class="acts">
+<div class="container">
+<div id="actsList" class="loading">Loading Acts...</div>
+</div>
+</section>
+
+<footer>
+© 2026 Bipin Kumar Maurya. All Rights Reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+const SUPABASE_URL=
+"https://jfstjogeyvkhlhxhiaie.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY=
+"sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+
+const supabaseClient=
+window.supabase.createClient(
+SUPABASE_URL,
+SUPABASE_PUBLISHABLE_KEY
+);
+
+const CATEGORY="Commerce & Corporate Laws";
+
+async function loadActs(){
+
+const list=document.getElementById("actsList");
+
+try{
+
+const {data,error}=await supabaseClient
+.from("bare_acts")
+.select("*")
+.eq("category",CATEGORY)
+.eq("status","published")
+.order("created_at",{ascending:false});
+
+if(error)throw error;
+
+if(!data||data.length===0){
+
+list.innerHTML=`
+<div class="empty">
+<h2>No Published Acts Available</h2>
+<p>इस category में अभी कोई Published Act उपलब्ध नहीं है।</p>
+</div>`;
+
+return;
+}
+
+list.innerHTML="";
+
+data.forEach(act=>{
+
+let pdfUrl="";
+
+if(act.pdf_path){
+
+pdfUrl=supabaseClient
+.storage
+.from("bare-acts")
+.getPublicUrl(act.pdf_path)
+.data
+.publicUrl;
+
+}
+
+const card=document.createElement("div");
+
+card.className="act-card";
+
+card.innerHTML=`
+
+<h2><a href="act.html?id=${encodeURIComponent(act.id)}" style="color:#d4af37;text-decoration:none">${escapeHTML(act.title || "Untitled Act")}</a></h2>
+
+${
+act.content
+?`<div class="description">${escapeHTML(act.content)}</div>`
+:""
+}
+
+${
+act.created_at
+?`<div class="date">
+Published: ${new Date(act.created_at).toLocaleDateString("en-IN")}
+</div>`
+:""
+}
+
+${
+pdfUrl
+?`<a class="pdf-btn"
+href="${pdfUrl}"
+target="_blank"
+rel="noopener">
+📄 Open PDF →
+</a>`
+:`<div class="date">PDF not available</div>`
+}
+
+`;
+
+list.appendChild(card);
+
+});
+
+}catch(error){
+
+console.error(error);
+
+list.innerHTML=`
+<div class="error">
+<h2>Unable to Load Acts</h2>
+<p>Please try again later.</p>
+</div>`;
+
+}
+
+}
+
+function escapeHTML(value){
+
+return String(value)
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+loadActs();
+
+</script>
+
+</body>
+</html>

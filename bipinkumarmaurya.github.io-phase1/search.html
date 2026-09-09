@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Search Legal Information | Bipin Kumar Maurya</title>
+<meta name="description" content="Search legal articles, Bare Acts and legal resources on Bipin Kumar Maurya's website.">
+<link rel="canonical" href="https://bipinkumarmaurya.github.io/search.html">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0b0b;color:#eee;font-family:Arial,sans-serif;line-height:1.7}header{background:#111;border-bottom:1px solid #d4af37;padding:24px 18px;text-align:center}h1{color:#d4af37;margin:0 0 6px}.container{width:92%;max-width:1000px;margin:auto}.search-wrap{padding:35px 0}.searchbar{display:flex;gap:10px}.searchbar input{flex:1;padding:14px;border:1px solid #555;border-radius:7px;background:#171717;color:#fff;font-size:16px}.searchbar button{padding:14px 20px;border:0;border-radius:7px;background:#d4af37;font-weight:bold;cursor:pointer}.hint,.status{text-align:center;color:#aaa;margin:15px 0}.result{background:#171717;border:1px solid #333;border-left:4px solid #d4af37;border-radius:9px;padding:18px;margin:14px 0}.result h2{margin:0 0 5px;font-size:20px}.result h2 a{color:#d4af37;text-decoration:none}.type{font-size:12px;color:#999;text-transform:uppercase}.empty{padding:35px;text-align:center;color:#aaa}nav{text-align:center;padding:14px;border-bottom:1px solid #333;background:#0d0d0d}nav a{color:#d4af37;text-decoration:none;margin:0 9px;font-weight:bold}footer{text-align:center;color:#888;padding:25px;border-top:1px solid #333;margin-top:35px}@media(max-width:600px){.searchbar{flex-direction:column}.searchbar button{width:100%}}
+</style></head><body>
+<header><h1>🔎 Legal Search</h1><p>Articles, Bare Acts और legal resources खोजें</p></header>
+<nav><a href="index.html">Home</a><a href="articles.html">Articles</a><a href="profile.html">Profile</a><a href="sections.html">Important Sections</a><a href="dictionary.html">Legal Dictionary</a></nav>
+<main class="container search-wrap"><div class="searchbar"><input id="q" type="search" placeholder="जैसे: murder, cheating, BNS, Constitution..." autocomplete="off"><button id="searchBtn">Search</button></div><div class="hint">कम से कम 2 अक्षर लिखकर Search दबाएँ।</div><div id="status" class="status"></div><div id="results"></div></main>
+<footer>© 2026 Bipin Kumar Maurya. All Rights Reserved.</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+const SUPABASE_URL="https://jfstjogeyvkhlhxhiaie.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+const supabaseClient=window.supabase.createClient(SUPABASE_URL,SUPABASE_PUBLISHABLE_KEY);
+const qEl=document.getElementById('q'), results=document.getElementById('results'), statusEl=document.getElementById('status');
+function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function cleanQ(s){return s.trim().replace(/[,*()]/g,' ').replace(/\s+/g,' ').slice(0,80);}
+async function search(){
+ const q=cleanQ(qEl.value); results.innerHTML=''; statusEl.textContent='';
+ if(q.length<2){statusEl.textContent='कृपया कम से कम 2 अक्षर लिखें।';return;}
+ statusEl.textContent='Searching...';
+ try{
+  const pattern=`*${q}*`;
+  const [a,b]=await Promise.all([
+   supabaseClient.from('articles').select('id,title,description,published_at,created_at').eq('status','published').or(`title.ilike.${pattern},description.ilike.${pattern}`),
+   supabaseClient.from('bare_acts').select('id,title,description,category,created_at,pdf_path').eq('status','published').or(`title.ilike.${pattern},description.ilike.${pattern},category.ilike.${pattern}`)
+  ]);
+  if(a.error)throw a.error;if(b.error)throw b.error;
+  const items=[];
+  (a.data||[]).forEach(x=>items.push({type:'Legal Article',title:x.title,desc:x.description,url:'article.html?id='+encodeURIComponent(x.id),date:x.published_at||x.created_at}));
+  (b.data||[]).forEach(x=>items.push({type:'Bare Act',title:x.title,desc:x.description||x.category,url:'act.html?id='+encodeURIComponent(x.id),date:x.created_at}));
+  items.sort((x,y)=>new Date(y.date||0)-new Date(x.date||0));
+  statusEl.textContent=items.length?`${items.length} result${items.length>1?'s':''} found`:'कोई परिणाम नहीं मिला।';
+  results.innerHTML=items.map(x=>`<article class="result"><div class="type">${esc(x.type)}</div><h2><a href="${x.url}">${esc(x.title||'Untitled')}</a></h2><div>${esc(x.desc||'Legal information')}</div></article>`).join('');
+ }catch(e){console.error(e);statusEl.textContent='Search अभी उपलब्ध नहीं है। कृपया थोड़ी देर बाद प्रयास करें।';}
+}
+document.getElementById('searchBtn').addEventListener('click',search);qEl.addEventListener('keydown',e=>{if(e.key==='Enter')search();});
+</script></body></html>
