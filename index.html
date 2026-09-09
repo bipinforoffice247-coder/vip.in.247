@@ -111,40 +111,29 @@
             align-items: center;
             text-align: center;
             padding: 30px 20px;
-            background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
+            background:
+                linear-gradient(
+                    rgba(11, 11, 11, 0.78),
+                    rgba(26, 26, 26, 0.88)
+                ),
+                url("banner.png") center center / cover no-repeat;
             border-bottom: 1px solid #d4af37;
         }
 
         .hero {
-            max-width: 1100px;
-            width: 100%;
+            max-width: 900px;
         }
 
 
-        /* =========================================
-           NEW LOGO IMAGE
-        ========================================= */
+        /* NEW LOGO */
 
         .hero-logo {
-            width: 180px;
-            max-width: 60%;
-            height: auto;
+            width: 150px;
+            height: 150px;
+            object-fit: contain;
             display: block;
-            margin: 0 auto 20px;
-        }
-
-
-        /* =========================================
-           NEW WIDE BANNER IMAGE
-        ========================================= */
-
-        .hero-banner {
-            width: 100%;
-            max-width: 1050px;
-            height: auto;
-            display: block;
-            margin: 0 auto 25px;
-            border-radius: 10px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
         }
 
 
@@ -834,28 +823,15 @@
 
             header {
                 min-height: 80vh;
-                padding: 40px 15px;
+                padding: 60px 15px;
+                background-position: center center;
             }
-
-
-            /* MOBILE LOGO */
 
             .hero-logo {
-                width: 130px;
-                max-width: 45%;
+                width: 115px;
+                height: 115px;
                 margin-bottom: 15px;
             }
-
-
-            /* MOBILE BANNER */
-
-            .hero-banner {
-                width: 100%;
-                max-width: 100%;
-                margin-bottom: 20px;
-                border-radius: 6px;
-            }
-
 
             h1 {
                 font-size: 34px;
@@ -1038,24 +1014,13 @@
 
         <div class="hero">
 
-
-            <!-- NEW SQUARE LOGO IMAGE -->
+            <!-- NEW LOGO IMAGE -->
 
             <img
                 src="logo.png"
-                alt="Bipin Kumar Maurya Legal Logo"
+                alt="Bipin Kumar Maurya Legal Consultant Logo"
                 class="hero-logo"
             >
-
-
-            <!-- NEW WIDE BANNER IMAGE -->
-
-            <img
-                src="banner.png"
-                alt="Bipin Kumar Maurya Advocate and Legal Consultant"
-                class="hero-banner"
-            >
-
 
             <div class="symbol">⚖️</div>
 
