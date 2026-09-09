@@ -116,8 +116,37 @@
         }
 
         .hero {
-            max-width: 900px;
+            max-width: 1100px;
+            width: 100%;
         }
+
+
+        /* =========================================
+           NEW LOGO IMAGE
+        ========================================= */
+
+        .hero-logo {
+            width: 180px;
+            max-width: 60%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+
+        /* =========================================
+           NEW WIDE BANNER IMAGE
+        ========================================= */
+
+        .hero-banner {
+            width: 100%;
+            max-width: 1050px;
+            height: auto;
+            display: block;
+            margin: 0 auto 25px;
+            border-radius: 10px;
+        }
+
 
         .symbol {
             font-size: 55px;
@@ -805,8 +834,28 @@
 
             header {
                 min-height: 80vh;
-                padding: 60px 15px;
+                padding: 40px 15px;
             }
+
+
+            /* MOBILE LOGO */
+
+            .hero-logo {
+                width: 130px;
+                max-width: 45%;
+                margin-bottom: 15px;
+            }
+
+
+            /* MOBILE BANNER */
+
+            .hero-banner {
+                width: 100%;
+                max-width: 100%;
+                margin-bottom: 20px;
+                border-radius: 6px;
+            }
+
 
             h1 {
                 font-size: 34px;
@@ -988,6 +1037,25 @@
     <header>
 
         <div class="hero">
+
+
+            <!-- NEW SQUARE LOGO IMAGE -->
+
+            <img
+                src="logo.png"
+                alt="Bipin Kumar Maurya Legal Logo"
+                class="hero-logo"
+            >
+
+
+            <!-- NEW WIDE BANNER IMAGE -->
+
+            <img
+                src="banner.png"
+                alt="Bipin Kumar Maurya Advocate and Legal Consultant"
+                class="hero-banner"
+            >
+
 
             <div class="symbol">⚖️</div>
 
