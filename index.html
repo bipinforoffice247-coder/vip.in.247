@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>
         Bipin Kumar Maurya | Legal Information & Legal Consultant in Gorakhpur
@@ -63,16 +64,7 @@
           content="hi_IN">
 
 
-    <!-- SOCIAL PROFILE -->
-
-    <meta property="profile:first_name"
-          content="Bipin">
-
-    <meta property="profile:last_name"
-          content="Kumar Maurya">
-
-
-    <!-- TWITTER / X CARD -->
+    <!-- TWITTER -->
 
     <meta name="twitter:card"
           content="summary">
@@ -102,23 +94,37 @@
         }
 
 
-        /* HERO SECTION */
+        /* =========================================
+           HERO
+        ========================================= */
 
         header {
+
             min-height: 90vh;
+
             display: flex;
+
             justify-content: center;
+
             align-items: center;
+
             text-align: center;
+
             padding: 30px 20px;
+
             background:
+
                 linear-gradient(
                     rgba(11, 11, 11, 0.78),
                     rgba(26, 26, 26, 0.88)
                 ),
-                url("banner.png") center center / cover no-repeat;
+
+                url("banner.png")
+                center center / cover no-repeat;
+
             border-bottom: 1px solid #d4af37;
         }
+
 
         .hero {
             max-width: 900px;
@@ -128,118 +134,198 @@
         /* LOGO */
 
         .hero-logo {
+
             width: 150px;
+
             height: 150px;
+
             object-fit: contain;
+
             display: block;
+
             margin: 0 auto 18px;
+
             border-radius: 50%;
         }
 
 
         h1 {
+
             font-size: 52px;
+
             margin: 10px 0 15px;
+
             color: #d4af37;
+
             letter-spacing: 1px;
         }
 
+
         .designation {
+
             font-size: 22px;
+
             letter-spacing: 2px;
+
             margin-bottom: 12px;
+
             color: #ffffff;
         }
 
+
         .tagline {
+
             color: #aaaaaa;
+
             font-size: 17px;
+
             font-style: italic;
+
             letter-spacing: 0.5px;
+
             margin: 5px 0 20px;
         }
 
+
         .location {
+
             color: #cccccc;
+
             font-size: 18px;
+
             line-height: 1.6;
         }
 
+
         .btn {
+
             display: inline-block;
+
             margin-top: 30px;
+
             padding: 14px 30px;
+
             background: #d4af37;
+
             color: #111111;
+
             text-decoration: none;
+
             font-weight: bold;
+
             border-radius: 6px;
+
             transition: 0.3s;
         }
 
+
         .btn:hover {
+
             background: #f0cf55;
+
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+
+            box-shadow:
+                0 5px 15px
+                rgba(212,175,55,0.3);
         }
 
 
-        /* NAVIGATION */
+        /* =========================================
+           NAVIGATION
+        ========================================= */
 
         nav {
+
             position: sticky;
+
             top: 0;
+
             z-index: 10;
+
             background: #0d0d0d;
+
             text-align: center;
+
             padding: 18px 10px;
+
             border-bottom: 1px solid #333333;
         }
 
+
         nav a {
+
             color: #d4af37;
+
             text-decoration: none;
+
             margin: 0 18px;
+
             font-weight: bold;
+
             font-size: 16px;
+
             transition: 0.3s;
         }
+
 
         nav a:hover {
             color: #ffffff;
         }
 
 
-        /* GENERAL SECTIONS */
+        /* =========================================
+           GENERAL
+        ========================================= */
 
         section {
+
             max-width: 1050px;
+
             margin: auto;
+
             padding: 70px 25px;
         }
 
+
         h2 {
+
             color: #d4af37;
+
             font-size: 34px;
+
             text-align: center;
+
             margin-bottom: 35px;
         }
 
 
-        /* ABOUT SECTION */
+        /* =========================================
+           ABOUT
+        ========================================= */
 
         .about-section {
+
             max-width: 900px;
+
             margin: 0 auto;
+
             padding: 70px 25px;
+
             text-align: center;
+
             background: #111111;
         }
 
+
         .about-section p {
+
             color: #dddddd;
+
             font-size: 18px;
+
             line-height: 1.8;
+
             margin-bottom: 18px;
         }
 
@@ -248,830 +334,1292 @@
            MAIN TWO CARD SECTION
         ========================================= */
 
-        .main-feature-section {
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 25px;
+        .main-choice-section {
+
+            max-width: none;
+
+            padding: 70px 20px;
+
+            background: #0d0d0d;
+
             text-align: center;
-            background: #111111;
         }
 
-        .main-feature-intro {
-            color: #cccccc;
+
+        .main-choice-intro {
+
             max-width: 750px;
-            margin: 0 auto 40px;
+
+            margin: -10px auto 40px;
+
+            color: #cccccc;
+
             line-height: 1.7;
-            font-size: 17px;
         }
 
-        .main-feature-cards {
-            max-width: 950px;
+
+        .main-choice-container {
+
+            max-width: 1000px;
+
             margin: 0 auto;
+
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 30px;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap: 25px;
         }
 
-        .main-feature-card {
+
+        .main-choice-card {
+
             display: flex;
+
             flex-direction: column;
-            justify-content: space-between;
-            min-height: 280px;
-            padding: 40px 30px;
+
+            justify-content: center;
+
+            align-items: center;
+
+            min-height: 260px;
+
+            padding: 35px 25px;
+
             background: #171717;
-            border: 1px solid #d4af37;
+
+            border: 1px solid #333333;
+
             border-radius: 12px;
+
             text-decoration: none;
+
             color: #ffffff;
-            transition: 0.3s ease;
+
             cursor: pointer;
+
+            transition: 0.3s ease;
         }
 
-        .main-feature-card:hover {
+
+        .main-choice-card:hover {
+
             transform: translateY(-7px);
-            border-color: #f0cf55;
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18);
+
+            border-color: #d4af37;
+
+            box-shadow:
+                0 10px 28px
+                rgba(212,175,55,0.15);
         }
 
-        .main-feature-icon {
-            font-size: 55px;
-            margin-bottom: 20px;
+
+        .main-choice-icon {
+
+            font-size: 52px;
+
+            margin-bottom: 18px;
         }
 
-        .main-feature-card h3 {
+
+        .main-choice-card h3 {
+
             color: #d4af37;
+
             font-size: 28px;
+
             margin: 0 0 15px;
         }
 
-        .main-feature-card p {
+
+        .main-choice-card p {
+
             color: #cccccc;
+
             line-height: 1.7;
-            margin: 0 0 25px;
+
+            max-width: 400px;
+
+            margin: 0;
         }
 
-        .main-feature-action {
-            display: inline-block;
-            align-self: center;
-            padding: 12px 24px;
-            border: 1px solid #d4af37;
-            border-radius: 6px;
+
+        .click-text {
+
+            margin-top: 20px;
+
             color: #d4af37;
+
             font-weight: bold;
-            transition: 0.3s ease;
         }
 
-        .main-feature-card:hover .main-feature-action {
+
+        /* =========================================
+           HIDDEN DETAIL SECTIONS
+        ========================================= */
+
+        .detail-section {
+
+            display: none;
+
+            max-width: none;
+
+            padding: 70px 20px;
+
+            background: #111111;
+
+            text-align: center;
+        }
+
+
+        .detail-section.active {
+            display: block;
+        }
+
+
+        .detail-intro {
+
+            max-width: 750px;
+
+            margin: -10px auto 40px;
+
+            color: #cccccc;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           PRACTICE CARDS
+        ========================================= */
+
+        .cards {
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 20px;
+
+            justify-content: center;
+        }
+
+
+        .card {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            padding: 35px 25px;
+
+            background: #171717;
+
+            border: 1px solid #d4af37;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 8px 25px
+                rgba(212,175,55,0.18);
+        }
+
+
+        .card h3 {
+
+            color: #d4af37;
+
+            font-size: 23px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .card p {
+
+            color: #cccccc;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           WHY CHOOSE ME CARDS
+        ========================================= */
+
+        .why-container {
+
+            max-width: 1050px;
+
+            margin: 0 auto;
+
+            display: flex;
+
+            gap: 20px;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+        }
+
+
+        .why-box {
+
+            flex: 1;
+
+            min-width: 250px;
+
+            padding: 30px 20px;
+
+            background: #171717;
+
+            border: 1px solid #333333;
+
+            border-radius: 10px;
+
+            transition: 0.3s;
+        }
+
+
+        .why-box:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #d4af37;
+        }
+
+
+        .why-box h3 {
+
+            color: #d4af37;
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .why-box p {
+
+            color: #cccccc;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================================
+           ONLY ONE BACK BUTTON
+        ========================================= */
+
+        .back-main {
+
+            margin-top: 45px;
+
+            text-align: center;
+        }
+
+
+        .back-main button {
+
+            padding: 14px 28px;
+
+            background: transparent;
+
+            color: #d4af37;
+
+            border: 1px solid #d4af37;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .back-main button:hover {
+
             background: #d4af37;
+
             color: #111111;
         }
 
 
         /* =========================================
-           INNER FEATURE PAGES
+           LEGAL ARTICLES
         ========================================= */
 
-        .feature-detail {
-            display: none;
-            max-width: 1100px;
-            margin: auto;
-            padding: 70px 25px;
-            background: #111111;
-        }
-
-        .feature-detail.active {
-            display: block;
-        }
-
-        .feature-detail h2 {
-            margin-bottom: 15px;
-        }
-
-        .feature-detail-intro {
-            text-align: center;
-            color: #cccccc;
-            max-width: 750px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
-
-        .back-main-btn {
-            display: block;
-            width: fit-content;
-            margin: 0 auto 40px;
-            padding: 12px 24px;
-            border: 1px solid #d4af37;
-            border-radius: 6px;
-            background: transparent;
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-
-        .back-main-btn:hover {
-            background: #d4af37;
-            color: #111111;
-        }
-
-
-        /* PRACTICE AREAS DETAIL */
-
-        .practice-detail-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .practice-detail-card {
-            flex: 1;
-            min-width: 250px;
-            padding: 35px 25px;
-            background: #171717;
-            border: 1px solid #d4af37;
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .practice-detail-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.18);
-        }
-
-        .practice-detail-card h3 {
-            color: #d4af37;
-            font-size: 23px;
-            margin-bottom: 15px;
-        }
-
-        .practice-detail-card p {
-            color: #cccccc;
-            line-height: 1.7;
-        }
-
-
-        /* WHY CHOOSE ME DETAIL */
-
-        .why-detail-cards {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .why-detail-card {
-            flex: 1;
-            min-width: 250px;
-            padding: 35px 25px;
-            background: #171717;
-            border: 1px solid #333333;
-            border-radius: 10px;
-            text-align: center;
-            transition: 0.3s;
-        }
-
-        .why-detail-card:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.12);
-        }
-
-        .why-detail-card h3 {
-            color: #d4af37;
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-        .why-detail-card p {
-            color: #cccccc;
-            line-height: 1.7;
-        }
-
-
-        /* LEGAL ARTICLES SECTION */
-
         .legal-articles-section {
+
             padding: 70px 20px;
+
             background: #0b0b0b;
+
             text-align: center;
+
             max-width: none;
         }
 
+
         .legal-articles-section h2 {
+
             color: #d4af37;
+
             font-size: 32px;
+
             margin-bottom: 12px;
         }
 
+
         .articles-intro {
+
             color: #cccccc;
+
             max-width: 700px;
+
             margin: 0 auto 35px;
+
             line-height: 1.7;
         }
 
+
         #home-articles-list {
+
             max-width: 950px;
+
             margin: 0 auto;
+
             display: grid;
+
             gap: 20px;
         }
 
+
         .home-article-card {
+
             background: #111111;
+
             border: 1px solid #333333;
+
             border-left: 4px solid #d4af37;
+
             padding: 25px;
+
             text-align: left;
+
             border-radius: 8px;
+
             transition: 0.3s ease;
         }
 
+
         .home-article-card:hover {
+
             transform: translateY(-3px);
+
             border-color: #d4af37;
         }
 
+
         .home-article-card h3 {
+
             color: #d4af37;
+
             margin-bottom: 10px;
+
             font-size: 21px;
         }
 
+
         .home-article-date {
+
             color: #999999;
+
             font-size: 14px;
+
             margin-bottom: 12px;
         }
 
+
         .home-article-description {
+
             color: #dddddd;
+
             line-height: 1.7;
         }
 
+
         .home-article-card a {
+
             display: inline-block;
+
             margin-top: 15px;
+
             color: #d4af37;
+
             text-decoration: none;
+
             font-weight: bold;
         }
+
 
         .home-article-card a:hover {
             text-decoration: underline;
         }
 
+
         .home-articles-loading {
+
             color: #aaaaaa;
+
             padding: 20px;
         }
+
 
         .all-articles-link {
             margin-top: 35px;
         }
 
+
         .all-articles-link a {
+
             display: inline-block;
+
             padding: 12px 25px;
+
             border: 1px solid #d4af37;
+
             color: #d4af37;
+
             text-decoration: none;
+
             border-radius: 5px;
+
             transition: 0.3s ease;
         }
 
+
         .all-articles-link a:hover {
+
             background: #d4af37;
+
             color: #000000;
         }
 
 
-        /* BARE ACTS SECTION */
+        /* =========================================
+           BARE ACTS
+        ========================================= */
 
         .bare-acts-section {
+
             max-width: none;
+
             padding: 70px 20px;
+
             background: #111111;
+
             text-align: center;
         }
 
+
         .bare-acts-section h2 {
+
             color: #d4af37;
+
             font-size: 32px;
+
             margin-bottom: 12px;
         }
 
+
         .bare-acts-intro {
+
             color: #cccccc;
+
             max-width: 750px;
+
             margin: 0 auto 40px;
+
             line-height: 1.7;
         }
 
+
         #home-bare-acts-list {
+
             max-width: 1100px;
+
             margin: 0 auto;
+
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
             gap: 25px;
+
             text-align: left;
         }
 
+
         .bare-category-card {
+
             display: flex;
+
             flex-direction: column;
+
             justify-content: space-between;
+
             min-height: 245px;
+
             padding: 30px;
+
             background: #171717;
+
             border: 1px solid #333333;
+
             border-radius: 12px;
+
             text-decoration: none;
+
             color: #ffffff;
+
             transition: 0.3s ease;
+
             position: relative;
+
             overflow: hidden;
         }
 
+
         .bare-category-card:hover {
+
             transform: translateY(-6px);
+
             border-color: #d4af37;
-            box-shadow: 0 10px 28px rgba(212, 175, 55, 0.15);
+
+            box-shadow:
+                0 10px 28px
+                rgba(212,175,55,0.15);
         }
+
 
         .bare-category-card:nth-child(1) {
             border-top: 4px solid #d4af37;
         }
 
+
         .bare-category-card:nth-child(2) {
             border-top: 4px solid #8fa8c7;
         }
+
 
         .bare-category-card:nth-child(3) {
             border-top: 4px solid #9ab58a;
         }
 
+
         .bare-category-card:nth-child(4) {
             border-top: 4px solid #b9a06a;
         }
 
+
         .bare-category-icon {
+
             font-size: 42px;
+
             margin-bottom: 18px;
         }
 
+
         .bare-category-name {
+
             display: block;
+
             color: #d4af37;
+
             font-size: 23px;
+
             font-weight: bold;
+
             line-height: 1.4;
+
             margin-bottom: 12px;
         }
 
-        .bare-category-card:nth-child(2) .bare-category-name {
+
+        .bare-category-card:nth-child(2)
+        .bare-category-name {
             color: #b9cce5;
         }
 
-        .bare-category-card:nth-child(3) .bare-category-name {
+
+        .bare-category-card:nth-child(3)
+        .bare-category-name {
             color: #b3cca5;
         }
 
-        .bare-category-card:nth-child(4) .bare-category-name {
+
+        .bare-category-card:nth-child(4)
+        .bare-category-name {
             color: #d0b879;
         }
 
+
         .bare-category-subtitle {
+
             display: block;
+
             color: #cccccc;
+
             line-height: 1.7;
+
             font-size: 15px;
+
             margin-bottom: 25px;
         }
 
+
         .bare-category-action {
+
             display: inline-block;
+
             align-self: flex-start;
+
             padding: 10px 17px;
+
             border: 1px solid #d4af37;
+
             border-radius: 5px;
+
             color: #d4af37;
+
             font-weight: bold;
+
             transition: 0.3s ease;
         }
 
-        .bare-category-card:hover .bare-category-action {
+
+        .bare-category-card:hover
+        .bare-category-action {
+
             background: #d4af37;
+
             color: #111111;
         }
 
 
-        /* CONTACT SECTION */
+        /* =========================================
+           CONTACT
+        ========================================= */
 
         .contact {
+
             text-align: center;
+
             background: #191919;
+
             max-width: none;
         }
 
+
         .contact p {
+
             font-size: 18px;
+
             margin: 15px;
         }
 
+
         .contact p a {
+
             color: #d4af37;
+
             text-decoration: none;
         }
 
+
         .contact-buttons {
+
             margin-top: 30px;
+
             display: flex;
+
             justify-content: center;
+
             gap: 15px;
+
             flex-wrap: wrap;
         }
 
+
         .contact-buttons a {
+
             display: inline-block;
+
             padding: 14px 28px;
+
             border-radius: 6px;
+
             text-decoration: none;
+
             font-weight: bold;
+
             transition: 0.3s;
         }
 
+
         .call-btn {
+
             background: #d4af37;
+
             color: #111111 !important;
         }
 
+
         .call-btn:hover {
+
             background: #f0cf55;
+
             transform: translateY(-2px);
         }
 
+
         .whatsapp-btn {
+
             background: #25D366;
+
             color: #ffffff !important;
         }
+
 
         .whatsapp-btn:hover {
             background: #1ebe5d;
-            transform: translateY(-2px);
         }
 
+
         .instagram-btn {
+
             background: #c13584;
+
             color: #ffffff !important;
         }
 
+
         .instagram-btn:hover {
             background: #e1306c;
-            transform: translateY(-2px);
         }
 
 
-        /* FOOTER */
-
-        footer {
-            background: #080808;
-            color: #888888;
-            text-align: center;
-            padding: 25px 15px;
-            border-top: 1px solid #333333;
-            font-size: 14px;
-        }
-
-        footer strong {
-            color: #d4af37;
-        }
-
-
-        /* LEGAL DISCLAIMER */
-
-        .disclaimer {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 25px;
-            text-align: center;
-            background: #111111;
-        }
-
-        .disclaimer h2 {
-            font-size: 28px;
-            color: #d4af37;
-            margin-bottom: 25px;
-        }
-
-        .disclaimer p {
-            color: #aaaaaa;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-
-        /* ENQUIRY FORM */
+        /* =========================================
+           ENQUIRY
+        ========================================= */
 
         .enquiry-section {
+
             max-width: 900px;
+
             margin: auto;
+
             padding: 70px 25px;
+
             background: #111111;
         }
 
+
         .enquiry-form {
+
             max-width: 650px;
+
             margin: 0 auto;
         }
 
+
         .enquiry-form input,
         .enquiry-form textarea {
+
             width: 100%;
+
             padding: 14px;
+
             margin-bottom: 18px;
+
             background: #171717;
+
             color: #ffffff;
+
             border: 1px solid #555555;
+
             border-radius: 6px;
+
             font-size: 16px;
+
             font-family: Arial, sans-serif;
         }
 
+
         .enquiry-form input:focus,
         .enquiry-form textarea:focus {
+
             outline: none;
+
             border-color: #d4af37;
         }
 
+
         .enquiry-form textarea {
+
             min-height: 140px;
+
             resize: vertical;
         }
 
+
         .enquiry-submit {
+
             width: 100%;
+
             padding: 15px;
+
             border: none;
+
             border-radius: 6px;
+
             background: #d4af37;
+
             color: #111111;
+
             font-size: 16px;
+
             font-weight: bold;
+
             cursor: pointer;
         }
+
 
         .enquiry-submit:hover {
             background: #f0cf55;
         }
 
 
-        /* FLOATING CONTACT BUTTONS */
-
-        .floating-contact {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .floating-contact a {
-            width: 52px;
-            height: 52px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 23px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            transition: 0.3s;
-        }
-
-        .floating-call {
-            background: #d4af37;
-            color: #111111;
-        }
-
-        .floating-whatsapp {
-            background: #25D366;
-            color: #ffffff;
-        }
-
-        .floating-contact a:hover {
-            transform: scale(1.08);
-        }
-
-
-        /* FAQ SECTION */
+        /* =========================================
+           FAQ
+        ========================================= */
 
         .faq-section {
+
             max-width: 900px;
+
             margin: auto;
+
             padding: 70px 25px;
+
             background: #111111;
         }
 
+
         .faq-item {
+
             margin-bottom: 15px;
+
             border: 1px solid #333333;
+
             border-radius: 8px;
+
             overflow: hidden;
+
             background: #171717;
         }
 
+
         .faq-question {
+
             width: 100%;
+
             padding: 18px 20px;
+
             background: #171717;
+
             color: #d4af37;
+
             border: none;
+
             text-align: left;
+
             font-size: 17px;
+
             font-weight: bold;
+
             cursor: pointer;
         }
 
+
         .faq-answer {
+
             display: none;
+
             padding: 0 20px 18px;
+
             color: #cccccc;
+
             line-height: 1.7;
         }
+
 
         .faq-item.active .faq-answer {
             display: block;
         }
 
 
-        /* MOBILE RESPONSIVE */
+        /* =========================================
+           DISCLAIMER
+        ========================================= */
+
+        .disclaimer {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 50px 25px;
+
+            text-align: center;
+
+            background: #111111;
+        }
+
+
+        .disclaimer h2 {
+
+            font-size: 28px;
+
+            color: #d4af37;
+
+            margin-bottom: 25px;
+        }
+
+
+        .disclaimer p {
+
+            color: #aaaaaa;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+
+            background: #080808;
+
+            color: #888888;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-top: 1px solid #333333;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           FLOATING BUTTONS
+        ========================================= */
+
+        .floating-contact {
+
+            position: fixed;
+
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
+        }
+
+
+        .floating-contact a {
+
+            width: 52px;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            text-decoration: none;
+
+            font-size: 23px;
+
+            box-shadow:
+                0 4px 12px
+                rgba(0,0,0,0.4);
+
+            transition: 0.3s;
+        }
+
+
+        .floating-call {
+
+            background: #d4af37;
+
+            color: #111111;
+        }
+
+
+        .floating-whatsapp {
+
+            background: #25D366;
+
+            color: #ffffff;
+        }
+
+
+        .floating-contact a:hover {
+            transform: scale(1.08);
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
 
         @media (max-width: 700px) {
 
             header {
+
                 min-height: 80vh;
+
                 padding: 60px 15px;
+
                 background-position: center center;
             }
 
+
             .hero-logo {
+
                 width: 115px;
+
                 height: 115px;
+
                 margin-bottom: 15px;
             }
+
 
             h1 {
                 font-size: 34px;
             }
 
+
             .designation {
                 font-size: 17px;
             }
 
+
             .tagline {
+
                 font-size: 15px;
+
                 line-height: 1.6;
             }
+
 
             .location {
                 font-size: 16px;
             }
 
+
             nav {
+
                 padding: 15px 5px;
+
+                white-space: nowrap;
+
+                overflow-x: auto;
             }
 
+
             nav a {
+
                 margin: 0 7px;
+
                 font-size: 14px;
             }
+
 
             .about-section {
                 padding: 50px 18px;
             }
 
+
             .about-section h2 {
                 font-size: 28px;
             }
+
 
             .about-section p {
                 font-size: 16px;
             }
 
 
-            /* MAIN TWO CARDS MOBILE */
+            .main-choice-section {
 
-            .main-feature-section {
-                padding: 50px 18px;
+                padding: 50px 15px;
             }
 
-            .main-feature-section h2 {
-                font-size: 28px;
-            }
 
-            .main-feature-cards {
+            .main-choice-container {
+
                 grid-template-columns: 1fr;
+
                 gap: 18px;
             }
 
-            .main-feature-card {
-                min-height: 240px;
-                padding: 30px 22px;
-            }
 
-            .main-feature-icon {
-                font-size: 45px;
-            }
+            .main-choice-card {
 
-            .main-feature-card h3 {
-                font-size: 24px;
+                min-height: 220px;
             }
 
 
-            /* DETAIL SECTIONS MOBILE */
+            .detail-section {
 
-            .feature-detail {
-                padding: 50px 18px;
+                padding: 50px 15px;
             }
 
-            .feature-detail h2 {
+
+            .detail-section h2 {
                 font-size: 28px;
             }
 
-            .practice-detail-card {
+
+            .card {
+
                 min-width: 100%;
             }
 
-            .why-detail-card {
+
+            .why-box {
+
                 min-width: 100%;
             }
 
 
             .legal-articles-section {
+
                 padding: 50px 15px;
             }
+
 
             .legal-articles-section h2 {
                 font-size: 27px;
             }
+
 
             .home-article-card {
                 padding: 20px;
             }
 
 
-            /* MOBILE BARE ACTS */
-
             .bare-acts-section {
+
                 padding: 50px 15px;
             }
+
 
             .bare-acts-section h2 {
                 font-size: 27px;
             }
 
+
             #home-bare-acts-list {
+
                 grid-template-columns: 1fr;
+
                 gap: 18px;
             }
 
+
             .bare-category-card {
+
                 min-height: 220px;
+
                 padding: 24px;
             }
+
 
             .bare-category-icon {
                 font-size: 36px;
             }
 
+
             .bare-category-name {
                 font-size: 20px;
             }
 
+
             .bare-category-action {
+
                 width: 100%;
+
                 text-align: center;
             }
 
 
             .contact-buttons {
+
                 flex-direction: column;
+
                 align-items: center;
             }
 
+
             .contact-buttons a {
+
                 width: 80%;
+
                 text-align: center;
             }
+
 
             footer {
                 font-size: 13px;
@@ -1137,9 +1685,11 @@
 <body>
 
 
-    <!-- HERO -->
+    <!-- =========================================
+         HERO
+    ========================================= -->
 
-    <header id="home">
+    <header>
 
         <div class="hero">
 
@@ -1172,13 +1722,17 @@
     </header>
 
 
-    <!-- NAVIGATION -->
+    <!-- =========================================
+         NAVIGATION
+    ========================================= -->
 
     <nav>
 
-        <a href="#about">About</a>
+        <a href="#about">
+            About
+        </a>
 
-        <a href="#main-features">
+        <a href="#main-options">
             Practice Areas
         </a>
 
@@ -1190,7 +1744,7 @@
             Bare Acts
         </a>
 
-        <a href="#main-features">
+        <a href="#main-options">
             Why Choose Me
         </a>
 
@@ -1201,11 +1755,16 @@
     </nav>
 
 
-    <!-- ABOUT -->
+    <!-- =========================================
+         ABOUT
+    ========================================= -->
 
-    <section id="about" class="about-section">
+    <section id="about"
+             class="about-section">
 
-        <h2>About Me</h2>
+        <h2>
+            About Me
+        </h2>
 
         <p>
             मैं Bipin Kumar Maurya, District Gorakhpur में Advocate एवं
@@ -1223,76 +1782,70 @@
 
 
     <!-- =========================================
-         MAIN TWO CARDS
+         MAIN TWO OPTIONS
     ========================================= -->
 
-    <section id="main-features" class="main-feature-section">
+    <section id="main-options"
+             class="main-choice-section">
 
-        <h2>Legal Services & Professional Approach</h2>
+        <h2>
+            Legal Services & Approach
+        </h2>
 
-        <p class="main-feature-intro">
-            नीचे दिए गए विकल्पों पर क्लिक करके Practice Areas तथा
-            Why Choose Me से संबंधित विस्तृत जानकारी देखें।
+        <p class="main-choice-intro">
+            नीचे दिए गए विकल्प पर क्लिक करके संबंधित जानकारी देखें।
         </p>
 
 
-        <div class="main-feature-cards">
+        <div class="main-choice-container">
 
 
-            <!-- PRACTICE AREAS MAIN CARD -->
+            <!-- PRACTICE AREAS CARD -->
 
-            <div class="main-feature-card"
-                 onclick="showFeature('practice-detail')">
+            <div class="main-choice-card"
+                 onclick="showDetail('practice-details')">
 
-                <div>
-
-                    <div class="main-feature-icon">
-                        ⚖️
-                    </div>
-
-                    <h3>
-                        Practice Areas
-                    </h3>
-
-                    <p>
-                        Criminal, Civil, Family, Property, Consumer और
-                        Labour Law से संबंधित कानूनी सहायता एवं जानकारी।
-                    </p>
-
+                <div class="main-choice-icon">
+                    ⚖️
                 </div>
 
-                <span class="main-feature-action">
-                    View Practice Areas →
-                </span>
+                <h3>
+                    Practice Areas
+                </h3>
+
+                <p>
+                    विभिन्न कानूनी क्षेत्रों से संबंधित
+                    विधिक सहायता एवं सेवाओं की जानकारी।
+                </p>
+
+                <div class="click-text">
+                    6 Practice Areas देखें →
+                </div>
 
             </div>
 
 
-            <!-- WHY CHOOSE ME MAIN CARD -->
+            <!-- WHY CHOOSE ME CARD -->
 
-            <div class="main-feature-card"
-                 onclick="showFeature('why-detail')">
+            <div class="main-choice-card"
+                 onclick="showDetail('why-details')">
 
-                <div>
-
-                    <div class="main-feature-icon">
-                        ⭐
-                    </div>
-
-                    <h3>
-                        Why Choose Me
-                    </h3>
-
-                    <p>
-                        Legal Guidance, Professional Approach और
-                        Client Focused कार्यप्रणाली के बारे में जानें।
-                    </p>
-
+                <div class="main-choice-icon">
+                    ⭐
                 </div>
 
-                <span class="main-feature-action">
-                    View Why Choose Me →
-                </span>
+                <h3>
+                    Why Choose Me
+                </h3>
+
+                <p>
+                    विधिक मामलों में कार्यप्रणाली और
+                    प्रमुख विशेषताओं की जानकारी।
+                </p>
+
+                <div class="click-text">
+                    3 प्रमुख विशेषताएँ देखें →
+                </div>
 
             </div>
 
@@ -1303,36 +1856,26 @@
 
 
     <!-- =========================================
-         PRACTICE AREAS DETAIL
+         PRACTICE AREAS DETAILS
     ========================================= -->
 
-    <section id="practice-detail"
-             class="feature-detail">
-
-        <button class="back-main-btn"
-                onclick="showMainFeatures()">
-
-            ← Main Website पर वापस जाएँ
-
-        </button>
-
+    <section id="practice-details"
+             class="detail-section">
 
         <h2>
             Practice Areas
         </h2>
 
-        <p class="feature-detail-intro">
-            विभिन्न कानूनी क्षेत्रों से संबंधित सहायता और
-            विधिक जानकारी।
+        <p class="detail-intro">
+            निम्नलिखित प्रमुख कानूनी क्षेत्रों से संबंधित
+            विधिक सहायता एवं जानकारी उपलब्ध है।
         </p>
 
 
-        <div class="practice-detail-cards">
+        <div class="cards">
 
 
-            <!-- CRIMINAL LAW -->
-
-            <div class="practice-detail-card">
+            <div class="card">
 
                 <h3>
                     Criminal Law
@@ -1346,9 +1889,7 @@
             </div>
 
 
-            <!-- CIVIL LAW -->
-
-            <div class="practice-detail-card">
+            <div class="card">
 
                 <h3>
                     Civil Law
@@ -1362,9 +1903,7 @@
             </div>
 
 
-            <!-- FAMILY LAW -->
-
-            <div class="practice-detail-card">
+            <div class="card">
 
                 <h3>
                     Family Law
@@ -1378,9 +1917,7 @@
             </div>
 
 
-            <!-- PROPERTY LAW -->
-
-            <div class="practice-detail-card">
+            <div class="card">
 
                 <h3>
                     Property Law
@@ -1394,9 +1931,7 @@
             </div>
 
 
-            <!-- CONSUMER LAW -->
-
-            <div class="practice-detail-card">
+            <div class="card">
 
                 <h3>
                     Consumer Law
@@ -1410,9 +1945,7 @@
             </div>
 
 
-            <!-- LABOUR LAW -->
-
-            <div class="practice-detail-card">
+            <div class="card">
 
                 <h3>
                     Labour Law
@@ -1429,48 +1962,40 @@
         </div>
 
 
-        <button class="back-main-btn"
-                onclick="showMainFeatures()"
-                style="margin-top:40px; margin-bottom:0;">
+        <!-- ONLY ONE BACK BUTTON -->
 
-            ← Main Website पर वापस जाएँ
+        <div class="back-main">
 
-        </button>
+            <button onclick="backToMain()">
+                ← Main Website पर वापस जाएँ
+            </button>
+
+        </div>
 
     </section>
 
 
     <!-- =========================================
-         WHY CHOOSE ME DETAIL
+         WHY CHOOSE ME DETAILS
     ========================================= -->
 
-    <section id="why-detail"
-             class="feature-detail">
-
-        <button class="back-main-btn"
-                onclick="showMainFeatures()">
-
-            ← Main Website पर वापस जाएँ
-
-        </button>
-
+    <section id="why-details"
+             class="detail-section">
 
         <h2>
             Why Choose Me
         </h2>
 
-        <p class="feature-detail-intro">
-            कानूनी मामलों में मार्गदर्शन और कार्यप्रणाली से संबंधित
-            प्रमुख विशेषताएँ।
+        <p class="detail-intro">
+            कानूनी मामलों में मार्गदर्शन और कार्यप्रणाली से
+            संबंधित प्रमुख विशेषताएँ।
         </p>
 
 
-        <div class="why-detail-cards">
+        <div class="why-container">
 
 
-            <!-- LEGAL GUIDANCE -->
-
-            <div class="why-detail-card">
+            <div class="why-box">
 
                 <h3>
                     ⚖️ Legal Guidance
@@ -1484,9 +2009,7 @@
             </div>
 
 
-            <!-- PROFESSIONAL APPROACH -->
-
-            <div class="why-detail-card">
+            <div class="why-box">
 
                 <h3>
                     📚 Professional Approach
@@ -1500,9 +2023,7 @@
             </div>
 
 
-            <!-- CLIENT FOCUSED -->
-
-            <div class="why-detail-card">
+            <div class="why-box">
 
                 <h3>
                     🤝 Client Focused
@@ -1519,18 +2040,22 @@
         </div>
 
 
-        <button class="back-main-btn"
-                onclick="showMainFeatures()"
-                style="margin-top:40px; margin-bottom:0;">
+        <!-- ONLY ONE BACK BUTTON -->
 
-            ← Main Website पर वापस जाएँ
+        <div class="back-main">
 
-        </button>
+            <button onclick="backToMain()">
+                ← Main Website पर वापस जाएँ
+            </button>
+
+        </div>
 
     </section>
 
 
-    <!-- LEGAL ARTICLES -->
+    <!-- =========================================
+         LEGAL ARTICLES
+    ========================================= -->
 
     <section id="legal-articles"
              class="legal-articles-section">
@@ -1544,6 +2069,7 @@
             उपयोगी लेख पढ़ें।
         </p>
 
+
         <div id="home-articles-list">
 
             <div class="home-articles-loading">
@@ -1551,6 +2077,7 @@
             </div>
 
         </div>
+
 
         <div class="all-articles-link">
 
@@ -1563,7 +2090,9 @@
     </section>
 
 
-    <!-- BARE ACTS -->
+    <!-- =========================================
+         BARE ACTS
+    ========================================= -->
 
     <section id="bare-acts"
              class="bare-acts-section">
@@ -1580,8 +2109,6 @@
 
         <div id="home-bare-acts-list">
 
-
-            <!-- CRIMINAL LAWS -->
 
             <a href="criminal-laws.html"
                class="bare-category-card">
@@ -1610,8 +2137,6 @@
             </a>
 
 
-            <!-- CONSTITUTIONAL LAWS -->
-
             <a href="constitutional-laws.html"
                class="bare-category-card">
 
@@ -1639,8 +2164,6 @@
             </a>
 
 
-            <!-- COMMERCE & CORPORATE LAWS -->
-
             <a href="commerce-corporate-laws.html"
                class="bare-category-card">
 
@@ -1667,8 +2190,6 @@
 
             </a>
 
-
-            <!-- MISCELLANEOUS LAWS -->
 
             <a href="miscellaneous-laws.html"
                class="bare-category-card">
@@ -1702,7 +2223,9 @@
     </section>
 
 
-    <!-- CLIENT ENQUIRY FORM -->
+    <!-- =========================================
+         CLIENT ENQUIRY
+    ========================================= -->
 
     <section id="enquiry"
              class="enquiry-section">
@@ -1710,6 +2233,7 @@
         <h2>
             Client Enquiry
         </h2>
+
 
         <form class="enquiry-form"
               onsubmit="sendEnquiryToWhatsApp(); return false;">
@@ -1752,12 +2276,15 @@
 
             </button>
 
+
         </form>
 
     </section>
 
 
-    <!-- FAQ SECTION -->
+    <!-- =========================================
+         FAQ
+    ========================================= -->
 
     <section id="faq"
              class="faq-section">
@@ -1775,6 +2302,7 @@
                 What legal matters can I get assistance with?
 
             </button>
+
 
             <div class="faq-answer">
 
@@ -1796,6 +2324,7 @@
 
             </button>
 
+
             <div class="faq-answer">
 
                 You can contact through the phone number or WhatsApp
@@ -1815,6 +2344,7 @@
 
             </button>
 
+
             <div class="faq-answer">
 
                 Yes. You can use the Client Enquiry form available on
@@ -1833,6 +2363,7 @@
                 Is the information on this website legal advice?
 
             </button>
+
 
             <div class="faq-answer">
 
@@ -1854,6 +2385,7 @@
 
             </button>
 
+
             <div class="faq-answer">
 
                 No. Every legal matter depends on its specific facts,
@@ -1867,7 +2399,9 @@
     </section>
 
 
-    <!-- CONTACT -->
+    <!-- =========================================
+         CONTACT
+    ========================================= -->
 
     <section id="contact"
              class="contact">
@@ -1940,7 +2474,9 @@
     </section>
 
 
-    <!-- LEGAL DISCLAIMER -->
+    <!-- =========================================
+         DISCLAIMER
+    ========================================= -->
 
     <section class="disclaimer">
 
@@ -1966,7 +2502,9 @@
     </section>
 
 
-    <!-- FOOTER -->
+    <!-- =========================================
+         FOOTER
+    ========================================= -->
 
     <footer>
 
@@ -1977,35 +2515,59 @@
     </footer>
 
 
-    <!-- WHATSAPP ENQUIRY SCRIPT -->
+    <!-- =========================================
+         WHATSAPP ENQUIRY
+    ========================================= -->
 
     <script>
 
         function sendEnquiryToWhatsApp() {
 
             var name =
-                document.getElementById("clientName").value;
+                document.getElementById(
+                    "clientName"
+                ).value;
 
             var phone =
-                document.getElementById("clientPhone").value;
+                document.getElementById(
+                    "clientPhone"
+                ).value;
 
             var email =
-                document.getElementById("clientEmail").value;
+                document.getElementById(
+                    "clientEmail"
+                ).value;
 
             var message =
-                document.getElementById("clientMessage").value;
+                document.getElementById(
+                    "clientMessage"
+                ).value;
 
 
             var whatsappMessage =
+
                 "New Client Enquiry%0A%0A" +
-                "Name: " + encodeURIComponent(name) + "%0A" +
-                "Mobile: " + encodeURIComponent(phone) + "%0A" +
-                "Email: " + encodeURIComponent(email) + "%0A" +
-                "Legal Enquiry: " + encodeURIComponent(message);
+
+                "Name: " +
+                encodeURIComponent(name) +
+                "%0A" +
+
+                "Mobile: " +
+                encodeURIComponent(phone) +
+                "%0A" +
+
+                "Email: " +
+                encodeURIComponent(email) +
+                "%0A" +
+
+                "Legal Enquiry: " +
+                encodeURIComponent(message);
 
 
             var whatsappURL =
+
                 "https://wa.me/917080884964?text=" +
+
                 whatsappMessage;
 
 
@@ -2019,77 +2581,78 @@
     </script>
 
 
-    <!-- FEATURE SECTION SCRIPT -->
+    <!-- =========================================
+         DETAIL SECTION CONTROL
+    ========================================= -->
 
     <script>
 
-        function showFeature(featureId) {
+        function showDetail(sectionId) {
 
-            var mainFeatures =
-                document.getElementById("main-features");
-
-            var practiceDetail =
-                document.getElementById("practice-detail");
-
-            var whyDetail =
-                document.getElementById("why-detail");
+            var sections =
+                document.querySelectorAll(
+                    ".detail-section"
+                );
 
 
-            mainFeatures.style.display = "none";
+            sections.forEach(
+                function(section) {
 
-            practiceDetail.classList.remove("active");
+                    section.classList.remove(
+                        "active"
+                    );
 
-            whyDetail.classList.remove("active");
-
-
-            if (featureId === "practice-detail") {
-
-                practiceDetail.classList.add("active");
-
-                window.scrollTo({
-                    top: practiceDetail.offsetTop - 20,
-                    behavior: "smooth"
-                });
-
-            }
+                }
+            );
 
 
-            if (featureId === "why-detail") {
+            var selectedSection =
+                document.getElementById(
+                    sectionId
+                );
 
-                whyDetail.classList.add("active");
 
-                window.scrollTo({
-                    top: whyDetail.offsetTop - 20,
-                    behavior: "smooth"
-                });
+            selectedSection.classList.add(
+                "active"
+            );
 
-            }
+
+            selectedSection.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
 
         }
 
 
-        function showMainFeatures() {
+        function backToMain() {
 
-            var mainFeatures =
-                document.getElementById("main-features");
-
-            var practiceDetail =
-                document.getElementById("practice-detail");
-
-            var whyDetail =
-                document.getElementById("why-detail");
+            var sections =
+                document.querySelectorAll(
+                    ".detail-section"
+                );
 
 
-            practiceDetail.classList.remove("active");
+            sections.forEach(
+                function(section) {
 
-            whyDetail.classList.remove("active");
+                    section.classList.remove(
+                        "active"
+                    );
 
-            mainFeatures.style.display = "block";
+                }
+            );
 
 
-            window.scrollTo({
-                top: mainFeatures.offsetTop - 20,
-                behavior: "smooth"
+            var mainOptions =
+                document.getElementById(
+                    "main-options"
+                );
+
+
+            mainOptions.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
             });
 
         }
@@ -2097,7 +2660,30 @@
     </script>
 
 
-    <!-- FLOATING CONTACT BUTTONS -->
+    <!-- =========================================
+         FAQ SCRIPT
+    ========================================= -->
+
+    <script>
+
+        function toggleFAQ(button) {
+
+            var faqItem =
+                button.parentElement;
+
+
+            faqItem.classList.toggle(
+                "active"
+            );
+
+        }
+
+    </script>
+
+
+    <!-- =========================================
+         FLOATING CONTACT BUTTONS
+    ========================================= -->
 
     <div class="floating-contact">
 
@@ -2125,28 +2711,17 @@
     </div>
 
 
-    <!-- FAQ SCRIPT -->
+    <!-- =========================================
+         SUPABASE
+    ========================================= -->
 
-    <script>
-
-        function toggleFAQ(button) {
-
-            var faqItem =
-                button.parentElement;
-
-            faqItem.classList.toggle("active");
-
-        }
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
     </script>
 
 
-    <!-- SUPABASE -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
-
-    <!-- SUPABASE LEGAL ARTICLES -->
+    <!-- =========================================
+         SUPABASE LEGAL ARTICLES
+    ========================================= -->
 
     <script>
 
@@ -2164,8 +2739,6 @@
                 SUPABASE_PUBLISHABLE_KEY
             );
 
-
-        /* LEGAL ARTICLES */
 
         async function loadHomeArticles() {
 
@@ -2209,11 +2782,17 @@
                 }
 
 
-                if (!data || data.length === 0) {
+                if (
+                    !data ||
+                    data.length === 0
+                ) {
 
                     container.innerHTML =
+
                         '<div class="home-articles-loading">' +
+
                         'अभी कोई Legal Article उपलब्ध नहीं है।' +
+
                         '</div>';
 
                     return;
@@ -2224,83 +2803,106 @@
                 container.innerHTML = "";
 
 
-                data.forEach(article => {
+                data.forEach(
+                    function(article) {
 
-                    const articleCard =
-                        document.createElement("article");
-
-
-                    articleCard.className =
-                        "home-article-card";
-
-
-                    const title =
-                        document.createElement("h3");
+                        const articleCard =
+                            document.createElement(
+                                "article"
+                            );
 
 
-                    title.textContent =
-                        article.title ||
-                        "Untitled Article";
+                        articleCard.className =
+                            "home-article-card";
 
 
-                    const date =
-                        document.createElement("div");
+                        const title =
+                            document.createElement(
+                                "h3"
+                            );
 
 
-                    date.className =
-                        "home-article-date";
+                        title.textContent =
+                            article.title ||
+                            "Untitled Article";
 
 
-                    date.textContent =
-                        "📅 " +
-                        formatArticleDate(
-                            article.published_at ||
-                            article.created_at
+                        const date =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        date.className =
+                            "home-article-date";
+
+
+                        date.textContent =
+                            "📅 " +
+                            formatArticleDate(
+                                article.published_at ||
+                                article.created_at
+                            );
+
+
+                        const description =
+                            document.createElement(
+                                "div"
+                            );
+
+
+                        description.className =
+                            "home-article-description";
+
+
+                        description.textContent =
+                            article.description ||
+                            "कानूनी जानकारी एवं जागरूकता से संबंधित लेख।";
+
+
+                        const link =
+                            document.createElement(
+                                "a"
+                            );
+
+
+                        link.href =
+                            "article.html?id=" +
+                            encodeURIComponent(
+                                article.id
+                            );
+
+
+                        link.textContent =
+                            "पूरा लेख पढ़ें →";
+
+
+                        articleCard.appendChild(
+                            title
                         );
 
 
-                    const description =
-                        document.createElement("div");
-
-
-                    description.className =
-                        "home-article-description";
-
-
-                    description.textContent =
-                        article.description ||
-                        "कानूनी जानकारी एवं जागरूकता से संबंधित लेख।";
-
-
-                    const link =
-                        document.createElement("a");
-
-
-                    link.href =
-                        "article.html?id=" +
-                        encodeURIComponent(
-                            article.id
+                        articleCard.appendChild(
+                            date
                         );
 
 
-                    link.textContent =
-                        "पूरा लेख पढ़ें →";
+                        articleCard.appendChild(
+                            description
+                        );
 
 
-                    articleCard.appendChild(title);
-
-                    articleCard.appendChild(date);
-
-                    articleCard.appendChild(description);
-
-                    articleCard.appendChild(link);
+                        articleCard.appendChild(
+                            link
+                        );
 
 
-                    container.appendChild(
-                        articleCard
-                    );
+                        container.appendChild(
+                            articleCard
+                        );
 
-                });
+                    }
+                );
 
 
             } catch (error) {
@@ -2312,8 +2914,11 @@
 
 
                 container.innerHTML =
+
                     '<div class="home-articles-loading">' +
+
                     'लेख अभी लोड नहीं हो पा रहे हैं।' +
+
                     '</div>';
 
             }
@@ -2321,9 +2926,9 @@
         }
 
 
-        /* DATE FORMAT */
-
-        function formatArticleDate(dateValue) {
+        function formatArticleDate(
+            dateValue
+        ) {
 
             if (!dateValue) {
 
@@ -2336,7 +2941,11 @@
                 new Date(dateValue);
 
 
-            if (isNaN(date.getTime())) {
+            if (
+                isNaN(
+                    date.getTime()
+                )
+            ) {
 
                 return "";
 
@@ -2354,8 +2963,6 @@
 
         }
 
-
-        /* LOAD ARTICLES */
 
         loadHomeArticles();
 
