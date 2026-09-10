@@ -244,16 +244,148 @@
         }
 
 
-        /* PRACTICE AREAS */
+        /* =========================================
+           MAIN TWO CARD SECTION
+        ========================================= */
 
-        .cards {
+        .main-feature-section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+            text-align: center;
+            background: #111111;
+        }
+
+        .main-feature-intro {
+            color: #cccccc;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .main-feature-cards {
+            max-width: 950px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 30px;
+        }
+
+        .main-feature-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 280px;
+            padding: 40px 30px;
+            background: #171717;
+            border: 1px solid #d4af37;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #ffffff;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .main-feature-card:hover {
+            transform: translateY(-7px);
+            border-color: #f0cf55;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18);
+        }
+
+        .main-feature-icon {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .main-feature-card h3 {
+            color: #d4af37;
+            font-size: 28px;
+            margin: 0 0 15px;
+        }
+
+        .main-feature-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            margin: 0 0 25px;
+        }
+
+        .main-feature-action {
+            display: inline-block;
+            align-self: center;
+            padding: 12px 24px;
+            border: 1px solid #d4af37;
+            border-radius: 6px;
+            color: #d4af37;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .main-feature-card:hover .main-feature-action {
+            background: #d4af37;
+            color: #111111;
+        }
+
+
+        /* =========================================
+           INNER FEATURE PAGES
+        ========================================= */
+
+        .feature-detail {
+            display: none;
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+            background: #111111;
+        }
+
+        .feature-detail.active {
+            display: block;
+        }
+
+        .feature-detail h2 {
+            margin-bottom: 15px;
+        }
+
+        .feature-detail-intro {
+            text-align: center;
+            color: #cccccc;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .back-main-btn {
+            display: block;
+            width: fit-content;
+            margin: 0 auto 40px;
+            padding: 12px 24px;
+            border: 1px solid #d4af37;
+            border-radius: 6px;
+            background: transparent;
+            color: #d4af37;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .back-main-btn:hover {
+            background: #d4af37;
+            color: #111111;
+        }
+
+
+        /* PRACTICE AREAS DETAIL */
+
+        .practice-detail-cards {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
 
-        .card {
+        .practice-detail-card {
             flex: 1;
             min-width: 250px;
             padding: 35px 25px;
@@ -264,18 +396,58 @@
             transition: 0.3s;
         }
 
-        .card:hover {
+        .practice-detail-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 8px 25px rgba(212, 175, 55, 0.18);
         }
 
-        .card h3 {
+        .practice-detail-card h3 {
             color: #d4af37;
             font-size: 23px;
             margin-bottom: 15px;
         }
 
-        .card p {
+        .practice-detail-card p {
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+
+        /* WHY CHOOSE ME DETAIL */
+
+        .why-detail-cards {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .why-detail-card {
+            flex: 1;
+            min-width: 250px;
+            padding: 35px 25px;
+            background: #171717;
+            border: 1px solid #333333;
+            border-radius: 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .why-detail-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.12);
+        }
+
+        .why-detail-card h3 {
+            color: #d4af37;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .why-detail-card p {
             color: #cccccc;
             line-height: 1.7;
         }
@@ -401,9 +573,6 @@
             line-height: 1.7;
         }
 
-
-        /* FOUR CATEGORY CARDS */
-
         #home-bare-acts-list {
             max-width: 1100px;
             margin: 0 auto;
@@ -499,58 +668,6 @@
         .bare-category-card:hover .bare-category-action {
             background: #d4af37;
             color: #111111;
-        }
-
-        .bare-acts-loading {
-            color: #aaaaaa;
-            padding: 20px;
-            grid-column: 1 / -1;
-            text-align: center;
-        }
-
-
-        /* WHY CHOOSE ME */
-
-        .why-section {
-            max-width: none;
-            padding: 70px 20px;
-            text-align: center;
-            background: #0d0d0d;
-        }
-
-        .why-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .why-box {
-            flex: 1;
-            min-width: 250px;
-            padding: 30px 20px;
-            background: #171717;
-            border: 1px solid #333333;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .why-box:hover {
-            transform: translateY(-5px);
-            border-color: #d4af37;
-        }
-
-        .why-box h3 {
-            color: #d4af37;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .why-box p {
-            color: #cccccc;
-            line-height: 1.7;
         }
 
 
@@ -850,9 +967,54 @@
                 font-size: 16px;
             }
 
-            .card {
+
+            /* MAIN TWO CARDS MOBILE */
+
+            .main-feature-section {
+                padding: 50px 18px;
+            }
+
+            .main-feature-section h2 {
+                font-size: 28px;
+            }
+
+            .main-feature-cards {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .main-feature-card {
+                min-height: 240px;
+                padding: 30px 22px;
+            }
+
+            .main-feature-icon {
+                font-size: 45px;
+            }
+
+            .main-feature-card h3 {
+                font-size: 24px;
+            }
+
+
+            /* DETAIL SECTIONS MOBILE */
+
+            .feature-detail {
+                padding: 50px 18px;
+            }
+
+            .feature-detail h2 {
+                font-size: 28px;
+            }
+
+            .practice-detail-card {
                 min-width: 100%;
             }
+
+            .why-detail-card {
+                min-width: 100%;
+            }
+
 
             .legal-articles-section {
                 padding: 50px 15px;
@@ -900,18 +1062,6 @@
                 text-align: center;
             }
 
-
-            .why-section {
-                padding: 50px 18px;
-            }
-
-            .why-section h2 {
-                font-size: 28px;
-            }
-
-            .why-box {
-                min-width: 100%;
-            }
 
             .contact-buttons {
                 flex-direction: column;
@@ -989,11 +1139,9 @@
 
     <!-- HERO -->
 
-    <header>
+    <header id="home">
 
         <div class="hero">
-
-            <!-- LOGO IMAGE -->
 
             <img
                 src="logo.png"
@@ -1029,11 +1177,26 @@
     <nav>
 
         <a href="#about">About</a>
-        <a href="#practice">Practice Areas</a>
-        <a href="#legal-articles">Legal Articles</a>
-        <a href="#bare-acts">Bare Acts</a>
-        <a href="#why">Why Choose Me</a>
-        <a href="#contact">Contact</a>
+
+        <a href="#main-features">
+            Practice Areas
+        </a>
+
+        <a href="#legal-articles">
+            Legal Articles
+        </a>
+
+        <a href="#bare-acts">
+            Bare Acts
+        </a>
+
+        <a href="#main-features">
+            Why Choose Me
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
 
     </nav>
 
@@ -1054,21 +1217,126 @@
             मेरा उद्देश्य प्रत्येक व्यक्ति को उसके कानूनी अधिकारों,
             दायित्वों एवं उपलब्ध विधिक उपायों के संबंध में उचित मार्गदर्शन
             प्रदान करना है।
+        </p>
 
     </section>
 
 
-    <!-- PRACTICE AREAS -->
+    <!-- =========================================
+         MAIN TWO CARDS
+    ========================================= -->
 
-    <section id="practice">
+    <section id="main-features" class="main-feature-section">
 
-        <h2>Practice Areas</h2>
+        <h2>Legal Services & Professional Approach</h2>
 
-        <div class="cards">
+        <p class="main-feature-intro">
+            नीचे दिए गए विकल्पों पर क्लिक करके Practice Areas तथा
+            Why Choose Me से संबंधित विस्तृत जानकारी देखें।
+        </p>
 
-            <div class="card">
 
-                <h3>Criminal Law</h3>
+        <div class="main-feature-cards">
+
+
+            <!-- PRACTICE AREAS MAIN CARD -->
+
+            <div class="main-feature-card"
+                 onclick="showFeature('practice-detail')">
+
+                <div>
+
+                    <div class="main-feature-icon">
+                        ⚖️
+                    </div>
+
+                    <h3>
+                        Practice Areas
+                    </h3>
+
+                    <p>
+                        Criminal, Civil, Family, Property, Consumer और
+                        Labour Law से संबंधित कानूनी सहायता एवं जानकारी।
+                    </p>
+
+                </div>
+
+                <span class="main-feature-action">
+                    View Practice Areas →
+                </span>
+
+            </div>
+
+
+            <!-- WHY CHOOSE ME MAIN CARD -->
+
+            <div class="main-feature-card"
+                 onclick="showFeature('why-detail')">
+
+                <div>
+
+                    <div class="main-feature-icon">
+                        ⭐
+                    </div>
+
+                    <h3>
+                        Why Choose Me
+                    </h3>
+
+                    <p>
+                        Legal Guidance, Professional Approach और
+                        Client Focused कार्यप्रणाली के बारे में जानें।
+                    </p>
+
+                </div>
+
+                <span class="main-feature-action">
+                    View Why Choose Me →
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         PRACTICE AREAS DETAIL
+    ========================================= -->
+
+    <section id="practice-detail"
+             class="feature-detail">
+
+        <button class="back-main-btn"
+                onclick="showMainFeatures()">
+
+            ← Main Website पर वापस जाएँ
+
+        </button>
+
+
+        <h2>
+            Practice Areas
+        </h2>
+
+        <p class="feature-detail-intro">
+            विभिन्न कानूनी क्षेत्रों से संबंधित सहायता और
+            विधिक जानकारी।
+        </p>
+
+
+        <div class="practice-detail-cards">
+
+
+            <!-- CRIMINAL LAW -->
+
+            <div class="practice-detail-card">
+
+                <h3>
+                    Criminal Law
+                </h3>
 
                 <p>
                     Legal assistance and representation
@@ -1078,9 +1346,13 @@
             </div>
 
 
-            <div class="card">
+            <!-- CIVIL LAW -->
 
-                <h3>Civil Law</h3>
+            <div class="practice-detail-card">
+
+                <h3>
+                    Civil Law
+                </h3>
 
                 <p>
                     Assistance in civil disputes and
@@ -1090,9 +1362,13 @@
             </div>
 
 
-            <div class="card">
+            <!-- FAMILY LAW -->
 
-                <h3>Family Law</h3>
+            <div class="practice-detail-card">
+
+                <h3>
+                    Family Law
+                </h3>
 
                 <p>
                     Legal assistance in family and
@@ -1102,9 +1378,13 @@
             </div>
 
 
-            <div class="card">
+            <!-- PROPERTY LAW -->
 
-                <h3>Property Law</h3>
+            <div class="practice-detail-card">
+
+                <h3>
+                    Property Law
+                </h3>
 
                 <p>
                     Assistance in property and
@@ -1114,9 +1394,13 @@
             </div>
 
 
-            <div class="card">
+            <!-- CONSUMER LAW -->
 
-                <h3>Consumer Law</h3>
+            <div class="practice-detail-card">
+
+                <h3>
+                    Consumer Law
+                </h3>
 
                 <p>
                     Legal assistance in consumer
@@ -1126,9 +1410,13 @@
             </div>
 
 
-            <div class="card">
+            <!-- LABOUR LAW -->
 
-                <h3>Labour Law</h3>
+            <div class="practice-detail-card">
+
+                <h3>
+                    Labour Law
+                </h3>
 
                 <p>
                     Assistance in employment and
@@ -1137,16 +1425,119 @@
 
             </div>
 
+
         </div>
+
+
+        <button class="back-main-btn"
+                onclick="showMainFeatures()"
+                style="margin-top:40px; margin-bottom:0;">
+
+            ← Main Website पर वापस जाएँ
+
+        </button>
+
+    </section>
+
+
+    <!-- =========================================
+         WHY CHOOSE ME DETAIL
+    ========================================= -->
+
+    <section id="why-detail"
+             class="feature-detail">
+
+        <button class="back-main-btn"
+                onclick="showMainFeatures()">
+
+            ← Main Website पर वापस जाएँ
+
+        </button>
+
+
+        <h2>
+            Why Choose Me
+        </h2>
+
+        <p class="feature-detail-intro">
+            कानूनी मामलों में मार्गदर्शन और कार्यप्रणाली से संबंधित
+            प्रमुख विशेषताएँ।
+        </p>
+
+
+        <div class="why-detail-cards">
+
+
+            <!-- LEGAL GUIDANCE -->
+
+            <div class="why-detail-card">
+
+                <h3>
+                    ⚖️ Legal Guidance
+                </h3>
+
+                <p>
+                    कानूनी मामलों में उचित एवं व्यावहारिक
+                    विधिक मार्गदर्शन।
+                </p>
+
+            </div>
+
+
+            <!-- PROFESSIONAL APPROACH -->
+
+            <div class="why-detail-card">
+
+                <h3>
+                    📚 Professional Approach
+                </h3>
+
+                <p>
+                    प्रत्येक मामले को तथ्यों एवं लागू कानून के
+                    आधार पर समझने का प्रयास।
+                </p>
+
+            </div>
+
+
+            <!-- CLIENT FOCUSED -->
+
+            <div class="why-detail-card">
+
+                <h3>
+                    🤝 Client Focused
+                </h3>
+
+                <p>
+                    क्लाइंट की समस्या को समझकर उपलब्ध कानूनी
+                    विकल्पों की जानकारी।
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <button class="back-main-btn"
+                onclick="showMainFeatures()"
+                style="margin-top:40px; margin-bottom:0;">
+
+            ← Main Website पर वापस जाएँ
+
+        </button>
 
     </section>
 
 
     <!-- LEGAL ARTICLES -->
 
-    <section id="legal-articles" class="legal-articles-section">
+    <section id="legal-articles"
+             class="legal-articles-section">
 
-        <h2>Legal Articles</h2>
+        <h2>
+            Legal Articles
+        </h2>
 
         <p class="articles-intro">
             कानून, विधिक जागरूकता और भारतीय विधि से संबंधित
@@ -1174,9 +1565,12 @@
 
     <!-- BARE ACTS -->
 
-    <section id="bare-acts" class="bare-acts-section">
+    <section id="bare-acts"
+             class="bare-acts-section">
 
-        <h2>⚖️ Bare Acts</h2>
+        <h2>
+            ⚖️ Bare Acts
+        </h2>
 
         <p class="bare-acts-intro">
             भारतीय कानूनों से संबंधित Bare Acts एवं विधिक सामग्री
@@ -1308,62 +1702,18 @@
     </section>
 
 
-    <!-- WHY CHOOSE ME -->
-
-    <section id="why" class="why-section">
-
-        <h2>Why Choose Me</h2>
-
-        <div class="why-container">
-
-            <div class="why-box">
-
-                <h3>⚖️ Legal Guidance</h3>
-
-                <p>
-                    कानूनी मामलों में उचित एवं व्यावहारिक
-                    विधिक मार्गदर्शन।
-                </p>
-
-            </div>
-
-
-            <div class="why-box">
-
-                <h3>📚 Professional Approach</h3>
-
-                <p>
-                    प्रत्येक मामले को तथ्यों एवं लागू कानून के
-                    आधार पर समझने का प्रयास।
-                </p>
-
-            </div>
-
-
-            <div class="why-box">
-
-                <h3>🤝 Client Focused</h3>
-
-                <p>
-                    क्लाइंट की समस्या को समझकर उपलब्ध कानूनी
-                    विकल्पों की जानकारी।
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
     <!-- CLIENT ENQUIRY FORM -->
 
-    <section id="enquiry" class="enquiry-section">
+    <section id="enquiry"
+             class="enquiry-section">
 
-        <h2>Client Enquiry</h2>
+        <h2>
+            Client Enquiry
+        </h2>
 
         <form class="enquiry-form"
               onsubmit="sendEnquiryToWhatsApp(); return false;">
+
 
             <input
                 type="text"
@@ -1372,6 +1722,7 @@
                 required
             >
 
+
             <input
                 type="tel"
                 id="clientPhone"
@@ -1379,11 +1730,13 @@
                 required
             >
 
+
             <input
                 type="email"
                 id="clientEmail"
                 placeholder="Email Address"
             >
+
 
             <textarea
                 id="clientMessage"
@@ -1391,8 +1744,12 @@
                 required
             ></textarea>
 
-            <button type="submit" class="enquiry-submit">
+
+            <button type="submit"
+                    class="enquiry-submit">
+
                 💬 Send Enquiry on WhatsApp
+
             </button>
 
         </form>
@@ -1402,21 +1759,29 @@
 
     <!-- FAQ SECTION -->
 
-    <section id="faq" class="faq-section">
+    <section id="faq"
+             class="faq-section">
 
-        <h2>Frequently Asked Questions</h2>
+        <h2>
+            Frequently Asked Questions
+        </h2>
 
 
         <div class="faq-item">
 
-            <button class="faq-question" onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
                 What legal matters can I get assistance with?
+
             </button>
 
             <div class="faq-answer">
+
                 Legal assistance may be provided in matters relating to
                 Criminal, Civil, Family, Property, Consumer and Labour Law,
                 subject to the facts and circumstances of each case.
+
             </div>
 
         </div>
@@ -1424,13 +1789,18 @@
 
         <div class="faq-item">
 
-            <button class="faq-question" onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
                 How can I contact the Advocate?
+
             </button>
 
             <div class="faq-answer">
+
                 You can contact through the phone number or WhatsApp
                 option available on this website.
+
             </div>
 
         </div>
@@ -1438,13 +1808,18 @@
 
         <div class="faq-item">
 
-            <button class="faq-question" onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
                 Can I send my legal enquiry online?
+
             </button>
 
             <div class="faq-answer">
+
                 Yes. You can use the Client Enquiry form available on
                 this website to send your basic enquiry through WhatsApp.
+
             </div>
 
         </div>
@@ -1452,14 +1827,19 @@
 
         <div class="faq-item">
 
-            <button class="faq-question" onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
                 Is the information on this website legal advice?
+
             </button>
 
             <div class="faq-answer">
+
                 No. The information provided on this website is for
                 general legal information and awareness purposes only.
                 Please refer to the Legal Disclaimer.
+
             </div>
 
         </div>
@@ -1467,14 +1847,19 @@
 
         <div class="faq-item">
 
-            <button class="faq-question" onclick="toggleFAQ(this)">
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
                 Does every legal matter have the same solution?
+
             </button>
 
             <div class="faq-answer">
+
                 No. Every legal matter depends on its specific facts,
                 circumstances and applicable law. Proper legal consultation
                 may be required before taking any legal action.
+
             </div>
 
         </div>
@@ -1484,23 +1869,35 @@
 
     <!-- CONTACT -->
 
-    <section id="contact" class="contact">
+    <section id="contact"
+             class="contact">
 
-        <h2>Contact</h2>
+        <h2>
+            Contact
+        </h2>
+
 
         <p>
+
             📞 Mobile:
+
             <a href="tel:7080884964">
                 7080884964
             </a>
+
         </p>
 
+
         <p>
+
             📧 Email:
+
             <a href="mailto:bipinforoffice247@gmail.com">
                 bipinforoffice247@gmail.com
             </a>
+
         </p>
+
 
         <p>
             📍 Uttar Pradesh, District Gorakhpur
@@ -1509,9 +1906,12 @@
 
         <div class="contact-buttons">
 
+
             <a href="tel:7080884964"
                class="call-btn">
+
                 📞 Call Now
+
             </a>
 
 
@@ -1519,7 +1919,9 @@
                class="whatsapp-btn"
                target="_blank"
                rel="noopener noreferrer">
+
                 💬 WhatsApp
+
             </a>
 
 
@@ -1527,8 +1929,11 @@
                class="instagram-btn"
                target="_blank"
                rel="noopener noreferrer">
+
                 📷 Instagram
+
             </a>
+
 
         </div>
 
@@ -1539,7 +1944,10 @@
 
     <section class="disclaimer">
 
-        <h2>Legal Disclaimer</h2>
+        <h2>
+            Legal Disclaimer
+        </h2>
+
 
         <p>
             इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य विधिक जानकारी
@@ -1547,6 +1955,7 @@
             मामले के संबंध में विधिक राय, सलाह अथवा पेशेवर परामर्श का
             विकल्प नहीं है।
         </p>
+
 
         <p>
             प्रत्येक कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार
@@ -1600,7 +2009,88 @@
                 whatsappMessage;
 
 
-            window.open(whatsappURL, "_blank");
+            window.open(
+                whatsappURL,
+                "_blank"
+            );
+
+        }
+
+    </script>
+
+
+    <!-- FEATURE SECTION SCRIPT -->
+
+    <script>
+
+        function showFeature(featureId) {
+
+            var mainFeatures =
+                document.getElementById("main-features");
+
+            var practiceDetail =
+                document.getElementById("practice-detail");
+
+            var whyDetail =
+                document.getElementById("why-detail");
+
+
+            mainFeatures.style.display = "none";
+
+            practiceDetail.classList.remove("active");
+
+            whyDetail.classList.remove("active");
+
+
+            if (featureId === "practice-detail") {
+
+                practiceDetail.classList.add("active");
+
+                window.scrollTo({
+                    top: practiceDetail.offsetTop - 20,
+                    behavior: "smooth"
+                });
+
+            }
+
+
+            if (featureId === "why-detail") {
+
+                whyDetail.classList.add("active");
+
+                window.scrollTo({
+                    top: whyDetail.offsetTop - 20,
+                    behavior: "smooth"
+                });
+
+            }
+
+        }
+
+
+        function showMainFeatures() {
+
+            var mainFeatures =
+                document.getElementById("main-features");
+
+            var practiceDetail =
+                document.getElementById("practice-detail");
+
+            var whyDetail =
+                document.getElementById("why-detail");
+
+
+            practiceDetail.classList.remove("active");
+
+            whyDetail.classList.remove("active");
+
+            mainFeatures.style.display = "block";
+
+
+            window.scrollTo({
+                top: mainFeatures.offsetTop - 20,
+                behavior: "smooth"
+            });
 
         }
 
@@ -1611,10 +2101,13 @@
 
     <div class="floating-contact">
 
+
         <a href="tel:7080884964"
            class="floating-call"
            title="Call Now">
+
             📞
+
         </a>
 
 
@@ -1623,8 +2116,11 @@
            title="WhatsApp"
            target="_blank"
            rel="noopener noreferrer">
+
             💬
+
         </a>
+
 
     </div>
 
@@ -1656,6 +2152,7 @@
 
         const SUPABASE_URL =
             "https://jfstjogeyvkhlhxhiaie.supabase.co";
+
 
         const SUPABASE_PUBLISHABLE_KEY =
             "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
@@ -1732,12 +2229,14 @@
                     const articleCard =
                         document.createElement("article");
 
+
                     articleCard.className =
                         "home-article-card";
 
 
                     const title =
                         document.createElement("h3");
+
 
                     title.textContent =
                         article.title ||
@@ -1747,8 +2246,10 @@
                     const date =
                         document.createElement("div");
 
+
                     date.className =
                         "home-article-date";
+
 
                     date.textContent =
                         "📅 " +
@@ -1761,8 +2262,10 @@
                     const description =
                         document.createElement("div");
 
+
                     description.className =
                         "home-article-description";
+
 
                     description.textContent =
                         article.description ||
@@ -1772,11 +2275,13 @@
                     const link =
                         document.createElement("a");
 
+
                     link.href =
                         "article.html?id=" +
                         encodeURIComponent(
                             article.id
                         );
+
 
                     link.textContent =
                         "पूरा लेख पढ़ें →";
