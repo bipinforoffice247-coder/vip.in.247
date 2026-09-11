@@ -1,766 +1,864 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 
 <head>
 
-```
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<title>
-    Legal Article | Bipin Kumar Maurya
-</title>
+    <title>Legal Article | Bipin Kumar Maurya</title>
 
+    <meta
+        name="description"
+        content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya."
+        id="meta-description"
+    >
 
-<meta
-    name="description"
-    content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya."
-    id="meta-description"
->
+    <meta
+        name="author"
+        content="Bipin Kumar Maurya"
+    >
 
-<meta
-    name="author"
-    content="Bipin Kumar Maurya"
->
+    <meta
+        name="robots"
+        content="index, follow, max-image-preview:large"
+    >
 
-<meta
-    name="robots"
-    content="index, follow, max-image-preview:large"
->
+    <meta
+        name="googlebot"
+        content="index, follow, max-image-preview:large"
+    >
 
-<meta
-    name="googlebot"
-    content="index, follow, max-image-preview:large"
->
+    <link
+        rel="canonical"
+        href="https://bipinkumarmaurya.github.io/article.html"
+        id="canonical-link"
+    >
 
+    <!-- OPEN GRAPH -->
 
-<link
-    rel="canonical"
-    href="https://bipinkumarmaurya.github.io/article.html"
-    id="canonical-link"
->
+    <meta
+        property="og:type"
+        content="article"
+    >
 
+    <meta
+        property="og:title"
+        content="Legal Article | Bipin Kumar Maurya"
+        id="og-title"
+    >
 
-<!-- OPEN GRAPH -->
+    <meta
+        property="og:description"
+        content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article."
+        id="og-description"
+    >
 
-<meta
-    property="og:type"
-    content="article"
->
+    <meta
+        property="og:url"
+        content="https://bipinkumarmaurya.github.io/article.html"
+        id="og-url"
+    >
 
-<meta
-    property="og:title"
-    content="Legal Article | Bipin Kumar Maurya"
-    id="og-title"
->
+    <meta
+        property="og:site_name"
+        content="Bipin Kumar Maurya"
+    >
 
-<meta
-    property="og:description"
-    content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article."
-    id="og-description"
->
 
-<meta
-    property="og:url"
-    content="https://bipinkumarmaurya.github.io/article.html"
-    id="og-url"
->
+    <style>
 
-<meta
-    property="og:site_name"
-    content="Bipin Kumar Maurya"
->
+        * {
+            box-sizing: border-box;
+        }
 
+        html {
+            scroll-behavior: smooth;
+        }
 
-<style>
+        body {
 
-    * {
-        box-sizing: border-box;
-    }
+            margin: 0;
 
+            font-family: Arial, sans-serif;
 
-    html {
-        scroll-behavior: smooth;
-    }
+            background: #111111;
 
+            color: #ffffff;
 
-    body {
+        }
 
-        margin: 0;
 
-        font-family: Arial, sans-serif;
-
-        background: #111111;
-
-        color: #ffffff;
-
-    }
-
-
-    /* HERO */
-
-    header {
-
-        min-height: 48vh;
-
-        display: flex;
-
-        justify-content: center;
-
-        align-items: center;
-
-        text-align: center;
-
-        padding: 60px 20px;
-
-        background:
-            linear-gradient(
-                135deg,
-                #0b0b0b,
-                #1a1a1a
-            );
-
-        border-bottom: 1px solid #d4af37;
-
-    }
-
-
-    .hero {
-
-        max-width: 900px;
-
-    }
-
-
-    .symbol {
-
-        font-size: 50px;
-
-        margin-bottom: 15px;
-
-    }
-
-
-    header h1 {
-
-        font-size: 42px;
-
-        margin: 10px 0 15px;
-
-        color: #d4af37;
-
-        letter-spacing: 1px;
-
-    }
-
-
-    .designation {
-
-        font-size: 20px;
-
-        letter-spacing: 2px;
-
-        color: #ffffff;
-
-        margin-bottom: 12px;
-
-    }
-
-
-    .tagline {
-
-        color: #aaaaaa;
-
-        font-size: 16px;
-
-        line-height: 1.6;
-
-    }
-
-
-    /* NAVIGATION */
-
-    nav {
-
-        position: sticky;
-
-        top: 0;
-
-        z-index: 10;
-
-        background: #0d0d0d;
-
-        text-align: center;
-
-        padding: 18px 10px;
-
-        border-bottom: 1px solid #333333;
-
-    }
-
-
-    nav a {
-
-        color: #d4af37;
-
-        text-decoration: none;
-
-        margin: 0 18px;
-
-        font-weight: bold;
-
-        font-size: 16px;
-
-        transition: 0.3s;
-
-    }
-
-
-    nav a:hover {
-
-        color: #ffffff;
-
-    }
-
-
-    /* ARTICLE */
-
-    main {
-
-        max-width: 950px;
-
-        margin: auto;
-
-        padding: 70px 25px;
-
-    }
-
-
-    .article-box {
-
-        background: #171717;
-
-        border: 1px solid #333333;
-
-        border-left: 4px solid #d4af37;
-
-        border-radius: 8px;
-
-        padding: 38px;
-
-    }
-
-
-    .article-title {
-
-        color: #d4af37;
-
-        font-size: 36px;
-
-        line-height: 1.4;
-
-        margin: 0 0 15px;
-
-    }
-
-
-    .article-date {
-
-        color: #999999;
-
-        font-size: 14px;
-
-        padding-bottom: 20px;
-
-        margin-bottom: 25px;
-
-        border-bottom: 1px solid #333333;
-
-    }
-
-
-    .article-description {
-
-        color: #dddddd;
-
-        font-size: 18px;
-
-        line-height: 1.8;
-
-        margin-bottom: 30px;
-
-        font-weight: bold;
-
-    }
-
-
-    .article-content {
-
-        color: #dddddd;
-
-        font-size: 17px;
-
-        line-height: 1.9;
-
-    }
-
-
-    .article-content p {
-
-        margin: 0 0 22px;
-
-        white-space: pre-line;
-
-    }
-
-
-    .article-content p:last-child {
-
-        margin-bottom: 0;
-
-    }
-
-
-    /* BACK BUTTON */
-
-    .back-btn {
-
-        display: inline-block;
-
-        margin-top: 35px;
-
-        padding: 13px 25px;
-
-        background: #d4af37;
-
-        color: #111111;
-
-        text-decoration: none;
-
-        font-weight: bold;
-
-        border-radius: 6px;
-
-        transition: 0.3s;
-
-    }
-
-
-    .back-btn:hover {
-
-        background: #f0cf55;
-
-        transform: translateY(-2px);
-
-    }
-
-
-    /* NOT FOUND / ERROR */
-
-    .loading,
-    .error,
-    .not-found {
-
-        text-align: center;
-
-        padding: 40px 20px;
-
-        color: #aaaaaa;
-
-    }
-
-
-    .error {
-
-        color: #d4af37;
-
-    }
-
-
-    /* DISCLAIMER */
-
-    .disclaimer {
-
-        max-width: 900px;
-
-        margin: auto;
-
-        padding: 50px 25px;
-
-        text-align: center;
-
-        background: #111111;
-
-    }
-
-
-    .disclaimer h2 {
-
-        font-size: 28px;
-
-        color: #d4af37;
-
-        margin-bottom: 25px;
-
-    }
-
-
-    .disclaimer p {
-
-        color: #aaaaaa;
-
-        font-size: 15px;
-
-        line-height: 1.8;
-
-        margin-bottom: 15px;
-
-    }
-
-
-    /* FOOTER */
-
-    footer {
-
-        background: #080808;
-
-        color: #888888;
-
-        text-align: center;
-
-        padding: 25px 15px;
-
-        border-top: 1px solid #333333;
-
-        font-size: 14px;
-
-    }
-
-
-    footer strong {
-
-        color: #d4af37;
-
-    }
-
-
-    /* FLOATING CONTACT */
-
-    .floating-contact {
-
-        position: fixed;
-
-        right: 20px;
-
-        bottom: 20px;
-
-        z-index: 1000;
-
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 10px;
-
-    }
-
-
-    .floating-contact a {
-
-        width: 52px;
-
-        height: 52px;
-
-        display: flex;
-
-        align-items: center;
-
-        justify-content: center;
-
-        border-radius: 50%;
-
-        text-decoration: none;
-
-        font-size: 23px;
-
-        box-shadow:
-            0 4px 12px
-            rgba(0, 0, 0, 0.4);
-
-        transition: 0.3s;
-
-    }
-
-
-    .floating-call {
-
-        background: #d4af37;
-
-        color: #111111;
-
-    }
-
-
-    .floating-whatsapp {
-
-        background: #25D366;
-
-        color: #ffffff;
-
-    }
-
-
-    .floating-contact a:hover {
-
-        transform: scale(1.08);
-
-    }
-
-
-    /* MOBILE */
-
-    @media (max-width: 600px) {
+        /* =========================
+           HERO
+           ========================= */
 
         header {
 
-            min-height: 42vh;
+            min-height: 48vh;
 
-            padding: 50px 15px;
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0b0b0b,
+                    #1a1a1a
+                );
+
+            border-bottom: 1px solid #d4af37;
+
+        }
+
+
+        .hero {
+
+            max-width: 900px;
+
+        }
+
+
+        .symbol {
+
+            font-size: 50px;
+
+            margin-bottom: 15px;
 
         }
 
 
         header h1 {
 
-            font-size: 30px;
+            font-size: 42px;
+
+            margin: 10px 0 15px;
+
+            color: #d4af37;
+
+            letter-spacing: 1px;
 
         }
 
 
         .designation {
 
-            font-size: 16px;
+            font-size: 20px;
+
+            letter-spacing: 2px;
+
+            color: #ffffff;
+
+            margin-bottom: 12px;
 
         }
 
 
         .tagline {
 
-            font-size: 14px;
+            color: #aaaaaa;
+
+            font-size: 16px;
+
+            line-height: 1.6;
 
         }
 
 
+        /* =========================
+           NAVIGATION
+           ========================= */
+
         nav {
 
-            padding: 15px 5px;
+            position: sticky;
+
+            top: 0;
+
+            z-index: 10;
+
+            background: #0d0d0d;
+
+            text-align: center;
+
+            padding: 18px 10px;
+
+            border-bottom: 1px solid #333333;
 
         }
 
 
         nav a {
 
-            margin: 0 7px;
+            color: #d4af37;
 
-            font-size: 14px;
+            text-decoration: none;
+
+            margin: 0 18px;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            transition: 0.3s;
 
         }
 
+
+        nav a:hover {
+
+            color: #ffffff;
+
+        }
+
+
+        /* =========================
+           MAIN
+           ========================= */
 
         main {
 
-            padding: 45px 15px;
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 70px 25px;
 
         }
 
 
+        /* =========================
+           ARTICLE BOX
+           ========================= */
+
         .article-box {
 
-            padding: 24px 18px;
+            background: #171717;
+
+            border: 1px solid #333333;
+
+            border-left: 4px solid #d4af37;
+
+            border-radius: 8px;
+
+            padding: 38px;
 
         }
 
 
         .article-title {
 
-            font-size: 27px;
+            color: #d4af37;
+
+            font-size: 36px;
+
+            line-height: 1.4;
+
+            margin: 0 0 15px;
+
+        }
+
+
+        .article-date {
+
+            color: #999999;
+
+            font-size: 14px;
+
+            padding-bottom: 20px;
+
+            margin-bottom: 25px;
+
+            border-bottom: 1px solid #333333;
 
         }
 
 
         .article-description {
 
-            font-size: 16px;
+            color: #dddddd;
+
+            font-size: 18px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+
+            font-weight: bold;
 
         }
 
 
         .article-content {
 
-            font-size: 16px;
+            color: #dddddd;
 
-            line-height: 1.8;
+            font-size: 17px;
+
+            line-height: 1.9;
+
+        }
+
+
+        .article-content p {
+
+            margin: 0 0 22px;
+
+            white-space: pre-line;
+
+        }
+
+
+        .article-content p:last-child {
+
+            margin-bottom: 0;
+
+        }
+
+
+        /* =========================
+           BUTTONS
+           ========================= */
+
+        .article-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 35px;
 
         }
 
 
         .back-btn {
 
-            width: 100%;
+            display: inline-block;
+
+            padding: 13px 20px;
+
+            background: #d4af37;
+
+            color: #111111;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .back-btn:hover {
+
+            background: #ffffff;
+
+            color: #111111;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        .home-btn {
+
+            display: inline-block;
+
+            padding: 13px 20px;
+
+            background: transparent;
+
+            color: #d4af37;
+
+            border: 1px solid #d4af37;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 6px;
+
+            transition: 0.3s;
+
+        }
+
+
+        .home-btn:hover {
+
+            background: #d4af37;
+
+            color: #111111;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* =========================
+           LOADING / ERROR
+           ========================= */
+
+        .loading,
+        .error,
+        .not-found {
 
             text-align: center;
 
+            padding: 40px 20px;
+
+            color: #aaaaaa;
+
         }
 
+
+        .error {
+
+            color: #d4af37;
+
+        }
+
+
+        /* =========================
+           DISCLAIMER
+           ========================= */
+
+        .disclaimer {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            padding: 50px 25px;
+
+            text-align: center;
+
+            background: #111111;
+
+        }
+
+
+        .disclaimer h2 {
+
+            font-size: 28px;
+
+            color: #d4af37;
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .disclaimer p {
+
+            color: #aaaaaa;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =========================
+           FOOTER
+           ========================= */
+
+        footer {
+
+            background: #080808;
+
+            color: #888888;
+
+            text-align: center;
+
+            padding: 25px 15px;
+
+            border-top: 1px solid #333333;
+
+            font-size: 14px;
+
+        }
+
+
+        footer strong {
+
+            color: #d4af37;
+
+        }
+
+
+        /* =========================
+           FLOATING CONTACT
+           ========================= */
 
         .floating-contact {
 
-            right: 15px;
+            position: fixed;
 
-            bottom: 15px;
+            right: 20px;
+
+            bottom: 20px;
+
+            z-index: 1000;
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 10px;
 
         }
 
-    }
 
-</style>
-```
+        .floating-contact a {
+
+            width: 52px;
+
+            height: 52px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            text-decoration: none;
+
+            font-size: 23px;
+
+            box-shadow:
+                0 4px 12px
+                rgba(0, 0, 0, 0.4);
+
+            transition: 0.3s;
+
+        }
+
+
+        .floating-call {
+
+            background: #d4af37;
+
+            color: #111111;
+
+        }
+
+
+        .floating-whatsapp {
+
+            background: #25D366;
+
+            color: #ffffff;
+
+        }
+
+
+        .floating-contact a:hover {
+
+            transform: scale(1.08);
+
+        }
+
+
+        /* =========================
+           MOBILE
+           ========================= */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                min-height: 42vh;
+
+                padding: 50px 15px;
+
+            }
+
+
+            header h1 {
+
+                font-size: 30px;
+
+            }
+
+
+            .designation {
+
+                font-size: 16px;
+
+            }
+
+
+            .tagline {
+
+                font-size: 14px;
+
+            }
+
+
+            nav {
+
+                padding: 15px 5px;
+
+            }
+
+
+            nav a {
+
+                margin: 0 7px;
+
+                font-size: 14px;
+
+            }
+
+
+            main {
+
+                padding: 45px 15px;
+
+            }
+
+
+            .article-box {
+
+                padding: 24px 18px;
+
+            }
+
+
+            .article-title {
+
+                font-size: 27px;
+
+            }
+
+
+            .article-description {
+
+                font-size: 16px;
+
+            }
+
+
+            .article-content {
+
+                font-size: 16px;
+
+                line-height: 1.8;
+
+            }
+
+
+            .article-buttons {
+
+                flex-direction: column;
+
+            }
+
+
+            .back-btn,
+            .home-btn {
+
+                width: 100%;
+
+                text-align: center;
+
+            }
+
+
+            .floating-contact {
+
+                right: 15px;
+
+                bottom: 15px;
+
+            }
+
+        }
+
+    </style>
 
 </head>
 
+
 <body>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+     ========================= -->
 
 <header>
 
-```
-<div class="hero">
+    <div class="hero">
 
-    <div class="symbol">⚖️</div>
+        <div class="symbol">
+            ⚖️
+        </div>
 
-    <h1>Legal Article</h1>
+        <h1>
+            Legal Article
+        </h1>
 
-    <div class="designation">
-        BIPIN KUMAR MAURYA
+        <div class="designation">
+            BIPIN KUMAR MAURYA
+        </div>
+
+        <p class="tagline">
+            कानून, विधिक जागरूकता एवं भारतीय विधि से संबंधित जानकारी
+        </p>
+
     </div>
-
-    <p class="tagline">
-        कानून, विधिक जागरूकता एवं भारतीय विधि से संबंधित जानकारी
-    </p>
-
-</div>
-```
 
 </header>
 
-<!-- NAVIGATION -->
+
+<!-- =========================
+     NAVIGATION
+     ========================= -->
 
 <nav aria-label="Main Navigation">
 
-```
-<a href="index.html">Home</a>
+    <a href="index.html">
+        Home
+    </a>
 
-<a href="articles.html">Legal Articles</a>
+    <a href="articles.html">
+        Legal Articles
+    </a>
 
-<a href="profile.html">Profile</a>
-```
+    <a href="profile.html">
+        Profile
+    </a>
 
 </nav>
 
-<!-- ARTICLE -->
+
+<!-- =========================
+     ARTICLE
+     ========================= -->
 
 <main>
 
-```
-<article
-    class="article-box"
-    id="article-container"
->
+    <article
+        class="article-box"
+        id="article-container"
+    >
 
-    <div class="loading">
+        <div class="loading">
 
-        लेख लोड हो रहा है...
+            लेख लोड हो रहा है...
 
-    </div>
+        </div>
 
-</article>
-```
+    </article>
 
 </main>
 
-<!-- DISCLAIMER -->
+
+<!-- =========================
+     DISCLAIMER
+     ========================= -->
 
 <section class="disclaimer">
 
-```
-<h2>Legal Disclaimer</h2>
+    <h2>
+        Legal Disclaimer
+    </h2>
 
-<p>
-    इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य विधिक जानकारी
-    एवं जागरूकता के उद्देश्य से प्रदान की गई है। यह किसी विशेष
-    मामले के संबंध में विधिक राय, सलाह अथवा पेशेवर परामर्श का
-    विकल्प नहीं है।
-</p>
+    <p>
+        इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य विधिक जानकारी
+        एवं जागरूकता के उद्देश्य से प्रदान की गई है। यह किसी विशेष
+        मामले के संबंध में विधिक राय, सलाह अथवा पेशेवर परामर्श का
+        विकल्प नहीं है।
+    </p>
 
-<p>
-    प्रत्येक कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार
-    पर अलग होता है। किसी भी कानूनी कार्रवाई से पहले उचित
-    विधिक परामर्श प्राप्त करना आवश्यक है।
-</p>
-```
+    <p>
+        प्रत्येक कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार
+        पर अलग होता है। किसी भी कानूनी कार्रवाई से पहले उचित
+        विधिक परामर्श प्राप्त करना आवश्यक है।
+    </p>
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+     ========================= -->
 
 <footer>
 
-```
-<p>
-    © 2026
-    <strong>Bipin Kumar Maurya</strong>
-    | Advocate & Legal Consultant
-</p>
-```
+    <p>
+
+        © 2026
+
+        <strong>
+            Bipin Kumar Maurya
+        </strong>
+
+        | Advocate & Legal Consultant
+
+    </p>
 
 </footer>
 
-<!-- FLOATING CONTACT -->
+
+<!-- =========================
+     FLOATING CONTACT
+     ========================= -->
 
 <div class="floating-contact">
 
-```
-<a
-    href="tel:7080884964"
-    class="floating-call"
-    title="Call Now"
->
-    📞
-</a>
+    <a
+        href="tel:7080884964"
+        class="floating-call"
+        title="Call Now"
+        aria-label="Call Bipin Kumar Maurya"
+    >
+        📞
+    </a>
 
 
-<a
-    href="https://wa.me/917080884964"
-    class="floating-whatsapp"
-    title="WhatsApp"
-    target="_blank"
-    rel="noopener noreferrer"
->
-    💬
-</a>
-```
+    <a
+        href="https://wa.me/917080884964"
+        class="floating-whatsapp"
+        title="WhatsApp"
+        aria-label="WhatsApp Bipin Kumar Maurya"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        💬
+    </a>
 
 </div>
 
-<!-- SUPABASE -->
+
+<!-- =========================
+     SUPABASE
+     ========================= -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 
 <script>
 
@@ -779,7 +877,9 @@
         );
 
 
-    /* GET ARTICLE ID */
+    /* =========================
+       GET ARTICLE ID
+       ========================= */
 
     const params =
         new URLSearchParams(
@@ -791,7 +891,9 @@
         params.get("id");
 
 
-    /* LOAD ARTICLE */
+    /* =========================
+       LOAD ARTICLE
+       ========================= */
 
     async function loadArticle() {
 
@@ -816,12 +918,25 @@
                         कोई लेख चुनें।
                     </p>
 
-                    <a
-                        class="back-btn"
-                        href="articles.html"
-                    >
-                        ← सभी Legal Articles देखें
-                    </a>
+
+                    <div class="article-buttons">
+
+                        <a
+                            class="back-btn"
+                            href="articles.html"
+                        >
+                            ← सभी Legal Articles देखें
+                        </a>
+
+
+                        <a
+                            class="home-btn"
+                            href="index.html"
+                        >
+                            ⌂ मुख्य वेबसाइट
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -863,6 +978,10 @@
             }
 
 
+            /* =========================
+               ARTICLE NOT FOUND
+               ========================= */
+
             if (!data) {
 
                 container.innerHTML = `
@@ -878,12 +997,25 @@
                             या अभी प्रकाशित नहीं हुआ है।
                         </p>
 
-                        <a
-                            class="back-btn"
-                            href="articles.html"
-                        >
-                            ← सभी Legal Articles देखें
-                        </a>
+
+                        <div class="article-buttons">
+
+                            <a
+                                class="back-btn"
+                                href="articles.html"
+                            >
+                                ← सभी Legal Articles देखें
+                            </a>
+
+
+                            <a
+                                class="home-btn"
+                                href="index.html"
+                            >
+                                ⌂ मुख्य वेबसाइट
+                            </a>
+
+                        </div>
 
                     </div>
 
@@ -894,38 +1026,50 @@
             }
 
 
-            /* SEO */
+            /* =========================
+               UPDATE SEO
+               ========================= */
 
             updateSEO(data);
 
             addArticleSchema(data);
 
 
-            /* CLEAR */
+            /* =========================
+               CLEAR CONTAINER
+               ========================= */
 
             container.innerHTML = "";
 
 
-            /* TITLE */
+            /* =========================
+               TITLE
+               ========================= */
 
             const title =
                 document.createElement("h1");
 
+
             title.className =
                 "article-title";
+
 
             title.textContent =
                 data.title ||
                 "Legal Article";
 
 
-            /* DATE */
+            /* =========================
+               DATE
+               ========================= */
 
             const date =
                 document.createElement("div");
 
+
             date.className =
                 "article-date";
+
 
             date.textContent =
                 "📅 प्रकाशित: " +
@@ -935,22 +1079,29 @@
                 );
 
 
-            /* DESCRIPTION */
+            /* =========================
+               DESCRIPTION
+               ========================= */
 
             const description =
                 document.createElement("div");
 
+
             description.className =
                 "article-description";
+
 
             description.textContent =
                 data.description || "";
 
 
-            /* CONTENT */
+            /* =========================
+               CONTENT
+               ========================= */
 
             const content =
                 document.createElement("div");
+
 
             content.className =
                 "article-content";
@@ -993,7 +1144,21 @@
             });
 
 
-            /* BACK BUTTON */
+            /* =========================
+               BUTTON BOX
+               ========================= */
+
+            const buttonBox =
+                document.createElement("div");
+
+
+            buttonBox.className =
+                "article-buttons";
+
+
+            /* =========================
+               ALL ARTICLES BUTTON
+               ========================= */
 
             const backButton =
                 document.createElement("a");
@@ -1011,7 +1176,43 @@
                 "← सभी Legal Articles देखें";
 
 
-            /* APPEND */
+            /* =========================
+               MAIN WEBSITE BUTTON
+               ========================= */
+
+            const homeButton =
+                document.createElement("a");
+
+
+            homeButton.className =
+                "home-btn";
+
+
+            homeButton.href =
+                "index.html";
+
+
+            homeButton.textContent =
+                "⌂ मुख्य वेबसाइट";
+
+
+            /* =========================
+               ADD BUTTONS
+               ========================= */
+
+            buttonBox.appendChild(
+                backButton
+            );
+
+
+            buttonBox.appendChild(
+                homeButton
+            );
+
+
+            /* =========================
+               APPEND ARTICLE
+               ========================= */
 
             container.appendChild(
                 title
@@ -1038,7 +1239,7 @@
 
 
             container.appendChild(
-                backButton
+                buttonBox
             );
 
         }
@@ -1065,12 +1266,25 @@
                         पुनः प्रयास करें।
                     </p>
 
-                    <a
-                        class="back-btn"
-                        href="articles.html"
-                    >
-                        ← सभी Legal Articles देखें
-                    </a>
+
+                    <div class="article-buttons">
+
+                        <a
+                            class="back-btn"
+                            href="articles.html"
+                        >
+                            ← सभी Legal Articles देखें
+                        </a>
+
+
+                        <a
+                            class="home-btn"
+                            href="index.html"
+                        >
+                            ⌂ मुख्य वेबसाइट
+                        </a>
+
+                    </div>
 
                 </div>
 
@@ -1081,7 +1295,9 @@
     }
 
 
-    /* SEO META */
+    /* =========================
+       SEO META
+       ========================= */
 
     function updateSEO(data) {
 
@@ -1191,7 +1407,9 @@
     }
 
 
-    /* ARTICLE SCHEMA */
+    /* =========================
+       ARTICLE SCHEMA
+       ========================= */
 
     function addArticleSchema(data) {
 
@@ -1320,7 +1538,9 @@
     }
 
 
-    /* DATE */
+    /* =========================
+       DATE FORMAT
+       ========================= */
 
     function formatDate(dateString) {
 
@@ -1360,11 +1580,14 @@
     }
 
 
-    /* START */
+    /* =========================
+       START
+       ========================= */
 
     loadArticle();
 
 </script>
+
 
 </body>
 
