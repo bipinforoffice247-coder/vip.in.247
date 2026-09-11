@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="hi">
 <head>
   <meta charset="UTF-8">
@@ -6,7 +7,51 @@
 
   <title>Legal Article | Bipin Kumar Maurya</title>
 
-  <meta name="description" content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya.">
+<meta
+name="description"
+content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya."
+
+>
+
+  <meta name="author" content="Bipin Kumar Maurya">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="googlebot" content="index, follow, max-image-preview:large">
+
+  <link
+    rel="canonical"
+    href="https://bipinkumarmaurya.github.io/article.html"
+    id="canonical-link"
+  >
+
+  <!-- Open Graph -->
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Legal Article | Bipin Kumar Maurya" id="og-title">
+  <meta
+    property="og:description"
+    content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya."
+    id="og-description"
+  >
+  <meta
+    property="og:url"
+    content="https://bipinkumarmaurya.github.io/article.html"
+    id="og-url"
+  >
+  <meta property="og:site_name" content="Bipin Kumar Maurya">
+
+  <!-- Twitter -->
+
+  <meta name="twitter:card" content="summary">
+  <meta
+    name="twitter:title"
+    content="Legal Article | Bipin Kumar Maurya"
+    id="twitter-title"
+  >
+  <meta
+    name="twitter:description"
+    content="कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya."
+    id="twitter-description"
+  >
 
   <style>
     *{
@@ -101,6 +146,7 @@
 
     .article-content p{
       margin:0 0 22px;
+      white-space:pre-line;
     }
 
     .back-btn{
@@ -181,6 +227,7 @@
       }
     }
   </style>
+
 </head>
 
 <body>
@@ -190,7 +237,7 @@
   <p>कानूनी जागरूकता एवं विधिक जानकारी</p>
 </header>
 
-<nav>
+<nav aria-label="मुख्य नेविगेशन">
   <a href="index.html">Home</a>
   <a href="articles.html">Legal Articles</a>
   <a href="profile.html">Profile</a>
@@ -198,11 +245,18 @@
 
 <main>
 
-  <article class="article-box" id="article-container">
+  <article
+    class="article-box"
+    id="article-container"
+    itemscope
+    itemtype="https://schema.org/Article"
+  >
 
-    <div class="loading">
-      लेख लोड हो रहा है...
-    </div>
+```
+<div class="loading">
+  लेख लोड हो रहा है...
+</div>
+```
 
   </article>
 
@@ -219,8 +273,8 @@
   © Bipin Kumar Maurya | Gorakhpur, Uttar Pradesh
 </footer>
 
-
 <!-- Supabase -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
@@ -254,6 +308,204 @@
 
 
   /* =================================
+     UPDATE SEO META
+     ================================= */
+
+  function updateSEOMeta(data){
+
+    const title =
+      data.title ||
+      "Legal Article | Bipin Kumar Maurya";
+
+    const description =
+      data.description ||
+      "कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article — Bipin Kumar Maurya.";
+
+    const pageUrl =
+      window.location.origin +
+      window.location.pathname +
+      "?id=" +
+      encodeURIComponent(data.id);
+
+
+    document.title =
+      title +
+      " | Bipin Kumar Maurya";
+
+
+    /* Description */
+
+    const descriptionTag =
+      document.querySelector('meta[name="description"]');
+
+    if(descriptionTag){
+      descriptionTag.setAttribute(
+        "content",
+        description
+      );
+    }
+
+
+    /* Canonical */
+
+    const canonical =
+      document.getElementById("canonical-link");
+
+    if(canonical){
+      canonical.setAttribute(
+        "href",
+        pageUrl
+      );
+    }
+
+
+    /* Open Graph */
+
+    const ogTitle =
+      document.getElementById("og-title");
+
+    if(ogTitle){
+      ogTitle.setAttribute(
+        "content",
+        title
+      );
+    }
+
+
+    const ogDescription =
+      document.getElementById("og-description");
+
+    if(ogDescription){
+      ogDescription.setAttribute(
+        "content",
+        description
+      );
+    }
+
+
+    const ogUrl =
+      document.getElementById("og-url");
+
+    if(ogUrl){
+      ogUrl.setAttribute(
+        "content",
+        pageUrl
+      );
+    }
+
+
+    /* Twitter */
+
+    const twitterTitle =
+      document.getElementById("twitter-title");
+
+    if(twitterTitle){
+      twitterTitle.setAttribute(
+        "content",
+        title
+      );
+    }
+
+
+    const twitterDescription =
+      document.getElementById("twitter-description");
+
+    if(twitterDescription){
+      twitterDescription.setAttribute(
+        "content",
+        description
+      );
+    }
+
+  }
+
+
+  /* =================================
+     CREATE STRUCTURED DATA
+     ================================= */
+
+  function addArticleSchema(data){
+
+    const oldSchema =
+      document.getElementById("article-schema");
+
+    if(oldSchema){
+      oldSchema.remove();
+    }
+
+
+    const pageUrl =
+      window.location.origin +
+      window.location.pathname +
+      "?id=" +
+      encodeURIComponent(data.id);
+
+
+    const publishedDate =
+      data.published_at ||
+      data.created_at ||
+      new Date().toISOString();
+
+
+    const schema = {
+
+      "@context":"https://schema.org",
+
+      "@type":"Article",
+
+      "mainEntityOfPage":{
+        "@type":"WebPage",
+        "@id":pageUrl
+      },
+
+      "headline":
+        data.title ||
+        "Legal Article",
+
+      "description":
+        data.description ||
+        "कानूनी जागरूकता और भारतीय कानून से संबंधित Legal Article.",
+
+      "datePublished":
+        publishedDate,
+
+      "author":{
+        "@type":"Person",
+        "name":"Bipin Kumar Maurya",
+        "url":
+          "https://bipinkumarmaurya.github.io/"
+      },
+
+      "publisher":{
+        "@type":"Person",
+        "name":"Bipin Kumar Maurya"
+      },
+
+      "inLanguage":"hi-IN",
+
+      "url":pageUrl
+
+    };
+
+
+    const script =
+      document.createElement("script");
+
+    script.type =
+      "application/ld+json";
+
+    script.id =
+      "article-schema";
+
+    script.textContent =
+      JSON.stringify(schema);
+
+    document.head.appendChild(script);
+
+  }
+
+
+  /* =================================
      LOAD ARTICLE
      ================================= */
 
@@ -262,19 +514,25 @@
     const container =
       document.getElementById("article-container");
 
+
     if(!articleId){
 
       container.innerHTML = `
         <div class="not-found">
+
           <h2>लेख उपलब्ध नहीं है।</h2>
+
           <p>
             कृपया Legal Articles page से कोई लेख चुनें।
           </p>
 
-          <a class="back-btn"
-             href="articles.html">
+          <a
+            class="back-btn"
+            href="articles.html"
+          >
             ← सभी लेख देखें
           </a>
+
         </div>
       `;
 
@@ -286,12 +544,23 @@
 
       const { data, error } =
         await supabaseClient
+
           .from("articles")
+
           .select(
             "id,title,description,content,published_at,created_at"
           )
-          .eq("id", articleId)
-          .eq("status","published")
+
+          .eq(
+            "id",
+            articleId
+          )
+
+          .eq(
+            "status",
+            "published"
+          )
+
           .maybeSingle();
 
 
@@ -317,8 +586,10 @@
               यह लेख उपलब्ध नहीं है या अभी प्रकाशित नहीं हुआ है।
             </p>
 
-            <a class="back-btn"
-               href="articles.html">
+            <a
+              class="back-btn"
+              href="articles.html"
+            >
               ← सभी लेख देखें
             </a>
 
@@ -330,12 +601,12 @@
 
 
       /* =================================
-         UPDATE PAGE TITLE
+         SEO
          ================================= */
 
-      document.title =
-        data.title +
-        " | Bipin Kumar Maurya";
+      updateSEOMeta(data);
+
+      addArticleSchema(data);
 
 
       /* =================================
@@ -353,8 +624,14 @@
       title.className =
         "article-title";
 
+      title.setAttribute(
+        "itemprop",
+        "headline"
+      );
+
       title.textContent =
-        data.title || "Legal Article";
+        data.title ||
+        "Legal Article";
 
 
       /* ---------- DATE ---------- */
@@ -364,6 +641,11 @@
 
       date.className =
         "article-date";
+
+      date.setAttribute(
+        "itemprop",
+        "datePublished"
+      );
 
       date.textContent =
         formatDate(
@@ -380,6 +662,11 @@
       description.className =
         "article-description";
 
+      description.setAttribute(
+        "itemprop",
+        "description"
+      );
+
       description.textContent =
         data.description || "";
 
@@ -391,6 +678,11 @@
 
       content.className =
         "article-content";
+
+      content.setAttribute(
+        "itemprop",
+        "articleBody"
+      );
 
 
       /*
@@ -412,13 +704,16 @@
           return;
         }
 
+
         const paragraph =
           document.createElement("p");
 
         paragraph.textContent =
           cleanText;
 
-        content.appendChild(paragraph);
+        content.appendChild(
+          paragraph
+        );
 
       });
 
@@ -440,17 +735,34 @@
 
       /* ---------- APPEND ---------- */
 
-      container.appendChild(title);
-      container.appendChild(date);
+      container.appendChild(
+        title
+      );
+
+      container.appendChild(
+        date
+      );
+
 
       if(data.description){
-        container.appendChild(description);
+
+        container.appendChild(
+          description
+        );
+
       }
 
-      container.appendChild(content);
-      container.appendChild(backButton);
+
+      container.appendChild(
+        content
+      );
+
+      container.appendChild(
+        backButton
+      );
 
     }
+
 
     catch(error){
 
@@ -458,6 +770,7 @@
         "Supabase Article Error:",
         error
       );
+
 
       container.innerHTML = `
         <div class="error">
@@ -470,8 +783,10 @@
             कृपया थोड़ी देर बाद पुनः प्रयास करें।
           </p>
 
-          <a class="back-btn"
-             href="articles.html">
+          <a
+            class="back-btn"
+            href="articles.html"
+          >
             ← सभी लेख देखें
           </a>
 
@@ -493,12 +808,19 @@
       return "";
     }
 
+
     const date =
       new Date(dateString);
 
-    if(isNaN(date.getTime())){
+
+    if(
+      isNaN(
+        date.getTime()
+      )
+    ){
       return "";
     }
+
 
     return "प्रकाशित: " +
       date.toLocaleDateString(
