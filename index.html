@@ -5,8 +5,7 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>
         Bipin Kumar Maurya | Legal Information & Legal Consultant in Gorakhpur
@@ -73,7 +72,7 @@
           content="Kumar Maurya">
 
 
-    <!-- TWITTER / X CARD -->
+    <!-- TWITTER / X -->
 
     <meta name="twitter:card"
           content="summary">
@@ -91,9 +90,11 @@
             box-sizing: border-box;
         }
 
+
         html {
             scroll-behavior: smooth;
         }
+
 
         body {
             margin: 0;
@@ -104,7 +105,7 @@
 
 
         /* =========================================
-           HERO SECTION
+           HERO
         ========================================= */
 
         header {
@@ -114,31 +115,13 @@
             align-items: center;
             text-align: center;
             padding: 30px 20px;
-
-            background:
-                linear-gradient(
-                    rgba(11, 11, 11, 0.78),
-                    rgba(26, 26, 26, 0.88)
-                ),
-                url("banner.png") center center / cover no-repeat;
-
+            background: linear-gradient(135deg, #0b0b0b, #1a1a1a);
             border-bottom: 1px solid #d4af37;
         }
 
+
         .hero {
             max-width: 900px;
-        }
-
-
-        /* LOGO */
-
-        .hero-logo {
-            width: 150px;
-            height: 150px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 18px;
-            border-radius: 50%;
         }
 
 
@@ -149,12 +132,14 @@
             letter-spacing: 1px;
         }
 
+
         .designation {
             font-size: 22px;
             letter-spacing: 2px;
             margin-bottom: 12px;
             color: #ffffff;
         }
+
 
         .tagline {
             color: #aaaaaa;
@@ -164,11 +149,13 @@
             margin: 5px 0 20px;
         }
 
+
         .location {
             color: #cccccc;
             font-size: 18px;
             line-height: 1.6;
         }
+
 
         .btn {
             display: inline-block;
@@ -181,6 +168,7 @@
             border-radius: 6px;
             transition: 0.3s;
         }
+
 
         .btn:hover {
             background: #f0cf55;
@@ -203,15 +191,17 @@
             border-bottom: 1px solid #333333;
         }
 
+
         nav a {
             color: #d4af37;
             text-decoration: none;
-            margin: 0 18px;
+            margin: 0 15px;
             font-weight: bold;
             font-size: 16px;
             transition: 0.3s;
             cursor: pointer;
         }
+
 
         nav a:hover {
             color: #ffffff;
@@ -227,6 +217,7 @@
             margin: auto;
             padding: 70px 25px;
         }
+
 
         h2 {
             color: #d4af37;
@@ -248,6 +239,7 @@
             background: #111111;
         }
 
+
         .about-section p {
             color: #dddddd;
             font-size: 18px;
@@ -257,148 +249,152 @@
 
 
         /* =========================================
-           SERVICES OVERVIEW - 2 CARDS
+           MAIN TWO CARD SECTION
         ========================================= */
 
-        .services-overview {
-            max-width: none;
-            padding: 70px 20px;
+        .main-choice-section {
+            max-width: 1050px;
+            margin: auto;
+            padding: 70px 25px;
             background: #111111;
             text-align: center;
         }
 
-        .services-overview-intro {
+
+        .main-choice-intro {
             color: #cccccc;
-            max-width: 750px;
+            max-width: 700px;
             margin: 0 auto 40px;
             line-height: 1.7;
             font-size: 17px;
         }
 
-        .overview-cards {
-            max-width: 1000px;
+
+        .main-choice-container {
+            max-width: 900px;
             margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 25px;
         }
 
-        .overview-card {
-            min-height: 260px;
-            padding: 40px 30px;
+
+        .main-choice-card {
             background: #171717;
-            border: 1px solid #333333;
+            border: 1px solid #d4af37;
             border-radius: 12px;
-            text-decoration: none;
-            color: #ffffff;
+            padding: 40px 30px;
+            text-align: center;
             cursor: pointer;
             transition: 0.3s ease;
+            min-height: 270px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
 
-        .overview-card:hover {
+
+        .main-choice-card:hover {
             transform: translateY(-7px);
-            border-color: #d4af37;
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.18);
+            background: #1b1b1b;
         }
 
-        .overview-icon {
-            font-size: 52px;
-            margin-bottom: 20px;
+
+        .main-choice-icon {
+            font-size: 48px;
+            margin-bottom: 18px;
         }
 
-        .overview-card h3 {
+
+        .main-choice-card h3 {
             color: #d4af37;
-            font-size: 28px;
-            margin: 0 0 15px;
+            font-size: 27px;
+            margin: 5px 0 15px;
         }
 
-        .overview-card p {
+
+        .main-choice-card p {
             color: #cccccc;
             line-height: 1.7;
-            margin: 0 0 20px;
-            max-width: 430px;
+            margin: 0 auto 22px;
+            max-width: 400px;
         }
 
-        .overview-action {
+
+        .view-details {
             display: inline-block;
-            padding: 11px 22px;
-            border: 1px solid #d4af37;
-            border-radius: 5px;
             color: #d4af37;
             font-weight: bold;
-        }
-
-        .overview-card:hover .overview-action {
-            background: #d4af37;
-            color: #111111;
+            font-size: 16px;
         }
 
 
         /* =========================================
-           DETAIL PAGE SECTIONS
+           DETAIL VIEW
         ========================================= */
 
-        .detail-section {
+        .detail-view {
             display: none;
-            max-width: none;
-            min-height: 70vh;
-            padding: 70px 20px 80px;
+            min-height: 100vh;
             background: #111111;
+            padding: 70px 20px 100px;
+        }
+
+
+        .detail-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+
+        .detail-title {
+            color: #d4af37;
             text-align: center;
-        }
-
-        .detail-section.active {
-            display: block;
-        }
-
-        .detail-section h2 {
             font-size: 38px;
-            margin-bottom: 15px;
+            margin: 0 0 12px;
         }
 
-        .detail-intro {
-            color: #cccccc;
+
+        .detail-subtitle {
+            color: #bbbbbb;
+            text-align: center;
             max-width: 750px;
             margin: 0 auto 45px;
             line-height: 1.7;
-            font-size: 17px;
         }
 
-
-        /* DETAIL CARDS */
 
         .detail-cards {
-            max-width: 1100px;
-            margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
         }
 
+
         .detail-card {
-            padding: 35px 25px;
             background: #171717;
             border: 1px solid #333333;
             border-radius: 10px;
+            padding: 30px 25px;
             text-align: center;
             transition: 0.3s ease;
         }
 
+
         .detail-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: #d4af37;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.18);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15);
         }
+
 
         .detail-card h3 {
             color: #d4af37;
-            font-size: 23px;
-            margin-bottom: 15px;
+            font-size: 22px;
+            margin-bottom: 14px;
         }
+
 
         .detail-card p {
             color: #cccccc;
@@ -407,36 +403,35 @@
         }
 
 
-        /* WHY CHOOSE DETAIL CARDS */
-
         .why-detail-cards {
-            max-width: 1000px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
+            gap: 22px;
         }
 
+
         .why-detail-card {
-            padding: 35px 25px;
             background: #171717;
             border: 1px solid #333333;
             border-radius: 10px;
+            padding: 35px 25px;
             text-align: center;
             transition: 0.3s ease;
         }
 
+
         .why-detail-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
             border-color: #d4af37;
-            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.18);
         }
+
 
         .why-detail-card h3 {
             color: #d4af37;
-            font-size: 22px;
+            font-size: 21px;
             margin-bottom: 15px;
         }
+
 
         .why-detail-card p {
             color: #cccccc;
@@ -445,22 +440,29 @@
         }
 
 
-        /* MAIN WEBSITE BUTTON */
+        /* MINIMIZE BUTTON */
 
-        .back-main-btn {
-            display: inline-block;
-            margin-top: 45px;
-            padding: 14px 28px;
-            border: 1px solid #d4af37;
-            border-radius: 6px;
-            color: #d4af37;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s ease;
-            cursor: pointer;
+        .minimize-wrapper {
+            text-align: center;
+            margin-top: 55px;
         }
 
-        .back-main-btn:hover {
+
+        .minimize-btn {
+            display: inline-block;
+            padding: 13px 30px;
+            background: transparent;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+
+        .minimize-btn:hover {
             background: #d4af37;
             color: #111111;
         }
@@ -477,11 +479,13 @@
             max-width: none;
         }
 
+
         .legal-articles-section h2 {
             color: #d4af37;
             font-size: 32px;
             margin-bottom: 12px;
         }
+
 
         .articles-intro {
             color: #cccccc;
@@ -490,12 +494,14 @@
             line-height: 1.7;
         }
 
+
         #home-articles-list {
             max-width: 950px;
             margin: 0 auto;
             display: grid;
             gap: 20px;
         }
+
 
         .home-article-card {
             background: #111111;
@@ -507,10 +513,12 @@
             transition: 0.3s ease;
         }
 
+
         .home-article-card:hover {
             transform: translateY(-3px);
             border-color: #d4af37;
         }
+
 
         .home-article-card h3 {
             color: #d4af37;
@@ -518,16 +526,19 @@
             font-size: 21px;
         }
 
+
         .home-article-date {
             color: #999999;
             font-size: 14px;
             margin-bottom: 12px;
         }
 
+
         .home-article-description {
             color: #dddddd;
             line-height: 1.7;
         }
+
 
         .home-article-card a {
             display: inline-block;
@@ -537,18 +548,22 @@
             font-weight: bold;
         }
 
+
         .home-article-card a:hover {
             text-decoration: underline;
         }
+
 
         .home-articles-loading {
             color: #aaaaaa;
             padding: 20px;
         }
 
+
         .all-articles-link {
             margin-top: 35px;
         }
+
 
         .all-articles-link a {
             display: inline-block;
@@ -559,6 +574,7 @@
             border-radius: 5px;
             transition: 0.3s ease;
         }
+
 
         .all-articles-link a:hover {
             background: #d4af37;
@@ -577,11 +593,13 @@
             text-align: center;
         }
 
+
         .bare-acts-section h2 {
             color: #d4af37;
             font-size: 32px;
             margin-bottom: 12px;
         }
+
 
         .bare-acts-intro {
             color: #cccccc;
@@ -589,6 +607,7 @@
             margin: 0 auto 40px;
             line-height: 1.7;
         }
+
 
         #home-bare-acts-list {
             max-width: 1100px;
@@ -598,6 +617,7 @@
             gap: 25px;
             text-align: left;
         }
+
 
         .bare-category-card {
             display: flex;
@@ -615,32 +635,39 @@
             overflow: hidden;
         }
 
+
         .bare-category-card:hover {
             transform: translateY(-6px);
             border-color: #d4af37;
             box-shadow: 0 10px 28px rgba(212, 175, 55, 0.15);
         }
 
+
         .bare-category-card:nth-child(1) {
             border-top: 4px solid #d4af37;
         }
+
 
         .bare-category-card:nth-child(2) {
             border-top: 4px solid #8fa8c7;
         }
 
+
         .bare-category-card:nth-child(3) {
             border-top: 4px solid #9ab58a;
         }
+
 
         .bare-category-card:nth-child(4) {
             border-top: 4px solid #b9a06a;
         }
 
+
         .bare-category-icon {
             font-size: 42px;
             margin-bottom: 18px;
         }
+
 
         .bare-category-name {
             display: block;
@@ -651,17 +678,21 @@
             margin-bottom: 12px;
         }
 
+
         .bare-category-card:nth-child(2) .bare-category-name {
             color: #b9cce5;
         }
+
 
         .bare-category-card:nth-child(3) .bare-category-name {
             color: #b3cca5;
         }
 
+
         .bare-category-card:nth-child(4) .bare-category-name {
             color: #d0b879;
         }
+
 
         .bare-category-subtitle {
             display: block;
@@ -670,6 +701,7 @@
             font-size: 15px;
             margin-bottom: 25px;
         }
+
 
         .bare-category-action {
             display: inline-block;
@@ -682,9 +714,120 @@
             transition: 0.3s ease;
         }
 
+
         .bare-category-card:hover .bare-category-action {
             background: #d4af37;
             color: #111111;
+        }
+
+
+        /* =========================================
+           CLIENT ENQUIRY
+        ========================================= */
+
+        .enquiry-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 25px;
+            background: #111111;
+        }
+
+
+        .enquiry-form {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+
+        .enquiry-form input,
+        .enquiry-form textarea {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            background: #171717;
+            color: #ffffff;
+            border: 1px solid #555555;
+            border-radius: 6px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+        }
+
+
+        .enquiry-form input:focus,
+        .enquiry-form textarea:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+
+        .enquiry-form textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+
+        .enquiry-submit {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 6px;
+            background: #d4af37;
+            color: #111111;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .enquiry-submit:hover {
+            background: #f0cf55;
+        }
+
+
+        /* =========================================
+           FAQ
+        ========================================= */
+
+        .faq-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 70px 25px;
+            background: #111111;
+        }
+
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #333333;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #171717;
+        }
+
+
+        .faq-question {
+            width: 100%;
+            padding: 18px 20px;
+            background: #171717;
+            color: #d4af37;
+            border: none;
+            text-align: left;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+        .faq-answer {
+            display: none;
+            padding: 0 20px 18px;
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+
+        .faq-item.active .faq-answer {
+            display: block;
         }
 
 
@@ -698,15 +841,18 @@
             max-width: none;
         }
 
+
         .contact p {
             font-size: 18px;
             margin: 15px;
         }
 
+
         .contact p a {
             color: #d4af37;
             text-decoration: none;
         }
+
 
         .contact-buttons {
             margin-top: 30px;
@@ -715,6 +861,7 @@
             gap: 15px;
             flex-wrap: wrap;
         }
+
 
         .contact-buttons a {
             display: inline-block;
@@ -725,34 +872,68 @@
             transition: 0.3s;
         }
 
+
         .call-btn {
             background: #d4af37;
             color: #111111 !important;
         }
+
 
         .call-btn:hover {
             background: #f0cf55;
             transform: translateY(-2px);
         }
 
+
         .whatsapp-btn {
             background: #25D366;
             color: #ffffff !important;
         }
+
 
         .whatsapp-btn:hover {
             background: #1ebe5d;
             transform: translateY(-2px);
         }
 
+
         .instagram-btn {
             background: #c13584;
             color: #ffffff !important;
         }
 
+
         .instagram-btn:hover {
             background: #e1306c;
             transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           DISCLAIMER
+        ========================================= */
+
+        .disclaimer {
+            max-width: 900px;
+            margin: auto;
+            padding: 50px 25px;
+            text-align: center;
+            background: #111111;
+        }
+
+
+        .disclaimer h2 {
+            font-size: 28px;
+            color: #d4af37;
+            margin-bottom: 25px;
+        }
+
+
+        .disclaimer p {
+            color: #aaaaaa;
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 15px;
         }
 
 
@@ -769,91 +950,9 @@
             font-size: 14px;
         }
 
+
         footer strong {
             color: #d4af37;
-        }
-
-
-        /* =========================================
-           DISCLAIMER
-        ========================================= */
-
-        .disclaimer {
-            max-width: 900px;
-            margin: auto;
-            padding: 50px 25px;
-            text-align: center;
-            background: #111111;
-        }
-
-        .disclaimer h2 {
-            font-size: 28px;
-            color: #d4af37;
-            margin-bottom: 25px;
-        }
-
-        .disclaimer p {
-            color: #aaaaaa;
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-
-        /* =========================================
-           ENQUIRY FORM
-        ========================================= */
-
-        .enquiry-section {
-            max-width: 900px;
-            margin: auto;
-            padding: 70px 25px;
-            background: #111111;
-        }
-
-        .enquiry-form {
-            max-width: 650px;
-            margin: 0 auto;
-        }
-
-        .enquiry-form input,
-        .enquiry-form textarea {
-            width: 100%;
-            padding: 14px;
-            margin-bottom: 18px;
-            background: #171717;
-            color: #ffffff;
-            border: 1px solid #555555;
-            border-radius: 6px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-        }
-
-        .enquiry-form input:focus,
-        .enquiry-form textarea:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
-
-        .enquiry-form textarea {
-            min-height: 140px;
-            resize: vertical;
-        }
-
-        .enquiry-submit {
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 6px;
-            background: #d4af37;
-            color: #111111;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .enquiry-submit:hover {
-            background: #f0cf55;
         }
 
 
@@ -871,6 +970,7 @@
             gap: 10px;
         }
 
+
         .floating-contact a {
             width: 52px;
             height: 52px;
@@ -884,61 +984,21 @@
             transition: 0.3s;
         }
 
+
         .floating-call {
             background: #d4af37;
             color: #111111;
         }
+
 
         .floating-whatsapp {
             background: #25D366;
             color: #ffffff;
         }
 
+
         .floating-contact a:hover {
             transform: scale(1.08);
-        }
-
-
-        /* =========================================
-           FAQ
-        ========================================= */
-
-        .faq-section {
-            max-width: 900px;
-            margin: auto;
-            padding: 70px 25px;
-            background: #111111;
-        }
-
-        .faq-item {
-            margin-bottom: 15px;
-            border: 1px solid #333333;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #171717;
-        }
-
-        .faq-question {
-            width: 100%;
-            padding: 18px 20px;
-            background: #171717;
-            color: #d4af37;
-            border: none;
-            text-align: left;
-            font-size: 17px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .faq-answer {
-            display: none;
-            padding: 0 20px 18px;
-            color: #cccccc;
-            line-height: 1.7;
-        }
-
-        .faq-item.active .faq-answer {
-            display: block;
         }
 
 
@@ -951,151 +1011,137 @@
             header {
                 min-height: 80vh;
                 padding: 60px 15px;
-                background-position: center center;
             }
 
-            .hero-logo {
-                width: 115px;
-                height: 115px;
-                margin-bottom: 15px;
-            }
 
             h1 {
                 font-size: 34px;
             }
 
+
             .designation {
                 font-size: 17px;
             }
+
 
             .tagline {
                 font-size: 15px;
                 line-height: 1.6;
             }
 
+
             .location {
                 font-size: 16px;
             }
+
 
             nav {
                 padding: 15px 5px;
             }
 
+
             nav a {
-                margin: 0 7px;
-                font-size: 14px;
+                margin: 0 6px;
+                font-size: 13px;
             }
+
 
             .about-section {
                 padding: 50px 18px;
             }
 
+
             .about-section h2 {
                 font-size: 28px;
             }
+
 
             .about-section p {
                 font-size: 16px;
             }
 
 
-            /* 2 OVERVIEW CARDS MOBILE */
-
-            .services-overview {
-                padding: 50px 15px;
+            .main-choice-section {
+                padding: 50px 18px;
             }
 
-            .overview-cards {
+
+            .main-choice-container {
                 grid-template-columns: 1fr;
-                gap: 18px;
-            }
-
-            .overview-card {
-                min-height: 230px;
-                padding: 30px 20px;
-            }
-
-            .overview-card h3 {
-                font-size: 24px;
-            }
-
-            .overview-icon {
-                font-size: 44px;
             }
 
 
-            /* DETAIL CARDS MOBILE */
-
-            .detail-section {
-                padding: 50px 15px 60px;
+            .main-choice-card {
+                min-height: 240px;
             }
 
-            .detail-section h2 {
-                font-size: 29px;
+
+            .detail-view {
+                padding: 50px 15px 80px;
             }
 
-            .detail-intro {
-                font-size: 16px;
+
+            .detail-title {
+                font-size: 30px;
             }
+
 
             .detail-cards {
                 grid-template-columns: 1fr;
-                gap: 18px;
             }
+
 
             .why-detail-cards {
                 grid-template-columns: 1fr;
-                gap: 18px;
             }
 
-            .detail-card,
-            .why-detail-card {
-                padding: 28px 20px;
-            }
-
-
-            /* LEGAL ARTICLES */
 
             .legal-articles-section {
                 padding: 50px 15px;
             }
 
+
             .legal-articles-section h2 {
                 font-size: 27px;
             }
+
 
             .home-article-card {
                 padding: 20px;
             }
 
 
-            /* BARE ACTS */
-
             .bare-acts-section {
                 padding: 50px 15px;
             }
 
+
             .bare-acts-section h2 {
                 font-size: 27px;
             }
+
 
             #home-bare-acts-list {
                 grid-template-columns: 1fr;
                 gap: 18px;
             }
 
+
             .bare-category-card {
                 min-height: 220px;
                 padding: 24px;
             }
 
+
             .bare-category-icon {
                 font-size: 36px;
             }
 
+
             .bare-category-name {
                 font-size: 20px;
             }
+
 
             .bare-category-action {
                 width: 100%;
@@ -1103,17 +1149,17 @@
             }
 
 
-            /* CONTACT */
-
             .contact-buttons {
                 flex-direction: column;
                 align-items: center;
             }
 
+
             .contact-buttons a {
                 width: 80%;
                 text-align: center;
             }
+
 
             footer {
                 font-size: 13px;
@@ -1179,19 +1225,18 @@
 <body>
 
 
-    <!-- =========================================
-         HERO
-    ========================================= -->
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
+
+<div id="mainWebsite">
+
+
+    <!-- HERO -->
 
     <header>
 
         <div class="hero">
-
-            <img
-                src="logo.png"
-                alt="Bipin Kumar Maurya Legal Consultant Logo"
-                class="hero-logo"
-            >
 
             <h1>Bipin Kumar Maurya</h1>
 
@@ -1216,9 +1261,7 @@
     </header>
 
 
-    <!-- =========================================
-         NAVIGATION
-    ========================================= -->
+    <!-- NAVIGATION -->
 
     <nav>
 
@@ -1226,8 +1269,7 @@
             About
         </a>
 
-        <a href="#services-overview"
-           onclick="showMainWebsite();">
+        <a onclick="openDetail('practice')">
             Practice Areas
         </a>
 
@@ -1239,8 +1281,7 @@
             Bare Acts
         </a>
 
-        <a href="#services-overview"
-           onclick="showWhyDetail();">
+        <a onclick="openDetail('why')">
             Why Choose Me
         </a>
 
@@ -1251,1169 +1292,1234 @@
     </nav>
 
 
-    <!-- =========================================
-         MAIN WEBSITE CONTENT
-    ========================================= -->
+    <!-- ABOUT -->
 
-    <div id="main-website-content">
+    <section id="about"
+             class="about-section">
 
+        <h2>
+            About Me
+        </h2>
 
-        <!-- ABOUT -->
+        <p>
+            मैं Bipin Kumar Maurya, District Gorakhpur में Advocate एवं
+            Legal Consultant के रूप में विधिक परामर्श और कानूनी सहायता
+            प्रदान करता हूँ।
+        </p>
 
-        <section id="about"
-                 class="about-section">
+        <p>
+            मेरा उद्देश्य प्रत्येक व्यक्ति को उसके कानूनी अधिकारों,
+            दायित्वों एवं उपलब्ध विधिक उपायों के संबंध में उचित मार्गदर्शन
+            प्रदान करना है।
+        </p>
 
-            <h2>
-                About Me
-            </h2>
-
-            <p>
-                मैं Bipin Kumar Maurya, District Gorakhpur में Advocate एवं
-                Legal Consultant के रूप में विधिक परामर्श और कानूनी सहायता
-                प्रदान करता हूँ।
-            </p>
-
-            <p>
-                मेरा उद्देश्य प्रत्येक व्यक्ति को उसके कानूनी अधिकारों,
-                दायित्वों एवं उपलब्ध विधिक उपायों के संबंध में उचित मार्गदर्शन
-                प्रदान करना है।
-            </p>
-
-        </section>
+    </section>
 
 
-        <!-- =========================================
-             2 MAIN CARDS
-        ========================================= -->
+    <!-- =================================================
+         MAIN TWO CARDS
+    ================================================== -->
 
-        <section id="services-overview"
-                 class="services-overview">
+    <section id="main-services"
+             class="main-choice-section">
 
-            <h2>
-                Legal Services
-            </h2>
+        <h2>
+            Explore Our Services
+        </h2>
 
-            <p class="services-overview-intro">
-                कानूनी सेवाओं एवं कार्यप्रणाली से संबंधित विस्तृत जानकारी
-                देखने के लिए नीचे दिए गए विकल्प का चयन करें।
-            </p>
-
-
-            <div class="overview-cards">
+        <p class="main-choice-intro">
+            नीचे दिए गए विकल्प पर क्लिक करके संबंधित जानकारी
+            विस्तार से देखें।
+        </p>
 
 
-                <!-- PRACTICE AREAS -->
+        <div class="main-choice-container">
 
-                <div class="overview-card"
-                     onclick="showPracticeDetail();">
 
-                    <div class="overview-icon">
+            <!-- PRACTICE AREAS CARD -->
+
+            <div class="main-choice-card"
+                 onclick="openDetail('practice')">
+
+                <div class="main-choice-icon">
+                    ⚖️
+                </div>
+
+                <h3>
+                    Practice Areas
+                </h3>
+
+                <p>
+                    Criminal, Civil, Family, Property,
+                    Consumer & Labour Law
+                </p>
+
+                <div class="view-details">
+                    View Details →
+                </div>
+
+            </div>
+
+
+            <!-- WHY CHOOSE ME CARD -->
+
+            <div class="main-choice-card"
+                 onclick="openDetail('why')">
+
+                <div class="main-choice-icon">
+                    ⭐
+                </div>
+
+                <h3>
+                    Why Choose Me
+                </h3>
+
+                <p>
+                    Legal Guidance, Professional Approach
+                    & Client Focused
+                </p>
+
+                <div class="view-details">
+                    View Details →
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         LEGAL ARTICLES
+    ================================================== -->
+
+    <section id="legal-articles"
+             class="legal-articles-section">
+
+        <h2>
+            Legal Articles
+        </h2>
+
+        <p class="articles-intro">
+            कानून, विधिक जागरूकता और भारतीय विधि से संबंधित
+            उपयोगी लेख पढ़ें।
+        </p>
+
+
+        <div id="home-articles-list">
+
+            <div class="home-articles-loading">
+                लेख लोड हो रहे हैं...
+            </div>
+
+        </div>
+
+
+        <div class="all-articles-link">
+
+            <a href="articles.html">
+                सभी Legal Articles देखें →
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         BARE ACTS
+    ================================================== -->
+
+    <section id="bare-acts"
+             class="bare-acts-section">
+
+        <h2>
+            ⚖️ Bare Acts
+        </h2>
+
+        <p class="bare-acts-intro">
+            भारतीय कानूनों से संबंधित Bare Acts एवं विधिक सामग्री
+            सामान्य विधिक जानकारी और जागरूकता के उद्देश्य से उपलब्ध है।
+        </p>
+
+
+        <div id="home-bare-acts-list">
+
+
+            <!-- CRIMINAL -->
+
+            <a href="criminal-laws.html"
+               class="bare-category-card">
+
+                <div>
+
+                    <div class="bare-category-icon">
                         ⚖️
                     </div>
 
-                    <h3>
-                        Practice Areas
-                    </h3>
+                    <span class="bare-category-name">
+                        Criminal Laws
+                    </span>
 
-                    <p>
-                        Criminal, Civil, Family, Property, Consumer और
-                        Labour Law से संबंधित कानूनी सहायता।
-                    </p>
-
-                    <span class="overview-action">
-                        View Practice Areas →
+                    <span class="bare-category-subtitle">
+                        आपराधिक कानूनों से संबंधित
+                        Published Bare Acts देखें।
                     </span>
 
                 </div>
 
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
 
-                <!-- WHY CHOOSE ME -->
+            </a>
 
-                <div class="overview-card"
-                     onclick="showWhyDetail();">
 
-                    <div class="overview-icon">
-                        ⭐
+            <!-- CONSTITUTIONAL -->
+
+            <a href="constitutional-laws.html"
+               class="bare-category-card">
+
+                <div>
+
+                    <div class="bare-category-icon">
+                        📜
                     </div>
 
-                    <h3>
-                        Why Choose Me
-                    </h3>
+                    <span class="bare-category-name">
+                        Constitution & Constitutional Laws
+                    </span>
 
-                    <p>
-                        विधिक मार्गदर्शन, Professional Approach और
-                        Client Focused कार्यप्रणाली से संबंधित जानकारी।
-                    </p>
-
-                    <span class="overview-action">
-                        Know More →
+                    <span class="bare-category-subtitle">
+                        संविधान एवं संवैधानिक कानूनों से संबंधित
+                        Published Bare Acts देखें।
                     </span>
 
                 </div>
 
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
 
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             LEGAL ARTICLES
-        ========================================= -->
-
-        <section id="legal-articles"
-                 class="legal-articles-section">
-
-            <h2>
-                Legal Articles
-            </h2>
-
-            <p class="articles-intro">
-                कानून, विधिक जागरूकता और भारतीय विधि से संबंधित
-                उपयोगी लेख पढ़ें।
-            </p>
-
-            <div id="home-articles-list">
-
-                <div class="home-articles-loading">
-                    लेख लोड हो रहे हैं...
-                </div>
-
-            </div>
-
-            <div class="all-articles-link">
-
-                <a href="articles.html">
-                    सभी Legal Articles देखें →
-                </a>
-
-            </div>
-
-        </section>
+            </a>
 
 
-        <!-- =========================================
-             BARE ACTS
-        ========================================= -->
+            <!-- COMMERCE -->
 
-        <section id="bare-acts"
-                 class="bare-acts-section">
+            <a href="commerce-corporate-laws.html"
+               class="bare-category-card">
 
-            <h2>
-                ⚖️ Bare Acts
-            </h2>
+                <div>
 
-            <p class="bare-acts-intro">
-                भारतीय कानूनों से संबंधित Bare Acts एवं विधिक सामग्री
-                सामान्य विधिक जानकारी और जागरूकता के उद्देश्य से उपलब्ध है।
-            </p>
-
-
-            <div id="home-bare-acts-list">
-
-
-                <!-- CRIMINAL -->
-
-                <a href="criminal-laws.html"
-                   class="bare-category-card">
-
-                    <div>
-
-                        <div class="bare-category-icon">
-                            ⚖️
-                        </div>
-
-                        <span class="bare-category-name">
-                            Criminal Laws
-                        </span>
-
-                        <span class="bare-category-subtitle">
-                            आपराधिक कानूनों से संबंधित
-                            Published Bare Acts देखें।
-                        </span>
-
+                    <div class="bare-category-icon">
+                        🏢
                     </div>
 
-                    <span class="bare-category-action">
-                        View All Acts →
+                    <span class="bare-category-name">
+                        Commerce & Corporate Laws
                     </span>
 
-                </a>
+                    <span class="bare-category-subtitle">
+                        वाणिज्यिक एवं कॉर्पोरेट कानूनों से संबंधित
+                        Published Bare Acts देखें।
+                    </span>
+
+                </div>
+
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
+
+            </a>
 
 
-                <!-- CONSTITUTIONAL -->
+            <!-- MISCELLANEOUS -->
 
-                <a href="constitutional-laws.html"
-                   class="bare-category-card">
+            <a href="miscellaneous-laws.html"
+               class="bare-category-card">
 
-                    <div>
+                <div>
 
-                        <div class="bare-category-icon">
-                            📜
-                        </div>
-
-                        <span class="bare-category-name">
-                            Constitution & Constitutional Laws
-                        </span>
-
-                        <span class="bare-category-subtitle">
-                            संविधान एवं संवैधानिक कानूनों से संबंधित
-                            Published Bare Acts देखें।
-                        </span>
-
+                    <div class="bare-category-icon">
+                        📚
                     </div>
 
-                    <span class="bare-category-action">
-                        View All Acts →
+                    <span class="bare-category-name">
+                        Miscellaneous Laws
                     </span>
 
-                </a>
-
-
-                <!-- COMMERCE -->
-
-                <a href="commerce-corporate-laws.html"
-                   class="bare-category-card">
-
-                    <div>
-
-                        <div class="bare-category-icon">
-                            🏢
-                        </div>
-
-                        <span class="bare-category-name">
-                            Commerce & Corporate Laws
-                        </span>
-
-                        <span class="bare-category-subtitle">
-                            वाणिज्यिक एवं कॉर्पोरेट कानूनों से संबंधित
-                            Published Bare Acts देखें।
-                        </span>
-
-                    </div>
-
-                    <span class="bare-category-action">
-                        View All Acts →
+                    <span class="bare-category-subtitle">
+                        अन्य महत्वपूर्ण विधियों से संबंधित
+                        Published Bare Acts देखें।
                     </span>
 
-                </a>
-
-
-                <!-- MISCELLANEOUS -->
-
-                <a href="miscellaneous-laws.html"
-                   class="bare-category-card">
-
-                    <div>
-
-                        <div class="bare-category-icon">
-                            📚
-                        </div>
-
-                        <span class="bare-category-name">
-                            Miscellaneous Laws
-                        </span>
-
-                        <span class="bare-category-subtitle">
-                            अन्य महत्वपूर्ण विधियों से संबंधित
-                            Published Bare Acts देखें।
-                        </span>
-
-                    </div>
-
-                    <span class="bare-category-action">
-                        View All Acts →
-                    </span>
-
-                </a>
-
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             CLIENT ENQUIRY
-        ========================================= -->
-
-        <section id="enquiry"
-                 class="enquiry-section">
-
-            <h2>
-                Client Enquiry
-            </h2>
-
-            <form class="enquiry-form"
-                  onsubmit="sendEnquiryToWhatsApp(); return false;">
-
-                <input
-                    type="text"
-                    id="clientName"
-                    placeholder="Your Name"
-                    required
-                >
-
-                <input
-                    type="tel"
-                    id="clientPhone"
-                    placeholder="Mobile Number"
-                    required
-                >
-
-                <input
-                    type="email"
-                    id="clientEmail"
-                    placeholder="Email Address"
-                >
-
-                <textarea
-                    id="clientMessage"
-                    placeholder="Briefly describe your legal enquiry..."
-                    required
-                ></textarea>
-
-                <button type="submit"
-                        class="enquiry-submit">
-
-                    💬 Send Enquiry on WhatsApp
-
-                </button>
-
-            </form>
-
-        </section>
-
-
-        <!-- =========================================
-             FAQ
-        ========================================= -->
-
-        <section id="faq"
-                 class="faq-section">
-
-            <h2>
-                Frequently Asked Questions
-            </h2>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question"
-                        onclick="toggleFAQ(this)">
-
-                    What legal matters can I get assistance with?
-
-                </button>
-
-                <div class="faq-answer">
-
-                    Legal assistance may be provided in matters relating to
-                    Criminal, Civil, Family, Property, Consumer and Labour Law,
-                    subject to the facts and circumstances of each case.
-
                 </div>
 
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question"
-                        onclick="toggleFAQ(this)">
-
-                    How can I contact the Advocate?
-
-                </button>
-
-                <div class="faq-answer">
-
-                    You can contact through the phone number or WhatsApp
-                    option available on this website.
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question"
-                        onclick="toggleFAQ(this)">
-
-                    Can I send my legal enquiry online?
-
-                </button>
-
-                <div class="faq-answer">
-
-                    Yes. You can use the Client Enquiry form available on
-                    this website to send your basic enquiry through WhatsApp.
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question"
-                        onclick="toggleFAQ(this)">
-
-                    Is the information on this website legal advice?
-
-                </button>
-
-                <div class="faq-answer">
-
-                    No. The information provided on this website is for
-                    general legal information and awareness purposes only.
-                    Please refer to the Legal Disclaimer.
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button class="faq-question"
-                        onclick="toggleFAQ(this)">
-
-                    Does every legal matter have the same solution?
-
-                </button>
-
-                <div class="faq-answer">
-
-                    No. Every legal matter depends on its specific facts,
-                    circumstances and applicable law. Proper legal consultation
-                    may be required before taking any legal action.
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             CONTACT
-        ========================================= -->
-
-        <section id="contact"
-                 class="contact">
-
-            <h2>
-                Contact
-            </h2>
-
-            <p>
-                📞 Mobile:
-
-                <a href="tel:7080884964">
-                    7080884964
-                </a>
-            </p>
-
-            <p>
-                📧 Email:
-
-                <a href="mailto:bipinforoffice247@gmail.com">
-                    bipinforoffice247@gmail.com
-                </a>
-            </p>
-
-            <p>
-                📍 Uttar Pradesh, District Gorakhpur
-            </p>
-
-
-            <div class="contact-buttons">
-
-                <a href="tel:7080884964"
-                   class="call-btn">
-
-                    📞 Call Now
-
-                </a>
-
-
-                <a href="https://wa.me/917080884964"
-                   class="whatsapp-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    💬 WhatsApp
-
-                </a>
-
-
-                <a href="https://www.instagram.com/vip.in.247/"
-                   class="instagram-btn"
-                   target="_blank"
-                   rel="noopener noreferrer">
-
-                    📷 Instagram
-
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- =========================================
-             DISCLAIMER
-        ========================================= -->
-
-        <section class="disclaimer">
-
-            <h2>
-                Legal Disclaimer
-            </h2>
-
-            <p>
-                इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य विधिक जानकारी
-                एवं जागरूकता के उद्देश्य से प्रदान की गई है। यह किसी विशेष
-                मामले के संबंध में विधिक राय, सलाह अथवा पेशेवर परामर्श का
-                विकल्प नहीं है।
-            </p>
-
-            <p>
-                प्रत्येक कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार
-                पर अलग होता है। किसी भी कानूनी कार्रवाई से पहले उचित
-                विधिक परामर्श प्राप्त करना आवश्यक है।
-            </p>
-
-        </section>
-
-
-        <!-- FOOTER -->
-
-        <footer>
-
-            <p>
-                © 2026 Bipin Kumar Maurya | Advocate & Legal Consultant
-            </p>
-
-        </footer>
-
-    </div>
-
-
-    <!-- =========================================
-         PRACTICE AREAS DETAIL
-    ========================================= -->
-
-    <section id="practice-detail"
-             class="detail-section">
-
-        <h2>
-            Practice Areas
-        </h2>
-
-        <p class="detail-intro">
-            विभिन्न प्रकार के कानूनी मामलों से संबंधित
-            विधिक सहायता एवं जानकारी।
-        </p>
-
-
-        <div class="detail-cards">
-
-
-            <div class="detail-card">
-
-                <h3>
-                    Criminal Law
-                </h3>
-
-                <p>
-                    Legal assistance and representation
-                    in criminal matters.
-                </p>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <h3>
-                    Civil Law
-                </h3>
-
-                <p>
-                    Assistance in civil disputes and
-                    related legal matters.
-                </p>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <h3>
-                    Family Law
-                </h3>
-
-                <p>
-                    Legal assistance in family and
-                    matrimonial matters.
-                </p>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <h3>
-                    Property Law
-                </h3>
-
-                <p>
-                    Assistance in property and
-                    land-related legal matters.
-                </p>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <h3>
-                    Consumer Law
-                </h3>
-
-                <p>
-                    Legal assistance in consumer
-                    disputes and related matters.
-                </p>
-
-            </div>
-
-
-            <div class="detail-card">
-
-                <h3>
-                    Labour Law
-                </h3>
-
-                <p>
-                    Assistance in employment and
-                    labour-related legal matters.
-                </p>
-
-            </div>
+                <span class="bare-category-action">
+                    View All Acts →
+                </span>
+
+            </a>
 
 
         </div>
 
+    </section>
 
-        <a class="back-main-btn"
-           onclick="showMainWebsite();">
 
-            ← Main Website पर वापस जाएँ
+    <!-- =================================================
+         CLIENT ENQUIRY
+    ================================================== -->
 
-        </a>
+    <section id="enquiry"
+             class="enquiry-section">
+
+        <h2>
+            Client Enquiry
+        </h2>
+
+
+        <form class="enquiry-form"
+              onsubmit="sendEnquiryToWhatsApp(); return false;">
+
+
+            <input
+                type="text"
+                id="clientName"
+                placeholder="Your Name"
+                required
+            >
+
+
+            <input
+                type="tel"
+                id="clientPhone"
+                placeholder="Mobile Number"
+                required
+            >
+
+
+            <input
+                type="email"
+                id="clientEmail"
+                placeholder="Email Address"
+            >
+
+
+            <textarea
+                id="clientMessage"
+                placeholder="Briefly describe your legal enquiry..."
+                required
+            ></textarea>
+
+
+            <button type="submit"
+                    class="enquiry-submit">
+
+                💬 Send Enquiry on WhatsApp
+
+            </button>
+
+
+        </form>
 
     </section>
 
 
-    <!-- =========================================
-         WHY CHOOSE ME DETAIL
-    ========================================= -->
+    <!-- =================================================
+         FAQ
+    ================================================== -->
 
-    <section id="why-detail"
-             class="detail-section">
+    <section id="faq"
+             class="faq-section">
 
         <h2>
-            Why Choose Me
+            Frequently Asked Questions
         </h2>
 
-        <p class="detail-intro">
-            कानूनी मामलों में मार्गदर्शन और कार्यप्रणाली से
-            संबंधित प्रमुख विशेषताएँ।
-        </p>
 
+        <div class="faq-item">
 
-        <div class="why-detail-cards">
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
 
+                What legal matters can I get assistance with?
 
-            <div class="why-detail-card">
+            </button>
 
-                <h3>
-                    ⚖️ Legal Guidance
-                </h3>
+            <div class="faq-answer">
 
-                <p>
-                    कानूनी मामलों में उचित एवं व्यावहारिक
-                    विधिक मार्गदर्शन।
-                </p>
+                Legal assistance may be provided in matters relating to
+                Criminal, Civil, Family, Property, Consumer and Labour Law,
+                subject to the facts and circumstances of each case.
 
             </div>
-
-
-            <div class="why-detail-card">
-
-                <h3>
-                    📚 Professional Approach
-                </h3>
-
-                <p>
-                    प्रत्येक मामले को तथ्यों एवं लागू कानून के
-                    आधार पर समझने का प्रयास।
-                </p>
-
-            </div>
-
-
-            <div class="why-detail-card">
-
-                <h3>
-                    🤝 Client Focused
-                </h3>
-
-                <p>
-                    क्लाइंट की समस्या को समझकर उपलब्ध कानूनी
-                    विकल्पों की जानकारी।
-                </p>
-
-            </div>
-
 
         </div>
 
 
-        <a class="back-main-btn"
-           onclick="showMainWebsite();">
+        <div class="faq-item">
 
-            ← Main Website पर वापस जाएँ
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
 
-        </a>
+                How can I contact the Advocate?
+
+            </button>
+
+            <div class="faq-answer">
+
+                You can contact through the phone number or WhatsApp
+                option available on this website.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                Can I send my legal enquiry online?
+
+            </button>
+
+            <div class="faq-answer">
+
+                Yes. You can use the Client Enquiry form available on
+                this website to send your basic enquiry through WhatsApp.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                Is the information on this website legal advice?
+
+            </button>
+
+            <div class="faq-answer">
+
+                No. The information provided on this website is for
+                general legal information and awareness purposes only.
+                Please refer to the Legal Disclaimer.
+
+            </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+            <button class="faq-question"
+                    onclick="toggleFAQ(this)">
+
+                Does every legal matter have the same solution?
+
+            </button>
+
+            <div class="faq-answer">
+
+                No. Every legal matter depends on its specific facts,
+                circumstances and applicable law. Proper legal consultation
+                may be required before taking any legal action.
+
+            </div>
+
+        </div>
+
 
     </section>
 
 
-    <!-- =========================================
-         WHATSAPP ENQUIRY SCRIPT
-    ========================================= -->
+    <!-- =================================================
+         CONTACT
+    ================================================== -->
 
-    <script>
+    <section id="contact"
+             class="contact">
 
-        function sendEnquiryToWhatsApp() {
-
-            var name =
-                document.getElementById("clientName").value;
-
-            var phone =
-                document.getElementById("clientPhone").value;
-
-            var email =
-                document.getElementById("clientEmail").value;
-
-            var message =
-                document.getElementById("clientMessage").value;
+        <h2>
+            Contact
+        </h2>
 
 
-            var whatsappMessage =
-                "New Client Enquiry%0A%0A" +
-                "Name: " +
-                encodeURIComponent(name) +
-                "%0A" +
-                "Mobile: " +
-                encodeURIComponent(phone) +
-                "%0A" +
-                "Email: " +
-                encodeURIComponent(email) +
-                "%0A" +
-                "Legal Enquiry: " +
-                encodeURIComponent(message);
+        <p>
+
+            📞 Mobile:
+
+            <a href="tel:7080884964">
+                7080884964
+            </a>
+
+        </p>
 
 
-            var whatsappURL =
-                "https://wa.me/917080884964?text=" +
-                whatsappMessage;
+        <p>
+
+            📧 Email:
+
+            <a href="mailto:bipinforoffice247@gmail.com">
+                bipinforoffice247@gmail.com
+            </a>
+
+        </p>
 
 
-            window.open(
-                whatsappURL,
-                "_blank"
-            );
-
-        }
-
-    </script>
+        <p>
+            📍 Uttar Pradesh, District Gorakhpur
+        </p>
 
 
-    <!-- =========================================
-         FLOATING CONTACT BUTTONS
-    ========================================= -->
-
-    <div class="floating-contact">
-
-        <a href="tel:7080884964"
-           class="floating-call"
-           title="Call Now">
-
-            📞
-
-        </a>
+        <div class="contact-buttons">
 
 
-        <a href="https://wa.me/917080884964"
-           class="floating-whatsapp"
-           title="WhatsApp"
-           target="_blank"
-           rel="noopener noreferrer">
+            <a href="tel:7080884964"
+               class="call-btn">
 
-            💬
+                📞 Call Now
 
-        </a>
+            </a>
+
+
+            <a href="https://wa.me/917080884964"
+               class="whatsapp-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                💬 WhatsApp
+
+            </a>
+
+
+            <a href="https://www.instagram.com/vip.in.247/"
+               class="instagram-btn"
+               target="_blank"
+               rel="noopener noreferrer">
+
+                📷 Instagram
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =================================================
+         DISCLAIMER
+    ================================================== -->
+
+    <section class="disclaimer">
+
+        <h2>
+            Legal Disclaimer
+        </h2>
+
+
+        <p>
+            इस वेबसाइट पर उपलब्ध जानकारी केवल सामान्य विधिक जानकारी
+            एवं जागरूकता के उद्देश्य से प्रदान की गई है। यह किसी विशेष
+            मामले के संबंध में विधिक राय, सलाह अथवा पेशेवर परामर्श का
+            विकल्प नहीं है।
+        </p>
+
+
+        <p>
+            प्रत्येक कानूनी मामला अपने तथ्यों और परिस्थितियों के आधार
+            पर अलग होता है। किसी भी कानूनी कार्रवाई से पहले उचित
+            विधिक परामर्श प्राप्त करना आवश्यक है।
+        </p>
+
+    </section>
+
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Bipin Kumar Maurya | Advocate & Legal Consultant
+        </p>
+
+    </footer>
+
+
+</div>
+
+
+<!-- =====================================================
+     DETAIL VIEW
+===================================================== -->
+
+<div id="detailView"
+     class="detail-view">
+
+
+    <div class="detail-inner">
+
+
+        <!-- DETAIL CONTENT WILL LOAD HERE -->
+
+        <div id="detailContent"></div>
+
+
+        <!-- ONLY ONE MINIMIZE BUTTON -->
+
+        <div class="minimize-wrapper">
+
+            <button class="minimize-btn"
+                    onclick="minimizeDetail()">
+
+                ⌃ Minimize
+
+            </button>
+
+        </div>
+
 
     </div>
 
+</div>
 
-    <!-- =========================================
-         FAQ SCRIPT
-    ========================================= -->
 
-    <script>
+<!-- =====================================================
+     FLOATING CONTACT BUTTONS
+===================================================== -->
 
-        function toggleFAQ(button) {
+<div class="floating-contact">
 
-            var faqItem =
-                button.parentElement;
 
-            faqItem.classList.toggle(
-                "active"
+    <a href="tel:7080884964"
+       class="floating-call"
+       title="Call Now">
+
+        📞
+
+    </a>
+
+
+    <a href="https://wa.me/917080884964"
+       class="floating-whatsapp"
+       title="WhatsApp"
+       target="_blank"
+       rel="noopener noreferrer">
+
+        💬
+
+    </a>
+
+
+</div>
+
+
+<!-- =====================================================
+     DETAIL VIEW SCRIPT
+===================================================== -->
+
+<script>
+
+
+    function openDetail(type) {
+
+        var mainWebsite =
+            document.getElementById("mainWebsite");
+
+        var detailView =
+            document.getElementById("detailView");
+
+        var detailContent =
+            document.getElementById("detailContent");
+
+
+        /* Hide complete main website */
+
+        mainWebsite.style.display = "none";
+
+
+        /* Show detail view */
+
+        detailView.style.display = "block";
+
+
+        /* Scroll to top */
+
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
+
+
+        /* PRACTICE AREAS */
+
+        if (type === "practice") {
+
+            detailContent.innerHTML = `
+
+                <h2 class="detail-title">
+                    Practice Areas
+                </h2>
+
+                <p class="detail-subtitle">
+                    Criminal, Civil, Family, Property, Consumer
+                    और Labour Law से संबंधित प्रमुख विधिक क्षेत्र।
+                </p>
+
+
+                <div class="detail-cards">
+
+
+                    <div class="detail-card">
+
+                        <h3>
+                            Criminal Law
+                        </h3>
+
+                        <p>
+                            Legal assistance and representation
+                            in criminal matters.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <h3>
+                            Civil Law
+                        </h3>
+
+                        <p>
+                            Assistance in civil disputes and
+                            related legal matters.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <h3>
+                            Family Law
+                        </h3>
+
+                        <p>
+                            Legal assistance in family and
+                            matrimonial matters.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <h3>
+                            Property Law
+                        </h3>
+
+                        <p>
+                            Assistance in property and
+                            land-related legal matters.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <h3>
+                            Consumer Law
+                        </h3>
+
+                        <p>
+                            Legal assistance in consumer
+                            disputes and related matters.
+                        </p>
+
+                    </div>
+
+
+                    <div class="detail-card">
+
+                        <h3>
+                            Labour Law
+                        </h3>
+
+                        <p>
+                            Assistance in employment and
+                            labour-related legal matters.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+        }
+
+
+        /* WHY CHOOSE ME */
+
+        if (type === "why") {
+
+            detailContent.innerHTML = `
+
+                <h2 class="detail-title">
+                    Why Choose Me
+                </h2>
+
+                <p class="detail-subtitle">
+                    विधिक मामलों में मार्गदर्शन, प्रत्येक मामले के
+                    तथ्यों को समझने और क्लाइंट की समस्या पर ध्यान देने
+                    का प्रयास।
+                </p>
+
+
+                <div class="why-detail-cards">
+
+
+                    <div class="why-detail-card">
+
+                        <h3>
+                            ⚖️ Legal Guidance
+                        </h3>
+
+                        <p>
+                            कानूनी मामलों में उचित एवं व्यावहारिक
+                            विधिक मार्गदर्शन।
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-detail-card">
+
+                        <h3>
+                            📚 Professional Approach
+                        </h3>
+
+                        <p>
+                            प्रत्येक मामले को तथ्यों एवं लागू कानून के
+                            आधार पर समझने का प्रयास।
+                        </p>
+
+                    </div>
+
+
+                    <div class="why-detail-card">
+
+                        <h3>
+                            🤝 Client Focused
+                        </h3>
+
+                        <p>
+                            क्लाइंट की समस्या को समझकर उपलब्ध कानूनी
+                            विकल्पों की जानकारी।
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+        }
+
+    }
+
+
+
+    /* =====================================================
+       MINIMIZE
+    ===================================================== */
+
+    function minimizeDetail() {
+
+        var mainWebsite =
+            document.getElementById("mainWebsite");
+
+        var detailView =
+            document.getElementById("detailView");
+
+
+        /* Hide detail */
+
+        detailView.style.display = "none";
+
+
+        /* Show main website */
+
+        mainWebsite.style.display = "block";
+
+
+        /* Go directly to two-card section */
+
+        setTimeout(function() {
+
+            document.getElementById("main-services")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+        }, 50);
+
+    }
+
+
+</script>
+
+
+<!-- =====================================================
+     WHATSAPP ENQUIRY
+===================================================== -->
+
+<script>
+
+
+    function sendEnquiryToWhatsApp() {
+
+        var name =
+            document.getElementById("clientName").value;
+
+
+        var phone =
+            document.getElementById("clientPhone").value;
+
+
+        var email =
+            document.getElementById("clientEmail").value;
+
+
+        var message =
+            document.getElementById("clientMessage").value;
+
+
+        var whatsappMessage =
+
+            "New Client Enquiry%0A%0A" +
+
+            "Name: " +
+            encodeURIComponent(name) +
+            "%0A" +
+
+            "Mobile: " +
+            encodeURIComponent(phone) +
+            "%0A" +
+
+            "Email: " +
+            encodeURIComponent(email) +
+            "%0A" +
+
+            "Legal Enquiry: " +
+            encodeURIComponent(message);
+
+
+        var whatsappURL =
+
+            "https://wa.me/917080884964?text=" +
+            whatsappMessage;
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    }
+
+
+</script>
+
+
+<!-- =====================================================
+     FAQ SCRIPT
+===================================================== -->
+
+<script>
+
+
+    function toggleFAQ(button) {
+
+        var faqItem =
+            button.parentElement;
+
+
+        faqItem.classList.toggle("active");
+
+    }
+
+
+</script>
+
+
+<!-- =====================================================
+     SUPABASE
+===================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- =====================================================
+     SUPABASE LEGAL ARTICLES
+===================================================== -->
+
+<script>
+
+
+    const SUPABASE_URL =
+        "https://jfstjogeyvkhlhxhiaie.supabase.co";
+
+
+    const SUPABASE_PUBLISHABLE_KEY =
+        "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+
+
+    const supabaseClient =
+        window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLISHABLE_KEY
+        );
+
+
+    /* =================================================
+       LOAD LEGAL ARTICLES
+    ================================================= */
+
+    async function loadHomeArticles() {
+
+        const container =
+            document.getElementById(
+                "home-articles-list"
             );
 
-        }
 
-    </script>
+        try {
 
+            const { data, error } =
+                await supabaseClient
 
-    <!-- =========================================
-         PRACTICE / WHY NAVIGATION SCRIPT
-    ========================================= -->
+                    .from("articles")
 
-    <script>
+                    .select(
+                        "id, title, description, created_at, published_at"
+                    )
 
-        function hideAllDetailSections() {
+                    .eq(
+                        "status",
+                        "published"
+                    )
 
-            document
-                .getElementById("practice-detail")
-                .classList.remove("active");
+                    .order(
+                        "published_at",
+                        {
+                            ascending: false,
+                            nullsFirst: false
+                        }
+                    )
 
-            document
-                .getElementById("why-detail")
-                .classList.remove("active");
+                    .limit(3);
 
-        }
 
+            if (error) {
 
-        function showPracticeDetail() {
+                throw error;
 
-            document
-                .getElementById("main-website-content")
-                .style.display = "none";
+            }
 
-            hideAllDetailSections();
 
-            document
-                .getElementById("practice-detail")
-                .classList.add("active");
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-
-
-        function showWhyDetail() {
-
-            document
-                .getElementById("main-website-content")
-                .style.display = "none";
-
-            hideAllDetailSections();
-
-            document
-                .getElementById("why-detail")
-                .classList.add("active");
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-
-
-        function showMainWebsite() {
-
-            hideAllDetailSections();
-
-            document
-                .getElementById("main-website-content")
-                .style.display = "block";
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-
-        }
-
-    </script>
-
-
-    <!-- =========================================
-         SUPABASE
-    ========================================= -->
-
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2">
-    </script>
-
-
-    <!-- =========================================
-         SUPABASE LEGAL ARTICLES
-    ========================================= -->
-
-    <script>
-
-        const SUPABASE_URL =
-            "https://jfstjogeyvkhlhxhiaie.supabase.co";
-
-        const SUPABASE_PUBLISHABLE_KEY =
-            "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
-
-
-        const supabaseClient =
-            window.supabase.createClient(
-                SUPABASE_URL,
-                SUPABASE_PUBLISHABLE_KEY
-            );
-
-
-        /* LEGAL ARTICLES */
-
-        async function loadHomeArticles() {
-
-            const container =
-                document.getElementById(
-                    "home-articles-list"
-                );
-
-
-            try {
-
-                const { data, error } =
-                    await supabaseClient
-
-                        .from("articles")
-
-                        .select(
-                            "id, title, description, created_at, published_at"
-                        )
-
-                        .eq(
-                            "status",
-                            "published"
-                        )
-
-                        .order(
-                            "published_at",
-                            {
-                                ascending: false,
-                                nullsFirst: false
-                            }
-                        )
-
-                        .limit(3);
-
-
-                if (error) {
-
-                    throw error;
-
-                }
-
-
-                if (
-                    !data ||
-                    data.length === 0
-                ) {
-
-                    container.innerHTML =
-                        '<div class="home-articles-loading">' +
-                        'अभी कोई Legal Article उपलब्ध नहीं है।' +
-                        '</div>';
-
-                    return;
-
-                }
-
-
-                container.innerHTML = "";
-
-
-                data.forEach(
-                    article => {
-
-                        const articleCard =
-                            document.createElement(
-                                "article"
-                            );
-
-                        articleCard.className =
-                            "home-article-card";
-
-
-                        const title =
-                            document.createElement(
-                                "h3"
-                            );
-
-                        title.textContent =
-                            article.title ||
-                            "Untitled Article";
-
-
-                        const date =
-                            document.createElement(
-                                "div"
-                            );
-
-                        date.className =
-                            "home-article-date";
-
-                        date.textContent =
-                            "📅 " +
-                            formatArticleDate(
-                                article.published_at ||
-                                article.created_at
-                            );
-
-
-                        const description =
-                            document.createElement(
-                                "div"
-                            );
-
-                        description.className =
-                            "home-article-description";
-
-                        description.textContent =
-                            article.description ||
-                            "कानूनी जानकारी एवं जागरूकता से संबंधित लेख।";
-
-
-                        const link =
-                            document.createElement(
-                                "a"
-                            );
-
-                        link.href =
-                            "article.html?id=" +
-                            encodeURIComponent(
-                                article.id
-                            );
-
-                        link.textContent =
-                            "पूरा लेख पढ़ें →";
-
-
-                        articleCard.appendChild(
-                            title
-                        );
-
-                        articleCard.appendChild(
-                            date
-                        );
-
-                        articleCard.appendChild(
-                            description
-                        );
-
-                        articleCard.appendChild(
-                            link
-                        );
-
-
-                        container.appendChild(
-                            articleCard
-                        );
-
-                    }
-                );
-
-
-            } catch (error) {
-
-                console.error(
-                    "Legal Articles Error:",
-                    error
-                );
-
+            if (!data || data.length === 0) {
 
                 container.innerHTML =
+
                     '<div class="home-articles-loading">' +
-                    'लेख अभी लोड नहीं हो पा रहे हैं।' +
+
+                    'अभी कोई Legal Article उपलब्ध नहीं है।' +
+
                     '</div>';
 
+                return;
+
             }
+
+
+            container.innerHTML = "";
+
+
+            data.forEach(article => {
+
+
+                const articleCard =
+                    document.createElement("article");
+
+
+                articleCard.className =
+                    "home-article-card";
+
+
+                const title =
+                    document.createElement("h3");
+
+
+                title.textContent =
+                    article.title ||
+                    "Untitled Article";
+
+
+                const date =
+                    document.createElement("div");
+
+
+                date.className =
+                    "home-article-date";
+
+
+                date.textContent =
+                    "📅 " +
+                    formatArticleDate(
+                        article.published_at ||
+                        article.created_at
+                    );
+
+
+                const description =
+                    document.createElement("div");
+
+
+                description.className =
+                    "home-article-description";
+
+
+                description.textContent =
+                    article.description ||
+                    "कानूनी जानकारी एवं जागरूकता से संबंधित लेख।";
+
+
+                const link =
+                    document.createElement("a");
+
+
+                link.href =
+                    "article.html?id=" +
+                    encodeURIComponent(
+                        article.id
+                    );
+
+
+                link.textContent =
+                    "पूरा लेख पढ़ें →";
+
+
+                articleCard.appendChild(
+                    title
+                );
+
+
+                articleCard.appendChild(
+                    date
+                );
+
+
+                articleCard.appendChild(
+                    description
+                );
+
+
+                articleCard.appendChild(
+                    link
+                );
+
+
+                container.appendChild(
+                    articleCard
+                );
+
+            });
+
 
         }
 
 
-        /* DATE FORMAT */
+        catch (error) {
 
-        function formatArticleDate(
-            dateValue
-        ) {
-
-            if (!dateValue) {
-
-                return "";
-
-            }
-
-
-            const date =
-                new Date(dateValue);
-
-
-            if (
-                isNaN(
-                    date.getTime()
-                )
-            ) {
-
-                return "";
-
-            }
-
-
-            return date.toLocaleDateString(
-                "hi-IN",
-                {
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric"
-                }
+            console.error(
+                "Legal Articles Error:",
+                error
             );
 
+
+            container.innerHTML =
+
+                '<div class="home-articles-loading">' +
+
+                'लेख अभी लोड नहीं हो पा रहे हैं।' +
+
+                '</div>';
+
+        }
+
+    }
+
+
+    /* =================================================
+       DATE FORMAT
+    ================================================= */
+
+    function formatArticleDate(dateValue) {
+
+        if (!dateValue) {
+
+            return "";
+
         }
 
 
-        /* LOAD ARTICLES */
+        const date =
+            new Date(dateValue);
 
-        loadHomeArticles();
 
-    </script>
+        if (isNaN(date.getTime())) {
+
+            return "";
+
+        }
+
+
+        return date.toLocaleDateString(
+            "hi-IN",
+            {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric"
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       LOAD ARTICLES
+    ================================================= */
+
+    loadHomeArticles();
+
+
+</script>
 
 
 </body>
