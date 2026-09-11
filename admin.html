@@ -1,1081 +1,1861 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Dashboard | Bipin Kumar Maurya</title>
+<meta charset="UTF-8">
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #0b0b0b;
-            color: #f5f5f5;
-        }
+<title>
+  Admin Dashboard | Bipin Kumar Maurya
+</title>
 
-        header {
-            background: #111;
-            border-bottom: 1px solid #c9a227;
-            padding: 18px 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
 
-        header h1 {
-            margin: 0;
-            color: #d4af37;
-            font-size: 22px;
-        }
+<!-- FONTS -->
 
-        button {
-            cursor: pointer;
-        }
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
 
-        .logout-btn,
-        .tab-btn,
-        .secondary-btn {
-            background: transparent;
-            color: #d4af37;
-            border: 1px solid #d4af37;
-            padding: 9px 16px;
-            border-radius: 5px;
-        }
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
-        .logout-btn:hover,
-        .tab-btn:hover,
-        .tab-btn.active,
-        .secondary-btn:hover {
-            background: #d4af37;
-            color: #000;
-        }
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+  rel="stylesheet"
+>
 
-        .container {
-            width: 92%;
-            max-width: 1100px;
-            margin: 30px auto;
-        }
 
-        .login-box,
-        .dashboard,
-        .form-box {
-            background: #121212;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.4);
-        }
+<style>
 
-        .login-box {
-            max-width: 450px;
-            margin: 70px auto;
-        }
+/* =====================================================
+   PREMIUM LEGAL THEME
+   ===================================================== */
 
-        h2 {
-            color: #d4af37;
-            margin-top: 0;
-        }
+:root{
 
-        label {
-            display: block;
-            margin: 15px 0 7px;
-            color: #ddd;
-        }
+  --bg:#090a0c;
 
-        input,
-        textarea,
-        select {
-            width: 100%;
-            padding: 12px;
-            background: #1c1c1c;
-            color: white;
-            border: 1px solid #444;
-            border-radius: 5px;
-            font-size: 15px;
-        }
+  --bg2:#0f1115;
 
-        textarea {
-            min-height: 300px;
-            resize: vertical;
-            line-height: 1.7;
-        }
+  --panel:#12151a;
 
-        input:focus,
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: #d4af37;
-        }
+  --panel2:#171b21;
 
-        .gold-btn {
-            background: #d4af37;
-            color: #000;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 18px;
-        }
+  --cream:#f4efe5;
 
-        .gold-btn:hover {
-            background: #f0cf55;
-        }
+  --muted:#aba397;
 
-        .danger-btn {
-            background: #8b0000;
-            color: white;
-            border: none;
-            padding: 8px 12px;
-            border-radius: 4px;
-        }
+  --muted2:#7d776f;
 
-        .edit-btn {
-            background: #333;
-            color: #d4af37;
-            border: 1px solid #d4af37;
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-right: 5px;
-        }
+  --gold:#c9a96e;
 
-        .hidden {
-            display: none !important;
-        }
+  --gold2:#e2c38e;
 
-        .message {
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 5px;
-            display: none;
-        }
+  --line:rgba(201,169,110,.22);
 
-        .success {
-            display: block;
-            background: #123d1e;
-            border: 1px solid #2e8b57;
-            color: #9cffb0;
-        }
+  --softline:rgba(255,255,255,.08);
 
-        .error {
-            display: block;
-            background: #3d1212;
-            border: 1px solid #a33;
-            color: #ffaaaa;
-        }
+  --shadow:0 24px 80px rgba(0,0,0,.35);
 
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
+  --radius:18px;
 
-        .user-info {
-            color: #aaa;
-            font-size: 14px;
-        }
+}
 
-        .tabs {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            border-bottom: 1px solid #333;
-            padding-bottom: 15px;
-            margin-bottom: 25px;
-        }
 
-        .tab-section {
-            display: none;
-        }
+/* =====================================================
+   RESET
+   ===================================================== */
 
-        .tab-section.active {
-            display: block;
-        }
+*{
 
-        .articles-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
+  box-sizing:border-box;
 
-        .articles-table th,
-        .articles-table td {
-            padding: 12px;
-            border-bottom: 1px solid #333;
-            text-align: left;
-            vertical-align: top;
-        }
+}
 
-        .articles-table th {
-            color: #d4af37;
-            background: #181818;
-        }
 
-        .status {
-            display: inline-block;
-            padding: 5px 9px;
-            border-radius: 4px;
-            font-size: 12px;
-        }
+html{
 
-        .published {
-            background: #123d1e;
-            color: #8cff9d;
-        }
+  scroll-behavior:smooth;
 
-        .draft {
-            background: #403612;
-            color: #ffe78a;
-        }
+}
 
-        .form-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
 
-        .empty {
-            text-align: center;
-            padding: 30px;
-            color: #aaa;
-        }
+body{
 
-        .file-info {
-            margin-top: 8px;
-            color: #aaa;
-            font-size: 13px;
-        }
+  margin:0;
 
-        .pdf-link {
-            color: #d4af37;
-            text-decoration: none;
-        }
+  min-height:100vh;
 
-        .pdf-link:hover {
-            text-decoration: underline;
-        }
+  background:
 
-        @media (max-width: 700px) {
-            .articles-table {
-                display: block;
-                overflow-x: auto;
-            }
+    radial-gradient(
+      circle at 80% 0%,
+      rgba(201,169,110,.07),
+      transparent 28%
+    ),
 
-            header {
-                gap: 15px;
-                flex-wrap: wrap;
-            }
+    linear-gradient(
+      180deg,
+      #090a0c 0%,
+      #0f1115 100%
+    );
 
-            .container {
-                width: 95%;
-            }
-        }
-    </style>
+  color:var(--cream);
+
+  font-family:"Inter",sans-serif;
+
+  line-height:1.7;
+
+  overflow-x:hidden;
+
+}
+
+
+button,
+input,
+textarea,
+select{
+
+  font-family:"Inter",sans-serif;
+
+}
+
+
+button{
+
+  cursor:pointer;
+
+}
+
+
+.hidden{
+
+  display:none!important;
+
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+header{
+
+  position:sticky;
+
+  top:0;
+
+  z-index:1000;
+
+  min-height:76px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  padding:14px 5%;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(15,23,42,.98),
+      rgba(11,18,32,.98)
+    );
+
+  border-bottom:1px solid rgba(201,169,110,.28);
+
+  box-shadow:
+    0 10px 35px rgba(0,0,0,.22);
+
+  backdrop-filter:blur(14px);
+
+}
+
+
+header h1{
+
+  margin:0;
+
+  color:var(--cream);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:30px;
+
+  font-weight:700;
+
+  letter-spacing:.2px;
+
+}
+
+
+header h1::first-letter{
+
+  color:var(--gold2);
+
+}
+
+
+/* =====================================================
+   LOGOUT
+   ===================================================== */
+
+.logout-btn{
+
+  min-height:42px;
+
+  background:transparent;
+
+  color:var(--gold2);
+
+  border:1px solid var(--gold);
+
+  padding:9px 17px;
+
+  border-radius:3px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  letter-spacing:.3px;
+
+  transition:.25s ease;
+
+}
+
+
+.logout-btn:hover{
+
+  background:var(--gold);
+
+  color:#111;
+
+  transform:translateY(-1px);
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+
+.container{
+
+  width:92%;
+
+  max-width:1180px;
+
+  margin:42px auto 70px;
+
+}
+
+
+/* =====================================================
+   COMMON CARDS
+   ===================================================== */
+
+.login-box,
+.dashboard,
+.form-box{
+
+  background:
+
+    linear-gradient(
+      145deg,
+      rgba(20,23,28,.98),
+      rgba(14,16,19,.98)
+    );
+
+  border:1px solid var(--softline);
+
+  border-radius:var(--radius);
+
+  box-shadow:var(--shadow);
+
+  position:relative;
+
+  overflow:hidden;
+
+}
+
+
+.login-box::before,
+.dashboard::before,
+.form-box::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:280px;
+
+  height:280px;
+
+  right:-150px;
+
+  top:-150px;
+
+  border:1px solid rgba(201,169,110,.08);
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+}
+
+
+.login-box{
+
+  max-width:470px;
+
+  margin:75px auto;
+
+  padding:34px;
+
+  border-top:2px solid var(--gold);
+
+}
+
+
+.dashboard{
+
+  padding:30px;
+
+}
+
+
+.form-box{
+
+  padding:30px;
+
+  margin-bottom:30px;
+
+  border-left:2px solid var(--gold);
+
+}
+
+
+/* =====================================================
+   HEADINGS
+   ===================================================== */
+
+h2{
+
+  margin-top:0;
+
+  color:var(--gold2);
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:34px;
+
+  line-height:1.15;
+
+  font-weight:600;
+
+}
+
+
+.login-box h2{
+
+  font-size:40px;
+
+  margin-bottom:10px;
+
+}
+
+
+.form-box h2{
+
+  font-size:32px;
+
+}
+
+
+/* =====================================================
+   TEXT
+   ===================================================== */
+
+.login-box p{
+
+  color:var(--muted);
+
+  font-size:13px;
+
+}
+
+
+.user-info{
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  margin-top:6px;
+
+}
+
+
+.file-note{
+
+  font-size:12px;
+
+  color:var(--muted2);
+
+  margin-top:7px;
+
+}
+
+
+/* =====================================================
+   LABELS
+   ===================================================== */
+
+label{
+
+  display:block;
+
+  margin:18px 0 8px;
+
+  color:#d9d2c7;
+
+  font-size:13px;
+
+  font-weight:600;
+
+}
+
+
+/* =====================================================
+   INPUTS
+   ===================================================== */
+
+input,
+textarea,
+select{
+
+  width:100%;
+
+  padding:13px 14px;
+
+  background:#0d0f12;
+
+  color:var(--cream);
+
+  border:1px solid rgba(255,255,255,.12);
+
+  border-radius:6px;
+
+  font-size:14px;
+
+  transition:.2s ease;
+
+}
+
+
+input::placeholder,
+textarea::placeholder{
+
+  color:#716c65;
+
+}
+
+
+textarea{
+
+  min-height:180px;
+
+  resize:vertical;
+
+  line-height:1.75;
+
+}
+
+
+input:focus,
+textarea:focus,
+select:focus{
+
+  outline:none;
+
+  border-color:var(--gold);
+
+  box-shadow:
+    0 0 0 2px rgba(201,169,110,.08);
+
+}
+
+
+/* FILE INPUT */
+
+input[type="file"]{
+
+  padding:10px;
+
+  color:#cfc8bd;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
+
+.gold-btn{
+
+  min-height:45px;
+
+  background:var(--gold);
+
+  color:#111;
+
+  border:1px solid var(--gold);
+
+  padding:11px 20px;
+
+  border-radius:3px;
+
+  font-weight:700;
+
+  font-size:12px;
+
+  letter-spacing:.3px;
+
+  transition:.25s ease;
+
+}
+
+
+.gold-btn:hover{
+
+  background:var(--gold2);
+
+  border-color:var(--gold2);
+
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.25);
+
+}
+
+
+.gold-btn:disabled{
+
+  opacity:.55;
+
+  cursor:not-allowed;
+
+  transform:none;
+
+}
+
+
+/* =====================================================
+   SECONDARY BUTTON
+   ===================================================== */
+
+.secondary-btn{
+
+  min-height:45px;
+
+  background:transparent;
+
+  color:var(--gold2);
+
+  border:1px solid rgba(201,169,110,.65);
+
+  padding:10px 19px;
+
+  border-radius:3px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  transition:.25s ease;
+
+}
+
+
+.secondary-btn:hover{
+
+  background:rgba(201,169,110,.10);
+
+  border-color:var(--gold);
+
+  transform:translateY(-1px);
+
+}
+
+
+/* =====================================================
+   EDIT BUTTON
+   ===================================================== */
+
+.edit-btn{
+
+  background:transparent;
+
+  color:var(--gold2);
+
+  border:1px solid rgba(201,169,110,.55);
+
+  padding:8px 12px;
+
+  border-radius:3px;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  margin-right:5px;
+
+  transition:.2s ease;
+
+}
+
+
+.edit-btn:hover{
+
+  background:var(--gold);
+
+  color:#111;
+
+}
+
+
+/* =====================================================
+   DANGER BUTTON
+   ===================================================== */
+
+.danger-btn{
+
+  background:#571b1b;
+
+  color:#ffdede;
+
+  border:1px solid #873333;
+
+  padding:8px 12px;
+
+  border-radius:3px;
+
+  font-size:11px;
+
+  font-weight:700;
+
+  transition:.2s ease;
+
+}
+
+
+.danger-btn:hover{
+
+  background:#7a2222;
+
+  border-color:#a84444;
+
+}
+
+
+/* =====================================================
+   TOP BAR
+   ===================================================== */
+
+.top-bar{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:18px;
+
+  margin-bottom:25px;
+
+  flex-wrap:wrap;
+
+}
+
+
+.top-bar h2{
+
+  margin-bottom:0;
+
+}
+
+
+/* =====================================================
+   TABS
+   ===================================================== */
+
+.tabs{
+
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:30px;
+
+  padding-bottom:16px;
+
+  border-bottom:1px solid var(--softline);
+
+}
+
+
+.tab-btn{
+
+  min-height:43px;
+
+  background:#101216;
+
+  color:#c9c2b7;
+
+  border:1px solid rgba(255,255,255,.10);
+
+  padding:10px 17px;
+
+  border-radius:3px;
+
+  font-size:12px;
+
+  font-weight:700;
+
+  transition:.25s ease;
+
+}
+
+
+.tab-btn:hover{
+
+  border-color:rgba(201,169,110,.45);
+
+  color:var(--gold2);
+
+}
+
+
+.tab-btn.active{
+
+  background:var(--gold);
+
+  color:#111;
+
+  border-color:var(--gold);
+
+}
+
+
+/* =====================================================
+   FORM BUTTONS
+   ===================================================== */
+
+.form-buttons{
+
+  display:flex;
+
+  gap:10px;
+
+  flex-wrap:wrap;
+
+  margin-top:20px;
+
+}
+
+
+/* =====================================================
+   TABLE
+   ===================================================== */
+
+.data-table{
+
+  width:100%;
+
+  border-collapse:separate;
+
+  border-spacing:0;
+
+  margin-top:20px;
+
+  overflow:hidden;
+
+  border:1px solid var(--softline);
+
+  border-radius:10px;
+
+  background:#0e1013;
+
+}
+
+
+.data-table th,
+.data-table td{
+
+  padding:14px 13px;
+
+  border-bottom:1px solid rgba(255,255,255,.06);
+
+  text-align:left;
+
+  vertical-align:top;
+
+  font-size:12px;
+
+}
+
+
+.data-table th{
+
+  color:var(--gold2);
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #171b21,
+      #111419
+    );
+
+  font-weight:700;
+
+  letter-spacing:.3px;
+
+}
+
+
+.data-table tr:last-child td{
+
+  border-bottom:0;
+
+}
+
+
+.data-table tbody tr{
+
+  transition:.2s ease;
+
+}
+
+
+.data-table tbody tr:hover{
+
+  background:rgba(201,169,110,.035);
+
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.status{
+
+  display:inline-block;
+
+  padding:5px 9px;
+
+  border-radius:3px;
+
+  font-size:10px;
+
+  font-weight:700;
+
+  letter-spacing:.3px;
+
+}
+
+
+.published{
+
+  background:rgba(28,110,55,.20);
+
+  border:1px solid rgba(65,160,90,.35);
+
+  color:#9cffb0;
+
+}
+
+
+.draft{
+
+  background:rgba(130,105,25,.18);
+
+  border:1px solid rgba(201,169,110,.30);
+
+  color:#ffe78a;
+
+}
+
+
+/* =====================================================
+   LOADING / EMPTY
+   ===================================================== */
+
+.empty{
+
+  text-align:center;
+
+  padding:38px 20px;
+
+  color:#817a72;
+
+  font-size:13px;
+
+  border:1px dashed rgba(255,255,255,.08);
+
+  border-radius:8px;
+
+  background:rgba(255,255,255,.015);
+
+}
+
+
+/* =====================================================
+   MESSAGE
+   ===================================================== */
+
+.message{
+
+  margin-top:16px;
+
+  padding:12px 14px;
+
+  border-radius:5px;
+
+  display:none;
+
+  font-size:12px;
+
+}
+
+
+.success{
+
+  display:block;
+
+  background:rgba(18,61,30,.65);
+
+  border:1px solid #2e8b57;
+
+  color:#9cffb0;
+
+}
+
+
+.error{
+
+  display:block;
+
+  background:rgba(61,18,18,.65);
+
+  border:1px solid #a33;
+
+  color:#ffaaaa;
+
+}
+
+
+/* =====================================================
+   BARE ACT PDF LINK
+   ===================================================== */
+
+.data-table a{
+
+  color:var(--gold2);
+
+  text-decoration:none;
+
+}
+
+
+.data-table a:hover{
+
+  color:#fff;
+
+  text-decoration:underline;
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media(max-width:700px){
+
+  header{
+
+    padding:13px 18px;
+
+  }
+
+
+  header h1{
+
+    font-size:25px;
+
+  }
+
+
+  .container{
+
+    width:94%;
+
+    margin-top:28px;
+
+  }
+
+
+  .login-box{
+
+    margin:45px auto;
+
+    padding:25px 20px;
+
+  }
+
+
+  .dashboard{
+
+    padding:20px 15px;
+
+  }
+
+
+  .form-box{
+
+    padding:22px 17px;
+
+  }
+
+
+  h2{
+
+    font-size:30px;
+
+  }
+
+
+  .login-box h2{
+
+    font-size:35px;
+
+  }
+
+
+  .data-table{
+
+    display:block;
+
+    overflow-x:auto;
+
+    white-space:nowrap;
+
+  }
+
+
+  .data-table th,
+  .data-table td{
+
+    min-width:100px;
+
+  }
+
+
+  .data-table th:first-child,
+  .data-table td:first-child{
+
+    min-width:210px;
+
+    white-space:normal;
+
+  }
+
+
+  .top-bar{
+
+    align-items:flex-start;
+
+  }
+
+
+  .top-bar .gold-btn{
+
+    width:100%;
+
+  }
+
+
+  .form-buttons{
+
+    flex-direction:column;
+
+  }
+
+
+  .form-buttons button{
+
+    width:100%;
+
+  }
+
+
+  .tabs{
+
+    flex-direction:column;
+
+  }
+
+
+  .tab-btn{
+
+    width:100%;
+
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media(max-width:430px){
+
+  header{
+
+    align-items:flex-start;
+
+    flex-direction:column;
+
+  }
+
+
+  header .logout-btn{
+
+    width:100%;
+
+  }
+
+
+  .login-box{
+
+    padding:22px 16px;
+
+  }
+
+
+  .dashboard{
+
+    padding:18px 10px;
+
+  }
+
+}
+
+</style>
+
 </head>
+
 
 <body>
 
+
+<!-- =====================================================
+     HEADER
+     ===================================================== -->
+
 <header>
 
-    <h1>⚖️ Admin Dashboard</h1>
+  <h1>
+    ⚖️ Bipin Kumar <span style="color:var(--gold2);">Maurya</span>
+  </h1>
 
-    <button
-        id="logoutBtn"
-        class="logout-btn hidden">
-        Logout
-    </button>
+  <button
+    id="logoutBtn"
+    class="logout-btn hidden"
+  >
+    Logout
+  </button>
 
 </header>
 
 
+<!-- =====================================================
+     MAIN
+     ===================================================== -->
+
 <div class="container">
 
-    <!-- LOGIN -->
 
-    <section
-        id="loginSection"
-        class="login-box">
+  <!-- ===================================================
+       LOGIN
+       =================================================== -->
 
-        <h2>Admin Login</h2>
+  <section
+    id="loginSection"
+    class="login-box"
+  >
 
-        <p style="color:#aaa;">
-            केवल authorized administrator login कर सकता है।
-        </p>
+    <h2>
+      Admin Login
+    </h2>
 
-        <label>
-            Email
-        </label>
 
-        <input
-            type="email"
-            id="loginEmail"
-            placeholder="Admin Email"
-            autocomplete="username"
-        >
+    <p>
+      केवल authorized administrator login कर सकता है।
+    </p>
 
-        <label>
-            Password
-        </label>
 
-        <input
-            type="password"
-            id="loginPassword"
-            placeholder="Password"
-            autocomplete="current-password"
-        >
+    <label for="loginEmail">
+      Email
+    </label>
+
+    <input
+      type="email"
+      id="loginEmail"
+      placeholder="Admin Email"
+      autocomplete="username"
+    >
+
+
+    <label for="loginPassword">
+      Password
+    </label>
+
+    <input
+      type="password"
+      id="loginPassword"
+      placeholder="Password"
+      autocomplete="current-password"
+    >
+
+
+    <button
+      id="loginBtn"
+      class="gold-btn"
+    >
+      Login
+    </button>
+
+
+    <div
+      id="loginMessage"
+      class="message"
+    ></div>
+
+  </section>
+
+
+  <!-- ===================================================
+       DASHBOARD
+       =================================================== -->
+
+  <section
+    id="dashboardSection"
+    class="dashboard hidden"
+  >
+
+
+    <!-- TOP -->
+
+    <div class="top-bar">
+
+      <div>
+
+        <h2>
+          Legal Content Dashboard
+        </h2>
+
+        <div
+          id="userInfo"
+          class="user-info"
+        ></div>
+
+      </div>
+
+    </div>
+
+
+    <!-- TABS -->
+
+    <div class="tabs">
+
+      <button
+        id="articlesTab"
+        class="tab-btn active"
+      >
+        📝 Legal Articles
+      </button>
+
+
+      <button
+        id="bareActsTab"
+        class="tab-btn"
+      >
+        ⚖️ Bare Acts
+      </button>
+
+    </div>
+
+
+    <!-- =================================================
+         ARTICLES
+         ================================================= -->
+
+    <div id="articlesSection">
+
+
+      <div class="top-bar">
+
+        <h2>
+          Legal Articles
+        </h2>
+
 
         <button
-            id="loginBtn"
-            class="gold-btn">
-            Login
+          id="newArticleBtn"
+          class="gold-btn"
+        >
+          + New Article
         </button>
 
-        <div
-            id="loginMessage"
-            class="message">
-        </div>
+      </div>
 
-    </section>
 
+      <!-- ARTICLE FORM -->
 
-    <!-- DASHBOARD -->
+      <div
+        id="articleForm"
+        class="form-box hidden"
+      >
 
-    <section
-        id="dashboardSection"
-        class="dashboard hidden">
+        <h2 id="formHeading">
+          New Article
+        </h2>
 
-        <div class="top-bar">
 
-            <div>
+        <input
+          type="hidden"
+          id="articleId"
+        >
 
-                <h2>
-                    Admin Dashboard
-                </h2>
 
-                <div
-                    id="userInfo"
-                    class="user-info">
-                </div>
+        <label for="articleTitle">
+          Article Title
+        </label>
 
-            </div>
+        <input
+          type="text"
+          id="articleTitle"
+          placeholder="जैसे: भारतीय न्याय संहिता में चोरी का अपराध"
+        >
 
-        </div>
 
+        <label for="articleDescription">
+          Short Description
+        </label>
 
-        <!-- TABS -->
+        <textarea
+          id="articleDescription"
+          style="min-height:120px;"
+          placeholder="Article का छोटा परिचय..."
+        ></textarea>
 
-        <div class="tabs">
 
-            <button
-                class="tab-btn active"
-                data-tab="articlesSection">
+        <label for="articleContent">
+          Article Content
+        </label>
 
-                📝 Legal Articles
+        <textarea
+          id="articleContent"
+          placeholder="यहाँ पूरा Legal Article लिखें..."
+        ></textarea>
 
-            </button>
 
+        <label for="articleStatus">
+          Status
+        </label>
 
-            <button
-                class="tab-btn"
-                data-tab="bareActsSection">
+        <select id="articleStatus">
 
-                ⚖️ Bare Acts
+          <option value="draft">
+            Draft
+          </option>
 
-            </button>
+          <option value="published">
+            Published
+          </option>
 
-        </div>
+        </select>
 
 
-        <!-- =========================
-             ARTICLES SECTION
-        ========================== -->
+        <div class="form-buttons">
 
-        <div
-            id="articlesSection"
-            class="tab-section active">
+          <button
+            id="saveArticleBtn"
+            class="gold-btn"
+          >
+            Save Article
+          </button>
 
-            <div class="top-bar">
 
-                <h2>
-                    Legal Articles Dashboard
-                </h2>
-
-                <button
-                    id="newArticleBtn"
-                    class="gold-btn">
-
-                    + New Article
-
-                </button>
-
-            </div>
-
-
-            <!-- ARTICLE FORM -->
-
-            <div
-                id="articleForm"
-                class="form-box hidden">
-
-                <h2 id="formHeading">
-                    New Article
-                </h2>
-
-                <input
-                    type="hidden"
-                    id="articleId"
-                >
-
-                <label>
-                    Article Title
-                </label>
-
-                <input
-                    type="text"
-                    id="articleTitle"
-                    placeholder="जैसे: भारतीय न्याय संहिता में चोरी का अपराध"
-                >
-
-                <label>
-                    Short Description
-                </label>
-
-                <textarea
-                    id="articleDescription"
-                    style="min-height:120px;"
-                    placeholder="Article का छोटा परिचय..."
-                ></textarea>
-
-                <label>
-                    Article Content
-                </label>
-
-                <textarea
-                    id="articleContent"
-                    placeholder="यहाँ पूरा Legal Article लिखें..."
-                ></textarea>
-
-                <label>
-                    Status
-                </label>
-
-                <select id="articleStatus">
-
-                    <option value="draft">
-                        Draft
-                    </option>
-
-                    <option value="published">
-                        Published
-                    </option>
-
-                </select>
-
-
-                <div class="form-buttons">
-
-                    <button
-                        id="saveArticleBtn"
-                        class="gold-btn">
-
-                        Save Article
-
-                    </button>
-
-                    <button
-                        id="cancelArticleBtn"
-                        class="secondary-btn">
-
-                        Cancel
-
-                    </button>
-
-                </div>
-
-
-                <div
-                    id="articleMessage"
-                    class="message">
-                </div>
-
-            </div>
-
-
-            <h2 style="margin-top:30px;">
-                My Articles
-            </h2>
-
-            <div
-                id="articlesLoading"
-                class="empty">
-
-                Articles load हो रहे हैं...
-
-            </div>
-
-
-            <table
-                id="articlesTable"
-                class="articles-table hidden">
-
-                <thead>
-
-                    <tr>
-
-                        <th>
-                            Title
-                        </th>
-
-                        <th>
-                            Status
-                        </th>
-
-                        <th>
-                            Date
-                        </th>
-
-                        <th>
-                            Action
-                        </th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody
-                    id="articlesTableBody">
-                </tbody>
-
-            </table>
+          <button
+            id="cancelArticleBtn"
+            class="secondary-btn"
+          >
+            Cancel
+          </button>
 
         </div>
 
-
-        <!-- =========================
-             BARE ACTS SECTION
-        ========================== -->
 
         <div
-            id="bareActsSection"
-            class="tab-section">
+          id="articleMessage"
+          class="message"
+        ></div>
 
-            <div class="top-bar">
+      </div>
 
-                <h2>
-                    ⚖️ Bare Acts Dashboard
-                </h2>
 
-                <button
-                    id="newBareActBtn"
-                    class="gold-btn">
+      <h2 style="margin-top:35px;">
 
-                    + New Bare Act
+        My Articles
 
-                </button>
+      </h2>
 
-            </div>
 
+      <div
+        id="articlesLoading"
+        class="empty"
+      >
+        Articles load हो रहे हैं...
+      </div>
 
-            <!-- BARE ACT FORM -->
 
-            <div
-                id="bareActForm"
-                class="form-box hidden">
+      <table
+        id="articlesTable"
+        class="data-table hidden"
+      >
 
-                <h2 id="bareActFormHeading">
-                    New Bare Act
-                </h2>
+        <thead>
 
+          <tr>
 
-                <input
-                    type="hidden"
-                    id="bareActId"
-                >
+            <th>
+              Title
+            </th>
 
-                <input
-                    type="hidden"
-                    id="oldPdfPath"
-                >
+            <th>
+              Status
+            </th>
 
+            <th>
+              Date
+            </th>
 
-                <label>
-                    Act Name
-                </label>
+            <th>
+              Action
+            </th>
 
-                <input
-                    type="text"
-                    id="bareActTitle"
-                    placeholder="जैसे: भारतीय न्याय संहिता, 2023"
-                >
+          </tr>
 
+        </thead>
 
-                <label>
-                    Category
-                </label>
 
-                <select id="bareActCategory">
+        <tbody
+          id="articlesTableBody"
+        ></tbody>
 
-                    <option value="Criminal Laws">
-                        Criminal Laws
-                    </option>
+      </table>
 
-                    <option value="Constitution & Constitutional Laws">
-                        Constitution & Constitutional Laws
-                    </option>
+    </div>
 
-                    <option value="Commerce & Corporate Laws">
-                        Commerce & Corporate Laws
-                    </option>
 
-                    <option value="Miscellaneous Laws">
-                        Miscellaneous Laws
-                    </option>
+    <!-- =================================================
+         BARE ACTS
+         ================================================= -->
 
-                </select>
+    <div
+      id="bareActsSection"
+      class="hidden"
+    >
 
 
-                <label>
-                    Short Description
-                </label>
+      <div class="top-bar">
 
-                <textarea
-                    id="bareActDescription"
-                    style="min-height:120px;"
-                    placeholder="इस Bare Act का छोटा परिचय..."
-                ></textarea>
+        <h2>
+          ⚖️ Bare Acts
+        </h2>
 
 
-                <label>
-                    PDF File
-                </label>
+        <button
+          id="newBareActBtn"
+          class="gold-btn"
+        >
+          + Upload Bare Act
+        </button>
 
-                <input
-                    type="file"
-                    id="bareActPdf"
-                    accept="application/pdf,.pdf"
-                >
+      </div>
 
-                <div
-                    id="fileInfo"
-                    class="file-info">
 
-                    केवल PDF, अधिकतम 50 MB।
+      <!-- BARE ACT FORM -->
 
-                </div>
+      <div
+        id="bareActForm"
+        class="form-box hidden"
+      >
 
+        <h2 id="bareActFormHeading">
+          Upload Bare Act PDF
+        </h2>
 
-                <label>
-                    Status
-                </label>
 
-                <select id="bareActStatus">
+        <input
+          type="hidden"
+          id="bareActId"
+        >
 
-                    <option value="draft">
-                        Draft
-                    </option>
 
-                    <option value="published">
-                        Published
-                    </option>
+        <input
+          type="hidden"
+          id="existingPdfPath"
+        >
 
-                </select>
 
+        <label for="bareActTitle">
+          Act Name
+        </label>
 
-                <div class="form-buttons">
+        <input
+          type="text"
+          id="bareActTitle"
+          placeholder="जैसे: Bharatiya Nyaya Sanhita, 2023"
+        >
 
-                    <button
-                        id="saveBareActBtn"
-                        class="gold-btn">
 
-                        Save Bare Act
+        <label for="bareActCategory">
+          Category
+        </label>
 
-                    </button>
+        <select id="bareActCategory">
 
-                    <button
-                        id="cancelBareActBtn"
-                        class="secondary-btn">
+          <option value="Criminal Laws">
+            Criminal Laws
+          </option>
 
-                        Cancel
+          <option value="Constitution & Constitutional Laws">
+            Constitution & Constitutional Laws
+          </option>
 
-                    </button>
+          <option value="Commerce & Corporate Laws">
+            Commerce & Corporate Laws
+          </option>
 
-                </div>
+          <option value="Miscellaneous Laws">
+            Miscellaneous Laws
+          </option>
 
+        </select>
 
-                <div
-                    id="bareActMessage"
-                    class="message">
-                </div>
 
-            </div>
+        <label for="bareActDescription">
+          Short Description
+        </label>
 
+        <textarea
+          id="bareActDescription"
+          style="min-height:120px;"
+          placeholder="Act का छोटा परिचय..."
+        ></textarea>
 
-            <h2 style="margin-top:30px;">
-                My Bare Acts
-            </h2>
 
+        <label for="bareActPdf">
+          PDF File
+        </label>
 
-            <div
-                id="bareActsLoading"
-                class="empty">
+        <input
+          type="file"
+          id="bareActPdf"
+          accept="application/pdf,.pdf"
+        >
 
-                Bare Acts load हो रहे हैं...
 
-            </div>
+        <div class="file-note">
+          केवल PDF. अधिकतम 50 MB.
+        </div>
 
 
-            <table
-                id="bareActsTable"
-                class="articles-table hidden">
+        <label for="bareActStatus">
+          Status
+        </label>
 
-                <thead>
+        <select id="bareActStatus">
 
-                    <tr>
+          <option value="draft">
+            Draft
+          </option>
 
-                        <th>
-                            Act Name
-                        </th>
+          <option value="published">
+            Published
+          </option>
 
-                        <th>
-                            Category
-                        </th>
+        </select>
 
-                        <th>
-                            Status
-                        </th>
 
-                        <th>
-                            Date
-                        </th>
+        <div class="form-buttons">
 
-                        <th>
-                            PDF
-                        </th>
+          <button
+            id="saveBareActBtn"
+            class="gold-btn"
+          >
+            Upload & Save
+          </button>
 
-                        <th>
-                            Action
-                        </th>
 
-                    </tr>
-
-                </thead>
-
-                <tbody
-                    id="bareActsTableBody">
-                </tbody>
-
-            </table>
+          <button
+            id="cancelBareActBtn"
+            class="secondary-btn"
+          >
+            Cancel
+          </button>
 
         </div>
 
-    </section>
+
+        <div
+          id="bareActMessage"
+          class="message"
+        ></div>
+
+      </div>
+
+
+      <h2 style="margin-top:35px;">
+
+        My Bare Acts
+
+      </h2>
+
+
+      <div
+        id="bareActsLoading"
+        class="empty"
+      >
+        Bare Acts load हो रहे हैं...
+      </div>
+
+
+      <table
+        id="bareActsTable"
+        class="data-table hidden"
+      >
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Act
+            </th>
+
+            <th>
+              Category
+            </th>
+
+            <th>
+              Status
+            </th>
+
+            <th>
+              Date
+            </th>
+
+            <th>
+              PDF
+            </th>
+
+            <th>
+              Action
+            </th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody
+          id="bareActsTableBody"
+        ></tbody>
+
+      </table>
+
+    </div>
+
+  </section>
 
 </div>
 
 
-<!-- SUPABASE -->
+<!-- =====================================================
+     SUPABASE
+     ===================================================== -->
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 
 <script>
 
-const SUPABASE_URL =
-    "https://jfstjogeyvkhlhxhiaie.supabase.co";
+const SUPABASE_URL="https://jfstjogeyvkhlhxhiaie.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY="sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+
+const supabaseClient=window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
 
 
-const SUPABASE_PUBLISHABLE_KEY =
-    "sb_publishable_XAHKkigfoMkuF88wcAOmCg_BpJ20aGz";
+const $=id=>document.getElementById(id);
 
 
-const supabaseClient =
-    window.supabase.createClient(
-        SUPABASE_URL,
-        SUPABASE_PUBLISHABLE_KEY
+function showMessage(el,text,type){
+
+  el.textContent=text;
+
+  el.className="message "+type;
+
+}
+
+
+function clearMessage(el){
+
+  el.textContent="";
+
+  el.className="message";
+
+}
+
+
+function createSlug(){
+
+  return "bare-act-"+Date.now()+"-"+Math.random().toString(36).slice(2,8);
+
+}
+
+
+async function getUser(){
+
+  const {data}=await supabaseClient.auth.getSession();
+
+  return data.session?.user;
+
+}
+
+
+/* =====================================================
+   LOGIN
+   ===================================================== */
+
+$("loginBtn").addEventListener("click",async()=>{
+
+  const email=$("loginEmail").value.trim();
+
+  const password=$("loginPassword").value;
+
+
+  if(!email||!password){
+
+    showMessage(
+      $("loginMessage"),
+      "Email और Password दोनों भरें।",
+      "error"
     );
 
+    return;
 
-/* =========================
-   BASIC ELEMENTS
-========================= */
-
-const loginSection =
-    document.getElementById("loginSection");
-
-const dashboardSection =
-    document.getElementById("dashboardSection");
-
-const logoutBtn =
-    document.getElementById("logoutBtn");
+  }
 
 
-/* =========================
-   MESSAGE
-========================= */
+  $("loginBtn").disabled=true;
 
-function showMessage(element, text, type) {
-
-    element.textContent = text;
-
-    element.className =
-        "message " + type;
-
-}
+  $("loginBtn").textContent="Logging in...";
 
 
-function clearMessage(element) {
-
-    element.textContent = "";
-
-    element.className =
-        "message";
-
-}
-
-
-/* =========================
-   TABS
-========================= */
-
-document
-    .querySelectorAll(".tab-btn")
-    .forEach(function(button) {
-
-        button.addEventListener(
-            "click",
-            function() {
-
-                document
-                    .querySelectorAll(".tab-btn")
-                    .forEach(function(btn) {
-
-                        btn.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-
-                document
-                    .querySelectorAll(".tab-section")
-                    .forEach(function(section) {
-
-                        section.classList.remove(
-                            "active"
-                        );
-
-                    });
-
-
-                button.classList.add(
-                    "active"
-                );
-
-
-                const target =
-                    document.getElementById(
-                        button.dataset.tab
-                    );
-
-
-                target.classList.add(
-                    "active"
-                );
-
-
-                if (
-                    button.dataset.tab ===
-                    "bareActsSection"
-                ) {
-
-                    loadBareActs();
-
-                }
-
-
-                if (
-                    button.dataset.tab ===
-                    "articlesSection"
-                ) {
-
-                    loadArticles();
-
-                }
-
-            }
-        );
-
+  const {data,error}=
+    await supabaseClient.auth.signInWithPassword({
+      email,
+      password
     });
 
 
-/* =========================
-   LOGIN
-========================= */
+  $("loginBtn").disabled=false;
 
-document
-    .getElementById("loginBtn")
-    .addEventListener(
-        "click",
-        async function() {
-
-            const email =
-                document
-                    .getElementById(
-                        "loginEmail"
-                    )
-                    .value
-                    .trim();
+  $("loginBtn").textContent="Login";
 
 
-            const password =
-                document
-                    .getElementById(
-                        "loginPassword"
-                    )
-                    .value;
+  if(error){
 
-
-            if (!email || !password) {
-
-                showMessage(
-                    document.getElementById(
-                        "loginMessage"
-                    ),
-                    "Email और Password दोनों भरें।",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            const button =
-                document.getElementById(
-                    "loginBtn"
-                );
-
-
-            button.disabled = true;
-
-            button.textContent =
-                "Logging in...";
-
-
-            const {
-                data,
-                error
-            } =
-                await supabaseClient
-                    .auth
-                    .signInWithPassword({
-
-                        email: email,
-
-                        password: password
-
-                    });
-
-
-            button.disabled = false;
-
-            button.textContent =
-                "Login";
-
-
-            if (error) {
-
-                showMessage(
-                    document.getElementById(
-                        "loginMessage"
-                    ),
-                    "Login failed: " +
-                    error.message,
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            clearMessage(
-                document.getElementById(
-                    "loginMessage"
-                )
-            );
-
-
-            showDashboard(
-                data.user
-            );
-
-        }
+    showMessage(
+      $("loginMessage"),
+      "Login failed: "+error.message,
+      "error"
     );
 
+    return;
 
-/* =========================
-   SHOW DASHBOARD
-========================= */
-
-function showDashboard(user) {
-
-    loginSection.classList.add(
-        "hidden"
-    );
+  }
 
 
-    dashboardSection.classList.remove(
-        "hidden"
-    );
+  clearMessage(
+    $("loginMessage")
+  );
 
 
-    logoutBtn.classList.remove(
-        "hidden"
-    );
+  showDashboard(
+    data.user
+  );
+
+});
 
 
-    document.getElementById(
-        "userInfo"
-    ).textContent =
-        "Logged in as: " +
-        user.email;
-
-
-    loadArticles();
-
-}
-
-
-/* =========================
+/* =====================================================
    SESSION
-========================= */
+   ===================================================== */
 
-async function checkSession() {
+async function checkSession(){
 
-    const {
-        data
-    } =
-        await supabaseClient
-            .auth
-            .getSession();
+  const {data}=
+    await supabaseClient.auth.getSession();
 
 
-    if (data.session) {
+  if(data.session){
 
-        showDashboard(
-            data.session.user
-        );
+    showDashboard(
+      data.session.user
+    );
 
-    }
+  }
 
 }
 
@@ -1083,1911 +1863,1314 @@ async function checkSession() {
 checkSession();
 
 
-/* =========================
-   AUTH STATE
-========================= */
+supabaseClient.auth.onAuthStateChange(
+  (event,session)=>{
 
-supabaseClient
-    .auth
-    .onAuthStateChange(
-        function(event, session) {
+    if(session){
 
-            if (session) {
+      showDashboard(
+        session.user
+      );
 
-                showDashboard(
-                    session.user
-                );
+    }else{
 
-            } else {
-
-                loginSection.classList.remove(
-                    "hidden"
-                );
-
-                dashboardSection.classList.add(
-                    "hidden"
-                );
-
-                logoutBtn.classList.add(
-                    "hidden"
-                );
-
-            }
-
-        }
-    );
+      $("loginSection")
+        .classList
+        .remove("hidden");
 
 
-/* =========================
-   LOGOUT
-========================= */
+      $("dashboardSection")
+        .classList
+        .add("hidden");
 
-logoutBtn.addEventListener(
-    "click",
-    async function() {
 
-        await supabaseClient
-            .auth
-            .signOut();
-
-        location.reload();
+      $("logoutBtn")
+        .classList
+        .add("hidden");
 
     }
+
+  }
 );
 
 
-/* =========================
-   ARTICLE FORM
-========================= */
+/* =====================================================
+   DASHBOARD
+   ===================================================== */
 
-const articleForm =
-    document.getElementById(
-        "articleForm"
-    );
+function showDashboard(user){
 
-
-document
-    .getElementById("newArticleBtn")
-    .addEventListener(
-        "click",
-        function() {
-
-            document.getElementById(
-                "formHeading"
-            ).textContent =
-                "New Article";
+  $("loginSection")
+    .classList
+    .add("hidden");
 
 
-            document.getElementById(
-                "articleId"
-            ).value = "";
+  $("dashboardSection")
+    .classList
+    .remove("hidden");
 
 
-            document.getElementById(
-                "articleTitle"
-            ).value = "";
+  $("logoutBtn")
+    .classList
+    .remove("hidden");
 
 
-            document.getElementById(
-                "articleDescription"
-            ).value = "";
+  $("userInfo").textContent=
+    "Logged in as: "+user.email;
 
 
-            document.getElementById(
-                "articleContent"
-            ).value = "";
+  loadArticles();
 
-
-            document.getElementById(
-                "articleStatus"
-            ).value =
-                "draft";
-
-
-            clearMessage(
-                document.getElementById(
-                    "articleMessage"
-                )
-            );
-
-
-            articleForm.classList.remove(
-                "hidden"
-            );
-
-        }
-    );
-
-
-document
-    .getElementById("cancelArticleBtn")
-    .addEventListener(
-        "click",
-        function() {
-
-            articleForm.classList.add(
-                "hidden"
-            );
-
-        }
-    );
-
-
-function createSlug() {
-
-    return "article-" +
-        Date.now();
+  loadBareActs();
 
 }
 
 
-/* =========================
-   SAVE ARTICLE
-========================= */
+/* =====================================================
+   LOGOUT
+   ===================================================== */
 
-document
-    .getElementById("saveArticleBtn")
-    .addEventListener(
-        "click",
-        async function() {
+$("logoutBtn").addEventListener(
+  "click",
+  async()=>{
 
-            const title =
-                document
-                    .getElementById(
-                        "articleTitle"
-                    )
-                    .value
-                    .trim();
+    await supabaseClient.auth.signOut();
 
+    location.reload();
 
-            const description =
-                document
-                    .getElementById(
-                        "articleDescription"
-                    )
-                    .value
-                    .trim();
+  }
+);
 
 
-            const content =
-                document
-                    .getElementById(
-                        "articleContent"
-                    )
-                    .value
-                    .trim();
+/* =====================================================
+   TABS
+   ===================================================== */
 
+$("articlesTab").addEventListener(
+  "click",
+  ()=>{
 
-            const status =
-                document
-                    .getElementById(
-                        "articleStatus"
-                    )
-                    .value;
+    $("articlesTab")
+      .classList
+      .add("active");
 
 
-            const articleId =
-                document
-                    .getElementById(
-                        "articleId"
-                    )
-                    .value;
+    $("bareActsTab")
+      .classList
+      .remove("active");
 
 
-            if (!title) {
+    $("articlesSection")
+      .classList
+      .remove("hidden");
 
-                showMessage(
-                    document.getElementById(
-                        "articleMessage"
-                    ),
-                    "Article title भरना जरूरी है।",
-                    "error"
-                );
 
-                return;
+    $("bareActsSection")
+      .classList
+      .add("hidden");
 
-            }
+  }
+);
 
 
-            if (!content) {
+$("bareActsTab").addEventListener(
+  "click",
+  ()=>{
 
-                showMessage(
-                    document.getElementById(
-                        "articleMessage"
-                    ),
-                    "Article content लिखना जरूरी है।",
-                    "error"
-                );
+    $("bareActsTab")
+      .classList
+      .add("active");
 
-                return;
 
-            }
+    $("articlesTab")
+      .classList
+      .remove("active");
 
 
-            const {
-                data: sessionData
-            } =
-                await supabaseClient
-                    .auth
-                    .getSession();
+    $("bareActsSection")
+      .classList
+      .remove("hidden");
 
 
-            const user =
-                sessionData
-                    .session
-                    ?.user;
-
-
-            if (!user) {
-
-                showMessage(
-                    document.getElementById(
-                        "articleMessage"
-                    ),
-                    "Session समाप्त हो गई है। दोबारा login करें।",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            const button =
-                document.getElementById(
-                    "saveArticleBtn"
-                );
-
-
-            button.disabled = true;
-
-            button.textContent =
-                "Saving...";
-
-
-            let result;
-
-
-            if (articleId) {
-
-                result =
-                    await supabaseClient
-                        .from("articles")
-                        .update({
-
-                            title:
-                                title,
-
-                            description:
-                                description,
-
-                            content:
-                                content,
-
-                            status:
-                                status,
-
-                            updated_at:
-                                new Date()
-                                    .toISOString(),
-
-                            published_at:
-                                status ===
-                                "published"
-                                    ? new Date()
-                                        .toISOString()
-                                    : null
-
-                        })
-                        .eq(
-                            "id",
-                            articleId
-                        )
-                        .eq(
-                            "author_id",
-                            user.id
-                        );
-
-            } else {
-
-                result =
-                    await supabaseClient
-                        .from("articles")
-                        .insert({
-
-                            title:
-                                title,
-
-                            slug:
-                                createSlug(),
-
-                            description:
-                                description,
-
-                            content:
-                                content,
-
-                            status:
-                                status,
-
-                            author_id:
-                                user.id,
-
-                            published_at:
-                                status ===
-                                "published"
-                                    ? new Date()
-                                        .toISOString()
-                                    : null
-
-                        });
-
-            }
-
-
-            button.disabled = false;
-
-            button.textContent =
-                "Save Article";
-
-
-            if (result.error) {
-
-                showMessage(
-                    document.getElementById(
-                        "articleMessage"
-                    ),
-                    "Error: " +
-                    result.error.message,
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            showMessage(
-                document.getElementById(
-                    "articleMessage"
-                ),
-                status === "published"
-                    ? "Article successfully published."
-                    : "Article saved as draft.",
-                "success"
-            );
-
-
-            setTimeout(
-                function() {
-
-                    articleForm.classList.add(
-                        "hidden"
-                    );
-
-                    loadArticles();
-
-                },
-                800
-            );
-
-        }
-    );
-
-
-/* =========================
-   LOAD ARTICLES
-========================= */
-
-async function loadArticles() {
-
-    const loading =
-        document.getElementById(
-            "articlesLoading"
-        );
-
-
-    const table =
-        document.getElementById(
-            "articlesTable"
-        );
-
-
-    loading.textContent =
-        "Articles load हो रहे हैं...";
-
-
-    loading.classList.remove(
-        "hidden"
-    );
-
-
-    table.classList.add(
-        "hidden"
-    );
-
-
-    const {
-        data: sessionData
-    } =
-        await supabaseClient
-            .auth
-            .getSession();
-
-
-    const user =
-        sessionData
-            .session
-            ?.user;
-
-
-    if (!user) {
-
-        return;
-
-    }
-
-
-    const {
-        data: articles,
-        error
-    } =
-        await supabaseClient
-            .from("articles")
-            .select("*")
-            .eq(
-                "author_id",
-                user.id
-            )
-            .order(
-                "created_at",
-                {
-                    ascending: false
-                }
-            );
-
-
-    loading.classList.add(
-        "hidden"
-    );
-
-
-    if (error) {
-
-        loading.textContent =
-            "Articles load नहीं हो पाए: " +
-            error.message;
-
-        loading.classList.remove(
-            "hidden"
-        );
-
-        return;
-
-    }
-
-
-    const body =
-        document.getElementById(
-            "articlesTableBody"
-        );
-
-
-    body.innerHTML = "";
-
-
-    if (
-        !articles ||
-        articles.length === 0
-    ) {
-
-        loading.textContent =
-            "अभी कोई Article नहीं है।";
-
-        loading.classList.remove(
-            "hidden"
-        );
-
-        return;
-
-    }
-
-
-    articles.forEach(
-        function(article) {
-
-            const row =
-                document.createElement(
-                    "tr"
-                );
-
-
-            const titleCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            titleCell.textContent =
-                article.title || "";
-
-
-            row.appendChild(
-                titleCell
-            );
-
-
-            const statusCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            const statusSpan =
-                document.createElement(
-                    "span"
-                );
-
-
-            statusSpan.className =
-                "status " +
-                (
-                    article.status ===
-                    "published"
-                        ? "published"
-                        : "draft"
-                );
-
-
-            statusSpan.textContent =
-                article.status ===
-                "published"
-                    ? "Published"
-                    : "Draft";
-
-
-            statusCell.appendChild(
-                statusSpan
-            );
-
-
-            row.appendChild(
-                statusCell
-            );
-
-
-            const dateCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            dateCell.textContent =
-                new Date(
-                    article.created_at
-                ).toLocaleDateString(
-                    "en-IN"
-                );
-
-
-            row.appendChild(
-                dateCell
-            );
-
-
-            const actionCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            const editButton =
-                document.createElement(
-                    "button"
-                );
-
-
-            editButton.textContent =
-                "Edit";
-
-
-            editButton.className =
-                "edit-btn";
-
-
-            editButton.onclick =
-                function() {
-
-                    editArticle(
-                        article
-                    );
-
-                };
-
-
-            const deleteButton =
-                document.createElement(
-                    "button"
-                );
-
-
-            deleteButton.textContent =
-                "Delete";
-
-
-            deleteButton.className =
-                "danger-btn";
-
-
-            deleteButton.onclick =
-                function() {
-
-                    deleteArticle(
-                        article.id
-                    );
-
-                };
-
-
-            actionCell.appendChild(
-                editButton
-            );
-
-
-            actionCell.appendChild(
-                deleteButton
-            );
-
-
-            row.appendChild(
-                actionCell
-            );
-
-
-            body.appendChild(
-                row
-            );
-
-        }
-    );
-
-
-    table.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-function editArticle(article) {
-
-    document.getElementById(
-        "formHeading"
-    ).textContent =
-        "Edit Article";
-
-
-    document.getElementById(
-        "articleId"
-    ).value =
-        article.id;
-
-
-    document.getElementById(
-        "articleTitle"
-    ).value =
-        article.title || "";
-
-
-    document.getElementById(
-        "articleDescription"
-    ).value =
-        article.description || "";
-
-
-    document.getElementById(
-        "articleContent"
-    ).value =
-        article.content || "";
-
-
-    document.getElementById(
-        "articleStatus"
-    ).value =
-        article.status || "draft";
-
-
-    articleForm.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-async function deleteArticle(articleId) {
-
-    const confirmDelete =
-        confirm(
-            "क्या आप इस Article को permanently delete करना चाहते हैं?"
-        );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    const {
-        error
-    } =
-        await supabaseClient
-            .from("articles")
-            .delete()
-            .eq(
-                "id",
-                articleId
-            );
-
-
-    if (error) {
-
-        alert(
-            "Delete failed: " +
-            error.message
-        );
-
-        return;
-
-    }
-
-
-    alert(
-        "Article successfully deleted."
-    );
-
-
-    loadArticles();
-
-}
-    /* =========================
-   BARE ACTS
-========================= */
-
-const bareActForm =
-    document.getElementById("bareActForm");
-
-const BARE_ACT_BUCKET =
-    "bare-acts";
-
-
-/* =========================
-   NEW BARE ACT
-========================= */
-
-document
-    .getElementById("newBareActBtn")
-    .addEventListener(
-        "click",
-        function() {
-
-            document.getElementById(
-                "bareActFormHeading"
-            ).textContent =
-                "New Bare Act";
-
-            document.getElementById(
-                "bareActId"
-            ).value = "";
-
-            document.getElementById(
-                "oldPdfPath"
-            ).value = "";
-
-            document.getElementById(
-                "bareActTitle"
-            ).value = "";
-
-            document.getElementById(
-                "bareActCategory"
-            ).value =
-                "Criminal Laws";
-
-            document.getElementById(
-                "bareActDescription"
-            ).value = "";
-
-            document.getElementById(
-                "bareActPdf"
-            ).value = "";
-
-            document.getElementById(
-                "bareActStatus"
-            ).value =
-                "draft";
-
-            document.getElementById(
-                "fileInfo"
-            ).textContent =
-                "केवल PDF, अधिकतम 50 MB।";
-
-            clearMessage(
-                document.getElementById(
-                    "bareActMessage"
-                )
-            );
-
-            bareActForm.classList.remove(
-                "hidden"
-            );
-
-        }
-    );
-
-
-/* =========================
-   CANCEL BARE ACT
-========================= */
-
-document
-    .getElementById("cancelBareActBtn")
-    .addEventListener(
-        "click",
-        function() {
-
-            bareActForm.classList.add(
-                "hidden"
-            );
-
-            clearMessage(
-                document.getElementById(
-                    "bareActMessage"
-                )
-            );
-
-        }
-    );
-
-
-/* =========================
-   PDF FILE INFO
-========================= */
-
-document
-    .getElementById("bareActPdf")
-    .addEventListener(
-        "change",
-        function() {
-
-            const file =
-                this.files[0];
-
-            if (!file) {
-
-                document.getElementById(
-                    "fileInfo"
-                ).textContent =
-                    "केवल PDF, अधिकतम 50 MB।";
-
-                return;
-
-            }
-
-            const size =
-                (
-                    file.size /
-                    1024 /
-                    1024
-                ).toFixed(2);
-
-
-            document.getElementById(
-                "fileInfo"
-            ).textContent =
-                file.name +
-                " — " +
-                size +
-                " MB";
-
-        }
-    );
-
-
-/* =========================
-   SAFE FILE NAME
-========================= */
-
-function safeFileName(name) {
-
-    return name.replace(
-        /[^a-zA-Z0-9._-]/g,
-        "-"
-    );
-
-}
-
-
-/* =========================
-   SAVE BARE ACT
-========================= */
-
-document
-    .getElementById("saveBareActBtn")
-    .addEventListener(
-        "click",
-        async function() {
-
-            const title =
-                document.getElementById(
-                    "bareActTitle"
-                ).value.trim();
-
-
-            const category =
-                document.getElementById(
-                    "bareActCategory"
-                ).value;
-
-
-            const description =
-                document.getElementById(
-                    "bareActDescription"
-                ).value.trim();
-
-
-            const status =
-                document.getElementById(
-                    "bareActStatus"
-                ).value;
-
-
-            const bareActId =
-                document.getElementById(
-                    "bareActId"
-                ).value;
-
-
-            const oldPdfPath =
-                document.getElementById(
-                    "oldPdfPath"
-                ).value;
-
-
-            const file =
-                document.getElementById(
-                    "bareActPdf"
-                ).files[0];
-
-
-            const message =
-                document.getElementById(
-                    "bareActMessage"
-                );
-
-
-            /* TITLE CHECK */
-
-            if (!title) {
-
-                showMessage(
-                    message,
-                    "Act Name भरना जरूरी है।",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            /* NEW ACT MUST HAVE PDF */
-
-            if (!bareActId && !file) {
-
-                showMessage(
-                    message,
-                    "नया Bare Act बनाने के लिए PDF चुनना जरूरी है।",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            /* FILE CHECK */
-
-            if (file) {
-
-                if (
-                    file.type !==
-                        "application/pdf" &&
-                    !file.name
-                        .toLowerCase()
-                        .endsWith(".pdf")
-                ) {
-
-                    showMessage(
-                        message,
-                        "केवल PDF file upload करें।",
-                        "error"
-                    );
-
-                    return;
-
-                }
-
-
-                if (
-                    file.size >
-                    50 * 1024 * 1024
-                ) {
-
-                    showMessage(
-                        message,
-                        "PDF 50 MB से बड़ी नहीं होनी चाहिए।",
-                        "error"
-                    );
-
-                    return;
-
-                }
-
-            }
-
-
-            /* SESSION */
-
-            const {
-                data: sessionData
-            } =
-                await supabaseClient
-                    .auth
-                    .getSession();
-
-
-            const user =
-                sessionData
-                    .session
-                    ?.user;
-
-
-            if (!user) {
-
-                showMessage(
-                    message,
-                    "Session समाप्त हो गई है। दोबारा login करें।",
-                    "error"
-                );
-
-                return;
-
-            }
-
-
-            const button =
-                document.getElementById(
-                    "saveBareActBtn"
-                );
-
-
-            button.disabled = true;
-
-            button.textContent =
-                "Saving...";
-
-
-            let pdfPath =
-                oldPdfPath;
-
-
-            try {
-
-                /* =====================
-                   UPLOAD NEW PDF
-                ===================== */
-
-                if (file) {
-
-                    pdfPath =
-                        user.id +
-                        "/" +
-                        Date.now() +
-                        "-" +
-                        safeFileName(
-                            file.name
-                        );
-
-
-                    const upload =
-                        await supabaseClient
-                            .storage
-                            .from(
-                                BARE_ACT_BUCKET
-                            )
-                            .upload(
-                                pdfPath,
-                                file,
-                                {
-                                    contentType:
-                                        "application/pdf",
-
-                                    upsert:
-                                        false
-                                }
-                            );
-
-
-                    if (upload.error) {
-
-                        throw new Error(
-                            "PDF upload failed: " +
-                            upload.error.message
-                        );
-
-                    }
-
-                }
-
-
-                let result;
-
-
-                /* =====================
-                   UPDATE
-                ===================== */
-
-                if (bareActId) {
-
-                    result =
-                        await supabaseClient
-                            .from(
-                                "bare_acts"
-                            )
-                            .update({
-
-                                title:
-                                    title,
-
-                                category:
-                                    category,
-
-                                description:
-                                    description,
-
-                                status:
-                                    status,
-
-                                pdf_path:
-                                    pdfPath,
-
-                                updated_at:
-                                    new Date()
-                                        .toISOString(),
-
-                                published_at:
-                                    status ===
-                                    "published"
-                                        ? new Date()
-                                            .toISOString()
-                                        : null
-
-                            })
-                            .eq(
-                                "id",
-                                bareActId
-                            )
-                            .eq(
-                                "author_id",
-                                user.id
-                            );
-
-
-                    if (result.error) {
-
-                        throw new Error(
-                            result.error.message
-                        );
-
-                    }
-
-
-                    /* DELETE OLD PDF */
-
-                    if (
-                        file &&
-                        oldPdfPath &&
-                        oldPdfPath !==
-                            pdfPath
-                    ) {
-
-                        await supabaseClient
-                            .storage
-                            .from(
-                                BARE_ACT_BUCKET
-                            )
-                            .remove([
-                                oldPdfPath
-                            ]);
-
-                    }
-
-                }
-
-
-                /* =====================
-                   CREATE NEW
-                ===================== */
-
-                else {
-
-                    result =
-                        await supabaseClient
-                            .from(
-                                "bare_acts"
-                            )
-                            .insert({
-
-                                title:
-                                    title,
-
-                                category:
-                                    category,
-
-                                description:
-                                    description,
-
-                                status:
-                                    status,
-
-                                author_id:
-                                    user.id,
-
-                                pdf_path:
-                                    pdfPath,
-
-                                published_at:
-                                    status ===
-                                    "published"
-                                        ? new Date()
-                                            .toISOString()
-                                        : null
-
-                            });
-
-
-                    if (result.error) {
-
-                        throw new Error(
-                            result.error.message
-                        );
-
-                    }
-
-                }
-
-
-                /* SUCCESS */
-
-                showMessage(
-                    message,
-                    status === "published"
-                        ? "Bare Act successfully published."
-                        : "Bare Act saved as draft.",
-                    "success"
-                );
-
-
-                setTimeout(
-                    function() {
-
-                        bareActForm.classList.add(
-                            "hidden"
-                        );
-
-                        loadBareActs();
-
-                    },
-                    800
-                );
-
-
-            } catch (error) {
-
-                /* REMOVE UPLOADED FILE IF DB FAILED */
-
-                if (
-                    file &&
-                    pdfPath
-                ) {
-
-                    await supabaseClient
-                        .storage
-                        .from(
-                            BARE_ACT_BUCKET
-                        )
-                        .remove([
-                            pdfPath
-                        ]);
-
-                }
-
-
-                showMessage(
-                    message,
-                    "Error: " +
-                    error.message,
-                    "error"
-                );
-
-            } finally {
-
-                button.disabled = false;
-
-                button.textContent =
-                    "Save Bare Act";
-
-            }
-
-        }
-    );
-
-
-/* =========================
-   LOAD BARE ACTS
-========================= */
-
-async function loadBareActs() {
-
-    const loading =
-        document.getElementById(
-            "bareActsLoading"
-        );
-
-
-    const table =
-        document.getElementById(
-            "bareActsTable"
-        );
-
-
-    loading.textContent =
-        "Bare Acts load हो रहे हैं...";
-
-
-    loading.classList.remove(
-        "hidden"
-    );
-
-
-    table.classList.add(
-        "hidden"
-    );
-
-
-    const {
-        data: sessionData
-    } =
-        await supabaseClient
-            .auth
-            .getSession();
-
-
-    const user =
-        sessionData
-            .session
-            ?.user;
-
-
-    if (!user) {
-
-        return;
-
-    }
-
-
-    const {
-        data: acts,
-        error
-    } =
-        await supabaseClient
-            .from(
-                "bare_acts"
-            )
-            .select("*")
-            .eq(
-                "author_id",
-                user.id
-            )
-            .order(
-                "created_at",
-                {
-                    ascending: false
-                }
-            );
-
-
-    loading.classList.add(
-        "hidden"
-    );
-
-
-    if (error) {
-
-        loading.textContent =
-            "Bare Acts load नहीं हो पाए: " +
-            error.message;
-
-        loading.classList.remove(
-            "hidden"
-        );
-
-        return;
-
-    }
-
-
-    const body =
-        document.getElementById(
-            "bareActsTableBody"
-        );
-
-
-    body.innerHTML = "";
-
-
-    if (
-        !acts ||
-        acts.length === 0
-    ) {
-
-        loading.textContent =
-            "अभी कोई Bare Act नहीं है।";
-
-        loading.classList.remove(
-            "hidden"
-        );
-
-        return;
-
-    }
-
-
-    acts.forEach(
-        function(act) {
-
-            const row =
-                document.createElement(
-                    "tr"
-                );
-
-
-            /* ACT NAME */
-
-            const titleCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            titleCell.textContent =
-                act.title || "";
-
-
-            row.appendChild(
-                titleCell
-            );
-
-
-            /* CATEGORY */
-
-            const categoryCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            categoryCell.textContent =
-                act.category || "";
-
-
-            row.appendChild(
-                categoryCell
-            );
-
-
-            /* STATUS */
-
-            const statusCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            const statusSpan =
-                document.createElement(
-                    "span"
-                );
-
-
-            statusSpan.className =
-                "status " +
-                (
-                    act.status ===
-                    "published"
-                        ? "published"
-                        : "draft"
-                );
-
-
-            statusSpan.textContent =
-                act.status ===
-                "published"
-                    ? "Published"
-                    : "Draft";
-
-
-            statusCell.appendChild(
-                statusSpan
-            );
-
-
-            row.appendChild(
-                statusCell
-            );
-
-
-            /* DATE */
-
-            const dateCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            dateCell.textContent =
-                new Date(
-                    act.created_at
-                ).toLocaleDateString(
-                    "en-IN"
-                );
-
-
-            row.appendChild(
-                dateCell
-            );
-
-
-            /* PDF */
-
-            const pdfCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            if (act.pdf_path) {
-
-                const {
-                    data
-                } =
-                    supabaseClient
-                        .storage
-                        .from(
-                            BARE_ACT_BUCKET
-                        )
-                        .getPublicUrl(
-                            act.pdf_path
-                        );
-
-
-                const link =
-                    document.createElement(
-                        "a"
-                    );
-
-
-                link.href =
-                    data.publicUrl;
-
-
-                link.target =
-                    "_blank";
-
-
-                link.rel =
-                    "noopener";
-
-
-                link.className =
-                    "pdf-link";
-
-
-                link.textContent =
-                    "Open PDF";
-
-
-                pdfCell.appendChild(
-                    link
-                );
-
-            } else {
-
-                pdfCell.textContent =
-                    "No PDF";
-
-            }
-
-
-            row.appendChild(
-                pdfCell
-            );
-
-
-            /* ACTION */
-
-            const actionCell =
-                document.createElement(
-                    "td"
-                );
-
-
-            const editButton =
-                document.createElement(
-                    "button"
-                );
-
-
-            editButton.textContent =
-                "Edit";
-
-
-            editButton.className =
-                "edit-btn";
-
-
-            editButton.onclick =
-                function() {
-
-                    editBareAct(
-                        act
-                    );
-
-                };
-
-
-            const deleteButton =
-                document.createElement(
-                    "button"
-                );
-
-
-            deleteButton.textContent =
-                "Delete";
-
-
-            deleteButton.className =
-                "danger-btn";
-
-
-            deleteButton.onclick =
-                function() {
-
-                    deleteBareAct(
-                        act
-                    );
-
-                };
-
-
-            actionCell.appendChild(
-                editButton
-            );
-
-
-            actionCell.appendChild(
-                deleteButton
-            );
-
-
-            row.appendChild(
-                actionCell
-            );
-
-
-            body.appendChild(
-                row
-            );
-
-        }
-    );
-
-
-    table.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =========================
-   EDIT BARE ACT
-========================= */
-
-function editBareAct(act) {
-
-    document.getElementById(
-        "bareActFormHeading"
-    ).textContent =
-        "Edit Bare Act";
-
-
-    document.getElementById(
-        "bareActId"
-    ).value =
-        act.id;
-
-
-    document.getElementById(
-        "oldPdfPath"
-    ).value =
-        act.pdf_path || "";
-
-
-    document.getElementById(
-        "bareActTitle"
-    ).value =
-        act.title || "";
-
-
-    document.getElementById(
-        "bareActCategory"
-    ).value =
-        act.category ||
-        "Criminal Laws";
-
-
-    document.getElementById(
-        "bareActDescription"
-    ).value =
-        act.description || "";
-
-
-    document.getElementById(
-        "bareActStatus"
-    ).value =
-        act.status ||
-        "draft";
-
-
-    document.getElementById(
-        "bareActPdf"
-    ).value = "";
-
-
-    document.getElementById(
-        "fileInfo"
-    ).textContent =
-        act.pdf_path
-            ? "Current PDF मौजूद है। नया PDF चुनना optional है।"
-            : "PDF मौजूद नहीं है।";
-
-
-    clearMessage(
-        document.getElementById(
-            "bareActMessage"
-        )
-    );
-
-
-    bareActForm.classList.remove(
-        "hidden"
-    );
-
-}
-
-
-/* =========================
-   DELETE BARE ACT
-========================= */
-
-async function deleteBareAct(act) {
-
-    const confirmDelete =
-        confirm(
-            "क्या आप इस Bare Act को permanently delete करना चाहते हैं?"
-        );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    const {
-        data: sessionData
-    } =
-        await supabaseClient
-            .auth
-            .getSession();
-
-
-    const user =
-        sessionData
-            .session
-            ?.user;
-
-
-    if (!user) {
-
-        alert(
-            "Session समाप्त हो गई है।"
-        );
-
-        return;
-
-    }
-
-
-    const {
-        error
-    } =
-        await supabaseClient
-            .from(
-                "bare_acts"
-            )
-            .delete()
-            .eq(
-                "id",
-                act.id
-            )
-            .eq(
-                "author_id",
-                user.id
-            );
-
-
-    if (error) {
-
-        alert(
-            "Delete failed: " +
-            error.message
-        );
-
-        return;
-
-    }
-
-
-    /* DELETE PDF */
-
-    if (act.pdf_path) {
-
-        await supabaseClient
-            .storage
-            .from(
-                BARE_ACT_BUCKET
-            )
-            .remove([
-                act.pdf_path
-            ]);
-
-    }
-
-
-    alert(
-        "Bare Act successfully deleted."
-    );
+    $("articlesSection")
+      .classList
+      .add("hidden");
 
 
     loadBareActs();
+
+  }
+);
+
+
+/* =====================================================
+   ARTICLES
+   ===================================================== */
+
+$("newArticleBtn").addEventListener(
+  "click",
+  ()=>{
+
+    $("formHeading").textContent=
+      "New Article";
+
+
+    $("articleId").value="";
+
+
+    $("articleTitle").value="";
+
+
+    $("articleDescription").value="";
+
+
+    $("articleContent").value="";
+
+
+    $("articleStatus").value="draft";
+
+
+    clearMessage(
+      $("articleMessage")
+    );
+
+
+    $("articleForm")
+      .classList
+      .remove("hidden");
+
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+
+$("cancelArticleBtn").addEventListener(
+  "click",
+  ()=>{
+
+    $("articleForm")
+      .classList
+      .add("hidden");
+
+
+    clearMessage(
+      $("articleMessage")
+    );
+
+  }
+);
+
+
+/* =====================================================
+   SAVE ARTICLE
+   ===================================================== */
+
+$("saveArticleBtn").addEventListener(
+  "click",
+  async()=>{
+
+    const title=
+      $("articleTitle").value.trim();
+
+
+    const description=
+      $("articleDescription").value.trim();
+
+
+    const content=
+      $("articleContent").value.trim();
+
+
+    const status=
+      $("articleStatus").value;
+
+
+    const articleId=
+      $("articleId").value;
+
+
+    if(!title){
+
+      showMessage(
+        $("articleMessage"),
+        "Article title भरना जरूरी है।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    if(!content){
+
+      showMessage(
+        $("articleMessage"),
+        "Article content लिखना जरूरी है।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    const user=
+      await getUser();
+
+
+    if(!user){
+
+      showMessage(
+        $("articleMessage"),
+        "Session समाप्त हो गई है। दोबारा login करें।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    $("saveArticleBtn").disabled=true;
+
+    $("saveArticleBtn").textContent=
+      "Saving...";
+
+
+    let result;
+
+
+    if(articleId){
+
+      result=
+        await supabaseClient
+          .from("articles")
+          .update({
+            title,
+            description,
+            content,
+            status,
+            updated_at:new Date().toISOString(),
+            published_at:
+              status==="published"
+                ?new Date().toISOString()
+                :null
+          })
+          .eq("id",articleId)
+          .eq("author_id",user.id);
+
+    }else{
+
+      result=
+        await supabaseClient
+          .from("articles")
+          .insert({
+            title,
+            slug:"article-"+Date.now(),
+            description,
+            content,
+            status,
+            author_id:user.id,
+            published_at:
+              status==="published"
+                ?new Date().toISOString()
+                :null
+          });
+
+    }
+
+
+    $("saveArticleBtn").disabled=false;
+
+    $("saveArticleBtn").textContent=
+      "Save Article";
+
+
+    if(result.error){
+
+      showMessage(
+        $("articleMessage"),
+        "Error: "+result.error.message,
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    showMessage(
+      $("articleMessage"),
+      status==="published"
+        ?"Article successfully published."
+        :"Article saved as draft.",
+      "success"
+    );
+
+
+    setTimeout(
+      ()=>{
+        $("articleForm")
+          .classList
+          .add("hidden");
+
+        loadArticles();
+
+      },
+      800
+    );
+
+  }
+);
+
+
+/* =====================================================
+   LOAD ARTICLES
+   ===================================================== */
+
+async function loadArticles(){
+
+  const loading=
+    $("articlesLoading");
+
+
+  loading
+    .classList
+    .remove("hidden");
+
+
+  $("articlesTable")
+    .classList
+    .add("hidden");
+
+
+  const user=
+    await getUser();
+
+
+  if(!user)return;
+
+
+  const {data:articles,error}=
+    await supabaseClient
+      .from("articles")
+      .select("*")
+      .eq("author_id",user.id)
+      .order(
+        "created_at",
+        {
+          ascending:false
+        }
+      );
+
+
+  loading
+    .classList
+    .add("hidden");
+
+
+  if(error){
+
+    loading.textContent=
+      "Articles load नहीं हो पाए: "+
+      error.message;
+
+
+    loading
+      .classList
+      .remove("hidden");
+
+
+    return;
+
+  }
+
+
+  $("articlesTableBody")
+    .innerHTML="";
+
+
+  if(!articles?.length){
+
+    loading.textContent=
+      "अभी कोई Article नहीं है।";
+
+
+    loading
+      .classList
+      .remove("hidden");
+
+
+    return;
+
+  }
+
+
+  articles.forEach(
+    article=>{
+
+      const row=
+        document.createElement("tr");
+
+
+      row.innerHTML=
+        "<td></td><td></td><td></td><td></td>";
+
+
+      row.children[0].textContent=
+        article.title||"";
+
+
+      const s=
+        document.createElement("span");
+
+
+      s.className=
+        "status "+
+        (
+          article.status==="published"
+            ?"published"
+            :"draft"
+        );
+
+
+      s.textContent=
+        article.status==="published"
+          ?"Published"
+          :"Draft";
+
+
+      row.children[1]
+        .appendChild(s);
+
+
+      row.children[2].textContent=
+        new Date(
+          article.created_at
+        ).toLocaleDateString(
+          "en-IN"
+        );
+
+
+      const edit=
+        document.createElement("button");
+
+
+      edit.textContent=
+        "Edit";
+
+
+      edit.className=
+        "edit-btn";
+
+
+      edit.onclick=
+        ()=>editArticle(article);
+
+
+      const del=
+        document.createElement("button");
+
+
+      del.textContent=
+        "Delete";
+
+
+      del.className=
+        "danger-btn";
+
+
+      del.onclick=
+        ()=>deleteArticle(article.id);
+
+
+      row.children[3]
+        .append(
+          edit,
+          del
+        );
+
+
+      $("articlesTableBody")
+        .appendChild(row);
+
+    }
+  );
+
+
+  $("articlesTable")
+    .classList
+    .remove("hidden");
+
+}
+
+
+/* =====================================================
+   EDIT ARTICLE
+   ===================================================== */
+
+function editArticle(a){
+
+  $("formHeading").textContent=
+    "Edit Article";
+
+
+  $("articleId").value=
+    a.id;
+
+
+  $("articleTitle").value=
+    a.title||"";
+
+
+  $("articleDescription").value=
+    a.description||"";
+
+
+  $("articleContent").value=
+    a.content||"";
+
+
+  $("articleStatus").value=
+    a.status||"draft";
+
+
+  clearMessage(
+    $("articleMessage")
+  );
+
+
+  $("articleForm")
+    .classList
+    .remove("hidden");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =====================================================
+   DELETE ARTICLE
+   ===================================================== */
+
+async function deleteArticle(id){
+
+  if(
+    !confirm(
+      "क्या आप इस Article को permanently delete करना चाहते हैं?"
+    )
+  )return;
+
+
+  const {error}=
+    await supabaseClient
+      .from("articles")
+      .delete()
+      .eq("id",id);
+
+
+  if(error){
+
+    alert(
+      "Delete failed: "+
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  alert(
+    "Article successfully deleted."
+  );
+
+
+  loadArticles();
+
+}
+
+
+/* =====================================================
+   BARE ACTS
+   ===================================================== */
+
+$("newBareActBtn").addEventListener(
+  "click",
+  ()=>{
+
+    $("bareActFormHeading").textContent=
+      "Upload Bare Act PDF";
+
+
+    $("bareActId").value="";
+
+
+    $("existingPdfPath").value="";
+
+
+    $("bareActTitle").value="";
+
+
+    $("bareActCategory").value=
+      "Criminal Laws";
+
+
+    $("bareActDescription").value="";
+
+
+    $("bareActPdf").value="";
+
+
+    $("bareActStatus").value=
+      "draft";
+
+
+    clearMessage(
+      $("bareActMessage")
+    );
+
+
+    $("bareActForm")
+      .classList
+      .remove("hidden");
+
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+);
+
+
+$("cancelBareActBtn").addEventListener(
+  "click",
+  ()=>{
+
+    $("bareActForm")
+      .classList
+      .add("hidden");
+
+
+    clearMessage(
+      $("bareActMessage")
+    );
+
+  }
+);
+
+
+/* =====================================================
+   SAVE BARE ACT
+   ===================================================== */
+
+$("saveBareActBtn").addEventListener(
+  "click",
+  async()=>{
+
+    const title=
+      $("bareActTitle").value.trim();
+
+
+    const category=
+      $("bareActCategory").value;
+
+
+    const description=
+      $("bareActDescription").value.trim();
+
+
+    const status=
+      $("bareActStatus").value;
+
+
+    const id=
+      $("bareActId").value;
+
+
+    const file=
+      $("bareActPdf").files[0];
+
+
+    if(!title){
+
+      showMessage(
+        $("bareActMessage"),
+        "Act Name भरना जरूरी है।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    if(!id&&!file){
+
+      showMessage(
+        $("bareActMessage"),
+        "PDF file चुनना जरूरी है।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    if(file){
+
+      if(
+        file.type!=="application/pdf" &&
+        !file.name.toLowerCase().endsWith(".pdf")
+      ){
+
+        showMessage(
+          $("bareActMessage"),
+          "केवल PDF file upload करें।",
+          "error"
+        );
+
+        return;
+
+      }
+
+
+      if(
+        file.size>50*1024*1024
+      ){
+
+        showMessage(
+          $("bareActMessage"),
+          "PDF 50 MB से छोटी होनी चाहिए।",
+          "error"
+        );
+
+        return;
+
+      }
+
+    }
+
+
+    const user=
+      await getUser();
+
+
+    if(!user){
+
+      showMessage(
+        $("bareActMessage"),
+        "Session समाप्त हो गई है। दोबारा login करें।",
+        "error"
+      );
+
+      return;
+
+    }
+
+
+    $("saveBareActBtn").disabled=true;
+
+    $("saveBareActBtn").textContent=
+      "Uploading...";
+
+
+    let pdfPath=
+      $("existingPdfPath").value;
+
+
+    try{
+
+      if(file){
+
+        const safeName=
+          file.name.replace(
+            /[^a-zA-Z0-9._-]/g,
+            "-"
+          );
+
+
+        pdfPath=
+          user.id+
+          "/"+
+          Date.now()+
+          "-"+
+          safeName;
+
+
+        const {
+          error:uploadError
+        }=
+          await supabaseClient
+            .storage
+            .from("bare-acts")
+            .upload(
+              pdfPath,
+              file,
+              {
+                contentType:
+                  "application/pdf",
+                upsert:false
+              }
+            );
+
+
+        if(uploadError)
+          throw uploadError;
+
+      }
+
+
+      let result;
+
+
+      const payload={
+
+        title,
+
+        category,
+
+        description,
+
+        status,
+
+        updated_at:
+          new Date().toISOString(),
+
+        published_at:
+          status==="published"
+            ?new Date().toISOString()
+            :null
+
+      };
+
+
+      if(id){
+
+        if(pdfPath)
+          payload.pdf_path=
+            pdfPath;
+
+
+        result=
+          await supabaseClient
+            .from("bare_acts")
+            .update(payload)
+            .eq("id",id)
+            .eq("author_id",user.id);
+
+      }else{
+
+        result=
+          await supabaseClient
+            .from("bare_acts")
+            .insert({
+              ...payload,
+              pdf_path:pdfPath,
+              author_id:user.id
+            });
+
+      }
+
+
+      if(result.error)
+        throw result.error;
+
+
+      showMessage(
+        $("bareActMessage"),
+        status==="published"
+          ?"Bare Act successfully published."
+          :"Bare Act saved as draft.",
+        "success"
+      );
+
+
+      setTimeout(
+        ()=>{
+          $("bareActForm")
+            .classList
+            .add("hidden");
+
+          loadBareActs();
+
+        },
+        800
+      );
+
+
+    }catch(error){
+
+      showMessage(
+        $("bareActMessage"),
+        "Error: "+error.message,
+        "error"
+      );
+
+    }
+
+
+    $("saveBareActBtn").disabled=false;
+
+    $("saveBareActBtn").textContent=
+      "Upload & Save";
+
+  }
+);
+
+
+/* =====================================================
+   LOAD BARE ACTS
+   ===================================================== */
+
+async function loadBareActs(){
+
+  const loading=
+    $("bareActsLoading");
+
+
+  loading
+    .classList
+    .remove("hidden");
+
+
+  $("bareActsTable")
+    .classList
+    .add("hidden");
+
+
+  const user=
+    await getUser();
+
+
+  if(!user)return;
+
+
+  const {data:acts,error}=
+    await supabaseClient
+      .from("bare_acts")
+      .select("*")
+      .eq("author_id",user.id)
+      .order(
+        "created_at",
+        {
+          ascending:false
+        }
+      );
+
+
+  loading
+    .classList
+    .add("hidden");
+
+
+  if(error){
+
+    loading.textContent=
+      "Bare Acts load नहीं हो पाए: "+
+      error.message;
+
+
+    loading
+      .classList
+      .remove("hidden");
+
+
+    return;
+
+  }
+
+
+  $("bareActsTableBody")
+    .innerHTML="";
+
+
+  if(!acts?.length){
+
+    loading.textContent=
+      "अभी कोई Bare Act नहीं है।";
+
+
+    loading
+      .classList
+      .remove("hidden");
+
+
+    return;
+
+  }
+
+
+  acts.forEach(
+    a=>{
+
+      const row=
+        document.createElement("tr");
+
+
+      row.innerHTML=
+        "<td></td><td></td><td></td><td></td><td></td><td></td>";
+
+
+      row.children[0].textContent=
+        a.title||"";
+
+
+      row.children[1].textContent=
+        a.category||"";
+
+
+      const s=
+        document.createElement("span");
+
+
+      s.className=
+        "status "+
+        (
+          a.status==="published"
+            ?"published"
+            :"draft"
+        );
+
+
+      s.textContent=
+        a.status==="published"
+          ?"Published"
+          :"Draft";
+
+
+      row.children[2]
+        .appendChild(s);
+
+
+      row.children[3].textContent=
+        new Date(
+          a.created_at
+        ).toLocaleDateString(
+          "en-IN"
+        );
+
+
+      if(a.pdf_path){
+
+        const {data}=
+          supabaseClient
+            .storage
+            .from("bare-acts")
+            .getPublicUrl(
+              a.pdf_path
+            );
+
+
+        const link=
+          document.createElement("a");
+
+
+        link.href=
+          data.publicUrl;
+
+
+        link.target="_blank";
+
+
+        link.rel="noopener";
+
+
+        link.textContent=
+          "Open PDF";
+
+
+        row.children[4]
+          .appendChild(link);
+
+      }else{
+
+        row.children[4].textContent=
+          "No PDF";
+
+      }
+
+
+      const edit=
+        document.createElement("button");
+
+
+      edit.textContent=
+        "Edit";
+
+
+      edit.className=
+        "edit-btn";
+
+
+      edit.onclick=
+        ()=>editBareAct(a);
+
+
+      const del=
+        document.createElement("button");
+
+
+      del.textContent=
+        "Delete";
+
+
+      del.className=
+        "danger-btn";
+
+
+      del.onclick=
+        ()=>deleteBareAct(a);
+
+
+      row.children[5]
+        .append(
+          edit,
+          del
+        );
+
+
+      $("bareActsTableBody")
+        .appendChild(row);
+
+    }
+  );
+
+
+  $("bareActsTable")
+    .classList
+    .remove("hidden");
+
+}
+
+
+/* =====================================================
+   EDIT BARE ACT
+   ===================================================== */
+
+function editBareAct(a){
+
+  $("bareActFormHeading").textContent=
+    "Edit Bare Act";
+
+
+  $("bareActId").value=
+    a.id;
+
+
+  $("existingPdfPath").value=
+    a.pdf_path||"";
+
+
+  $("bareActTitle").value=
+    a.title||"";
+
+
+  $("bareActCategory").value=
+    a.category||"Criminal Laws";
+
+
+  $("bareActDescription").value=
+    a.description||"";
+
+
+  $("bareActPdf").value="";
+
+
+  $("bareActStatus").value=
+    a.status||"draft";
+
+
+  clearMessage(
+    $("bareActMessage")
+  );
+
+
+  $("bareActForm")
+    .classList
+    .remove("hidden");
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+}
+
+
+/* =====================================================
+   DELETE BARE ACT
+   ===================================================== */
+
+async function deleteBareAct(a){
+
+  if(
+    !confirm(
+      "क्या आप इस Bare Act को permanently delete करना चाहते हैं?"
+    )
+  )return;
+
+
+  const {error}=
+    await supabaseClient
+      .from("bare_acts")
+      .delete()
+      .eq("id",a.id)
+      .eq(
+        "author_id",
+        (await getUser()).id
+      );
+
+
+  if(error){
+
+    alert(
+      "Delete failed: "+
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  if(a.pdf_path){
+
+    await supabaseClient
+      .storage
+      .from("bare-acts")
+      .remove([
+        a.pdf_path
+      ]);
+
+  }
+
+
+  alert(
+    "Bare Act successfully deleted."
+  );
+
+
+  loadBareActs();
 
 }
 
 </script>
 
 </body>
+
 </html>
