@@ -1366,6 +1366,7 @@
         opacity:1!important;
         transform:none!important;
       }
+
     }
 
   </style>
@@ -2455,6 +2456,9 @@
 
     /* PRACTICE EXPLORER */
 
+    let practiceExplorerHistory = false;
+
+
     function openPracticeExplorer(){
 
       document.getElementById("navLinks").classList.remove("active");
@@ -2464,61 +2468,141 @@
         "false"
       );
 
-      document.body.classList.add("practice-open");
 
       const explorer =
         document.getElementById("practiceExplorer");
+
+
+      document.body.classList.add("practice-open");
+
 
       explorer.setAttribute(
         "aria-hidden",
         "false"
       );
 
+
       explorer.scrollTop = 0;
+
+
+      /*
+        Create a temporary browser history entry.
+
+        This makes the browser Back button
+        close Practice Areas first instead of
+        leaving the homepage.
+      */
+
+      if(!practiceExplorerHistory){
+
+        history.pushState(
+          {
+            practiceExplorer:true
+          },
+          "",
+          window.location.href
+        );
+
+        practiceExplorerHistory = true;
+
+      }
 
     }
 
 
+    /* CLOSE PRACTICE EXPLORER */
+
     function closePracticeExplorer(){
 
-      document.body.classList.remove("practice-open");
+      if(
+        document.body.classList.contains("practice-open")
+      ){
+
+        /*
+          If the temporary history entry exists,
+          remove it using browser Back.
+        */
+
+        if(practiceExplorerHistory){
+
+          practiceExplorerHistory = false;
+
+          history.back();
+
+        }else{
+
+          hidePracticeExplorer();
+
+        }
+
+      }
+
+    }
+
+
+    /* ACTUALLY HIDE PRACTICE EXPLORER */
+
+    function hidePracticeExplorer(){
+
+      document.body.classList.remove(
+        "practice-open"
+      );
+
 
       const explorer =
         document.getElementById("practiceExplorer");
+
 
       explorer.setAttribute(
         "aria-hidden",
         "true"
       );
 
-      setTimeout(function(){
-
-        document
-          .getElementById("practice")
-          .scrollIntoView({
-            behavior:"smooth",
-            block:"center"
-          });
-
-      },120);
-
     }
+
+
+    /*
+      BROWSER BACK BUTTON
+
+      When Practice Areas is open,
+      browser Back closes only the explorer.
+    */
+
+    window.addEventListener(
+      "popstate",
+      function(){
+
+        if(
+          document.body.classList.contains("practice-open")
+        ){
+
+          practiceExplorerHistory = false;
+
+          hidePracticeExplorer();
+
+        }
+
+      }
+    );
 
 
     /* ESCAPE TO CLOSE PRACTICE EXPLORER */
 
-    document.addEventListener("keydown",function(event){
+    document.addEventListener(
+      "keydown",
+      function(event){
 
-      if(
-        event.key === "Escape" &&
-        document.body.classList.contains("practice-open")
-      ){
+        if(
+          event.key === "Escape" &&
+          document.body.classList.contains("practice-open")
+        ){
 
-        closePracticeExplorer();
+          closePracticeExplorer();
+
+        }
 
       }
-
-    });
+    );
 
 
     /* FAQ */
