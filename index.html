@@ -1797,7 +1797,6 @@
             <form class="enquiry-form" onsubmit="sendEnquiryToWhatsApp(); return false;">
               <input type="text" id="clientName" placeholder="Your Name" aria-label="Your Name" autocomplete="name" required>
               <input type="tel" id="clientPhone" placeholder="Mobile Number" aria-label="Mobile Number" autocomplete="tel" required>
-              <input type="email" id="clientEmail" placeholder="Email Address" aria-label="Email Address" autocomplete="email">
               <textarea id="clientMessage" placeholder="Briefly describe your legal enquiry..." aria-label="Legal Enquiry" required></textarea>
               <button type="submit">Send Enquiry on WhatsApp →</button>
             </form>
@@ -1953,9 +1952,14 @@
     function sendEnquiryToWhatsApp(){
       const name = document.getElementById("clientName").value.trim();
       const phone = document.getElementById("clientPhone").value.trim();
-      const email = document.getElementById("clientEmail").value.trim();
       const message = document.getElementById("clientMessage").value.trim();
-      const whatsappMessage = "New Client Enquiry\n\n" + "Name: " + name + "\n" + "Mobile: " + phone + "\n" + "Email: " + email + "\n" + "Legal Enquiry: " + message;
+
+      const whatsappMessage =
+        "New Client Enquiry\n\n" +
+        "Name: " + name + "\n" +
+        "Mobile: " + phone + "\n" +
+        "Legal Enquiry: " + message;
+
       const whatsappURL = "https://wa.me/917080884964?text=" + encodeURIComponent(whatsappMessage);
       window.open(whatsappURL, "_blank", "noopener,noreferrer");
     }
