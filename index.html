@@ -432,7 +432,7 @@
       flex:0 0 auto;
     }
 
-    /* Hero Photo */
+    /* Hero Photo - with better shadow + animation */
 
     .hero-photo-wrap{
       display:flex;
@@ -448,8 +448,30 @@
       height:280px;
       border-radius:50%;
       object-fit:cover;
-      border:3px solid rgba(201,169,110,.55);
-      box-shadow:0 20px 50px rgba(0,0,0,.45), 0 0 0 8px rgba(201,169,110,.08);
+      border:3px solid rgba(201,169,110,.6);
+      box-shadow:
+        0 25px 60px rgba(0,0,0,.55),
+        0 0 0 10px rgba(201,169,110,.08),
+        0 0 40px rgba(201,169,110,.15);
+      transition: transform .4s ease, box-shadow .4s ease;
+      animation: photoFloat 5s ease-in-out infinite alternate;
+    }
+
+    .hero-photo:hover{
+      transform: scale(1.04);
+      box-shadow:
+        0 30px 70px rgba(0,0,0,.6),
+        0 0 0 12px rgba(201,169,110,.12),
+        0 0 50px rgba(201,169,110,.22);
+    }
+
+    @keyframes photoFloat{
+      from{
+        transform: translateY(0);
+      }
+      to{
+        transform: translateY(-12px);
+      }
     }
 
     /* COMMON */
@@ -1396,6 +1418,10 @@
       .reveal{
         opacity:1!important;
         transform:none!important;
+      }
+
+      .hero-photo{
+        animation:none!important;
       }
 
     }
