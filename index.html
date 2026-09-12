@@ -10,7 +10,6 @@
   <meta name="description" content="Bipin Kumar Maurya provides legal information, consultation and assistance in Gorakhpur, Uttar Pradesh, covering Criminal, Civil, Family, Property, Consumer and Labour matters.">
   <meta name="author" content="Bipin Kumar Maurya">
 
-  <!-- Google does not use meta keywords for ranking, but keeping this is harmless -->
   <meta name="keywords" content="Bipin Kumar Maurya, Bipin Kumar Maurya Gorakhpur, Legal Consultant Gorakhpur, Legal Information Gorakhpur, Criminal Law Gorakhpur, Civil Law Gorakhpur, Family Law Gorakhpur, Property Law Gorakhpur, Consumer Law Gorakhpur, Labour Law Gorakhpur, Indian Law, Legal Articles, Bare Acts">
 
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -20,13 +19,10 @@
   <meta name="geo.region" content="IN-UP">
   <meta name="geo.placename" content="Gorakhpur, Uttar Pradesh, India">
 
-  <!-- CANONICAL -->
   <link rel="canonical" href="https://bipinkumarmaurya.github.io/">
 
-  <!-- GOOGLE SEARCH CONSOLE VERIFICATION - DO NOT REMOVE -->
   <meta name="google-site-verification" content="ad_9dYPWp9U3cuvj17PGE6DQTWQePiF1BH_sFx9lGEs">
 
-  <!-- OPEN GRAPH -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Bipin Kumar Maurya | Legal Consultant in Gorakhpur">
   <meta property="og:description" content="Legal information, consultation and assistance relating to Criminal, Civil, Family, Property, Consumer and Labour matters in Gorakhpur, Uttar Pradesh.">
@@ -34,18 +30,15 @@
   <meta property="og:site_name" content="Bipin Kumar Maurya">
   <meta property="og:locale" content="en_IN">
 
-  <!-- TWITTER / X -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bipin Kumar Maurya | Legal Consultant in Gorakhpur">
   <meta name="twitter:description" content="Legal information and legal assistance relating to Criminal, Civil, Family, Property, Consumer and Labour matters in Gorakhpur, Uttar Pradesh.">
 
-  <!-- PERFORMANCE -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- STRUCTURED DATA: PERSON -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -68,7 +61,6 @@
   }
   </script>
 
-  <!-- STRUCTURED DATA: WEBSITE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -84,7 +76,6 @@
   }
   </script>
 
-  <!-- STRUCTURED DATA: WEBPAGE -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -396,8 +387,9 @@
     }
 
     .btn-outline{
-      border:1px solid rgba(255,255,255,.24);
-      color:var(--cream);
+      border:1px solid rgba(201,169,110,.65);
+      color:var(--gold2);
+      background:transparent;
     }
 
     .btn-primary:hover,
@@ -410,8 +402,9 @@
     }
 
     .btn-outline:hover{
-      border-color:var(--gold);
-      color:var(--gold2);
+      border-color:var(--gold2);
+      color:#fff;
+      background:rgba(201,169,110,.12);
     }
 
     .hero-note{
@@ -705,7 +698,7 @@
       margin-top:26px;
     }
 
-    /* BARE ACTS / LEGAL RESOURCES */
+    /* LEGAL RESOURCES */
 
     .bare-wrapper{
       background:linear-gradient(180deg,#0a0b0d,#0d0f12);
@@ -2398,8 +2391,6 @@
 
   <script>
 
-    /* MOBILE MENU */
-
     function toggleMenu(){
 
       const nav = document.getElementById("navLinks");
@@ -2416,8 +2407,6 @@
 
     }
 
-
-    /* CLOSE MOBILE MENU AFTER CLICK */
 
     document.querySelectorAll(".nav-links a").forEach(function(link){
 
@@ -2438,8 +2427,6 @@
     });
 
 
-    /* NAVBAR */
-
     window.addEventListener("scroll",function(){
 
       const navbar = document.getElementById("navbar");
@@ -2453,8 +2440,6 @@
       passive:true
     });
 
-
-    /* PRACTICE EXPLORER */
 
     let practiceExplorerHistory = false;
 
@@ -2485,14 +2470,6 @@
       explorer.scrollTop = 0;
 
 
-      /*
-        Create a temporary browser history entry.
-
-        This makes the browser Back button
-        close Practice Areas first instead of
-        leaving the homepage.
-      */
-
       if(!practiceExplorerHistory){
 
         history.pushState(
@@ -2510,18 +2487,11 @@
     }
 
 
-    /* CLOSE PRACTICE EXPLORER */
-
     function closePracticeExplorer(){
 
       if(
         document.body.classList.contains("practice-open")
       ){
-
-        /*
-          If the temporary history entry exists,
-          remove it using browser Back.
-        */
 
         if(practiceExplorerHistory){
 
@@ -2539,8 +2509,6 @@
 
     }
 
-
-    /* ACTUALLY HIDE PRACTICE EXPLORER */
 
     function hidePracticeExplorer(){
 
@@ -2561,13 +2529,6 @@
     }
 
 
-    /*
-      BROWSER BACK BUTTON
-
-      When Practice Areas is open,
-      browser Back closes only the explorer.
-    */
-
     window.addEventListener(
       "popstate",
       function(){
@@ -2586,8 +2547,6 @@
     );
 
 
-    /* ESCAPE TO CLOSE PRACTICE EXPLORER */
-
     document.addEventListener(
       "keydown",
       function(event){
@@ -2604,8 +2563,6 @@
       }
     );
 
-
-    /* FAQ */
 
     function toggleFAQ(button){
 
@@ -2662,8 +2619,6 @@
     }
 
 
-    /* WHATSAPP ENQUIRY */
-
     function sendEnquiryToWhatsApp(){
 
       const name =
@@ -2700,8 +2655,6 @@
 
     }
 
-
-    /* REVEAL ANIMATION */
 
     const revealObserver =
       new IntersectionObserver(function(entries){
@@ -2756,8 +2709,6 @@
         SUPABASE_PUBLISHABLE_KEY
       );
 
-
-    /* LOAD PUBLISHED ARTICLES */
 
     async function loadHomeArticles(){
 
@@ -2914,8 +2865,6 @@
     }
 
 
-    /* FORMAT ARTICLE DATE */
-
     function formatArticleDate(dateValue){
 
       if(!dateValue){
@@ -2943,8 +2892,6 @@
 
     }
 
-
-    /* START ARTICLES */
 
     loadHomeArticles();
 
